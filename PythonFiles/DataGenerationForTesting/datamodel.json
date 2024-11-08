@@ -1,0 +1,3229 @@
+{
+    "Styles": [],
+    "Entities": [
+        {
+            "Label": "$OpenedDate$-$CaseNumber$",
+            "DisplayName": "Fascicolo",
+            "MetaType": "guid6C7D9311-D676-47cb-9546-68A34BADB498",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "YearStarted",
+                    "DisplayName": "Anno",
+                    "DataType": 2,
+                    "MetaType": "guid593C7ECC-8A6A-41a1-B3CA-14427217B3BE"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "CaseNumber",
+                    "DisplayName": "Progressivo",
+                    "DataType": 2,
+                    "MetaType": "guid775b8aac-60bd-470c-a61a-a792c9fac1ed"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "EventTitle",
+                    "DisplayName": "Voce",
+                    "DataType": 4,
+                    "MetaType": "guid59A239DD-F3EE-4EE2-B3DB-FF5A1195E903"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "OpenedDate",
+                    "DisplayName": "Data Inserimento",
+                    "DataType": 3,
+                    "MetaType": "guid9B359855-D9C4-468f-81A2-9DB9C87D32EE"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "AnnotationText",
+                    "DisplayName": "Annotazione",
+                    "DataType": 4,
+                    "MetaType": "guid537C05E5-A426-4d70-B6EA-640AB6961865"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Ordinario",
+                        "Operazione",
+                        "Dossier/Altro",
+                        "C",
+                        "NON INDICATO",
+                        "FASCICOLO EX 6",
+                        "FASCICOLO 7",
+                        "FASCICOLO IMPOSSIBILE",
+                        "FSC PROTOCOLLO IMP",
+                        "IGNOTI",
+                        "ART.75",
+                        "Fascicolo Ufficio",
+                        "Fascicolo Precursori",
+                        "Altro"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "DocumentType",
+                    "DisplayName": "Tipo",
+                    "DataType": 4,
+                    "MetaType": "guidc329f90d-3bf7-40c3-8d87-f6fe3cb8d5d4"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 8,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "EventDate",
+                    "DisplayName": "Data Evidenza",
+                    "DataType": 3,
+                    "MetaType": "guid75CA7E8F-D2EF-4CF4-BB81-6C244ADA5286"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "ClassificationCode",
+                    "DisplayName": "Classifica",
+                    "DataType": 4,
+                    "MetaType": "guid46E39FEF-87EC-444f-9EAA-570638001AE1"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Trattazione",
+                        "Atti",
+                        "Atti Faldone",
+                        "Evidenza",
+                        "Assegnazione",
+                        "Atti Garage",
+                        "Consultazione",
+                        "Fuso",
+                        "Altro"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "CaseStatus",
+                    "DisplayName": "Stato",
+                    "DataType": 4,
+                    "MetaType": "guid7BCB6E9E-3DE6-4941-B452-EC83E0F992DF"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "TransactionDate",
+                    "DisplayName": "Data Assegnazione",
+                    "DataType": 3,
+                    "MetaType": "guidBCAD30E5-D249-412f-83BF-00AA0FF5B7EC"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Fascicolo",
+                    "Name": "ClosedDate",
+                    "DisplayName": "Data Cancellazione",
+                    "DataType": 3,
+                    "MetaType": "guid80860455-202C-4ddf-85A9-AE576D66BD56"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 8,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Operazione",
+                    "Name": "EventStartDate",
+                    "DisplayName": "Data Inizio Operazione",
+                    "DataType": 3,
+                    "MetaType": "guidE17D5FB3-4FF6-4177-AC26-73D8FE2911EE"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 8,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Operazione",
+                    "Name": "EventEndDate",
+                    "DisplayName": "Data Fine Operazione",
+                    "DataType": 3,
+                    "MetaType": "guid994DA53C-CBE3-4273-8734-A398646C7995"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Operazione",
+                    "Name": "IsRunning",
+                    "DisplayName": "Operazione In Corso",
+                    "DataType": 1,
+                    "MetaType": "guidDB49455F-D8E2-4D1C-B649-F5A50EAD34D8"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Operazione",
+                    "Name": "EventText",
+                    "DisplayName": "Obiettivo Operazione",
+                    "DataType": 4,
+                    "MetaType": "guidAF9E50C6-9A4B-4EAC-B556-A6FC438E734D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Operazione",
+                    "Name": "EventResults",
+                    "DisplayName": "Risultati Ottenuti",
+                    "DataType": 4,
+                    "MetaType": "guid5B859481-7F46-4F04-B306-06D1AA9EB3EC"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Operazione",
+                    "Name": "OperationSheet",
+                    "DisplayName": "Scheda Operazione",
+                    "DataType": 4,
+                    "MetaType": "guid00A09C3D-E13B-4E99-9FE6-65A1ACC986F0"
+                }
+            ],
+            "Name": "Dossier",
+            "IconName": "icone_Fascicolo-indagine",
+            "IconUri": null
+        },
+        {
+            "Label": "$EventDate$/$CaseNumber$",
+            "DisplayName": "Nota",
+            "MetaType": "guid3FF99984-6D1C-4265-866D-4980DC756E26",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "ClassificationCode",
+                    "DisplayName": "Classifica",
+                    "DataType": 4,
+                    "MetaType": "guid46E39FEF-87EC-444f-9EAA-570638001AE1"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "OpenedDate",
+                    "DisplayName": "Data Inserimento",
+                    "DataType": 3,
+                    "MetaType": "guid9B359855-D9C4-468f-81A2-9DB9C87D32EE"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "AnnotationText",
+                    "DisplayName": "Annotazione",
+                    "DataType": 4,
+                    "MetaType": "guid537C05E5-A426-4d70-B6EA-640AB6961865"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "DocumentTitle",
+                    "DisplayName": "Oggetto Nota",
+                    "DataType": 4,
+                    "MetaType": "guidB4EC8FC2-13EC-4df2-AE90-D7D5D4A4B621"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "ClosedDate",
+                    "DisplayName": "Data Cancellazione",
+                    "DataType": 3,
+                    "MetaType": "guid80860455-202C-4ddf-85A9-AE576D66BD56"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "CaseNumber",
+                    "DisplayName": "Progressivo",
+                    "DataType": 2,
+                    "MetaType": "guid775b8aac-60bd-470c-a61a-a792c9fac1ed"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "DCSADate",
+                    "DisplayName": "Data DCSA",
+                    "DataType": 3,
+                    "MetaType": "guidFBDE03B9-1548-4481-AE99-A3AFE890EA71"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Determinato",
+                        "Ricusato",
+                        "Inviato alla Firma",
+                        "Inviato a Protocollo",
+                        "Inserito a sistema",
+                        "Assegnato a Fsc",
+                        "Modifica Nota",
+                        "Inviato a DC",
+                        "Protocollato",
+                        "Auto Determinato",
+                        "Avocato",
+                        "Rigettato",
+                        "Evaso dal protocollo",
+                        "Annullato",
+                        "Visualizza",
+                        "Archiviata Minuta",
+                        "Gestisci Nota",
+                        "Fotocopiata",
+                        "Stampa Etichetta",
+                        "Assegnazione Massiva",
+                        "Assegnazione Massiva 2",
+                        "Generica",
+                        "Inviato a Errati",
+                        "Segnalata per correzione",
+                        "Corretta",
+                        "Firma Grafica",
+                        "Apponi Etichetta",
+                        "Invio fuori DCSA",
+                        "Invia a G.Firma"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "CaseStatus",
+                    "DisplayName": "Stato",
+                    "DataType": 4,
+                    "MetaType": "guid7BCB6E9E-3DE6-4941-B452-EC83E0F992DF"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "FilingNumber",
+                    "DisplayName": "Progressivo Fascicolo",
+                    "DataType": 2,
+                    "MetaType": "guidAD5C928A-7E0F-4368-8D7D-2480C46532B3"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Entrante",
+                        "Uscente",
+                        "Indefinito"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Direction",
+                    "DisplayName": "Verso",
+                    "DataType": 4,
+                    "MetaType": "guid25EAFCAA-E2EB-432d-8927-A59CF0B84CDA"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Interlocutore",
+                    "Name": "ProtEE",
+                    "DisplayName": "Protocollo Ente Emittente",
+                    "DataType": 4,
+                    "MetaType": "guidD68BD8B0-ADFB-4D3F-A54F-B547D617B8B2"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Interlocutore",
+                    "Name": "DataEE",
+                    "DisplayName": "Data Ente Emittente",
+                    "DataType": 3,
+                    "MetaType": "guid6DF508C9-878C-4038-9689-43B4283FDFC0"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Cartaceo",
+                        "Fax",
+                        "Mail",
+                        "Brevi Manu",
+                        "PEC",
+                        "Altro",
+                        "Mista",
+                        "MIC",
+                        "SIENA",
+                        "Unknown"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Interlocutore",
+                    "Name": "DeliveryType",
+                    "DisplayName": "Modalita Arrivo",
+                    "DataType": 4,
+                    "MetaType": "guid8F72378D-E0CD-493B-8B29-F95C292A1CF2"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "DCSACaseNumber",
+                    "DisplayName": "Protocollo DCSA",
+                    "DataType": 4,
+                    "MetaType": "guidF360A3C5-E533-4AE2-926B-77871E7A6CF1"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Cartaceo",
+                        "Fax",
+                        "Mail",
+                        "Brevi Manu",
+                        "PEC",
+                        "Altro",
+                        "Mista",
+                        "MIC",
+                        "SIENA",
+                        "Unknown"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "ProtocolLevel",
+                    "DisplayName": "Livello Protocollo",
+                    "DataType": 4,
+                    "MetaType": "guidB2A3B23C-07B8-4A87-8B45-4CD20079E79C"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Dir. Centrale",
+                        "Servizio",
+                        "Sezione"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "SignOwnerName",
+                    "DisplayName": "Gruppo FIrma",
+                    "DataType": 4,
+                    "MetaType": "guid2335132D-E792-40F4-8C8C-0AEE19B52EA6"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Normale",
+                        "Alta"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "Priority",
+                    "DisplayName": "Priorità",
+                    "DataType": 4,
+                    "MetaType": "guid7861226D-5D80-4ef8-9ED9-029D54C228EF"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Da Trattare",
+                        "Trattato"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "SuperStatus",
+                    "DisplayName": "Super Stato",
+                    "DataType": 4,
+                    "MetaType": "guidA09A26D1-C077-4A0C-877B-95F1009A25B8"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dati Nota",
+                    "Name": "YearStarted",
+                    "DisplayName": "Anno",
+                    "DataType": 2,
+                    "MetaType": "guid593C7ECC-8A6A-41a1-B3CA-14427217B3BE"
+                }
+            ],
+            "Name": "Document",
+            "IconName": "icone_Documento",
+            "IconUri": null
+        },
+        {
+            "Label": "$VehicleLicensePlateNumber$",
+            "DisplayName": "Mezzo",
+            "MetaType": "guid124035A5-5D11-418b-A0A1-2C53F1932B8D",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Mezzo",
+                    "Name": "TransportIdentifier",
+                    "DisplayName": "Telaio",
+                    "DataType": 4,
+                    "MetaType": "guidE556FA14-0421-4e47-BE10-A825DBDF2E85"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Mezzo",
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4,
+                    "MetaType": "guid359AD9EB-8AC2-4c0d-82E6-AA77734CC423"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Mezzo",
+                    "Name": "VehicleLicensePlateNumber",
+                    "DisplayName": "Targa",
+                    "DataType": 4,
+                    "MetaType": "guidD1F35949-FC3C-4985-B068-F09B74CE1AE3"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Mezzo",
+                    "Name": "AnnotationText",
+                    "DisplayName": "Annotazione",
+                    "DataType": 4,
+                    "MetaType": "guid537C05E5-A426-4d70-B6EA-640AB6961865"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Non Disponibile",
+                        "Autovettura",
+                        "Natante",
+                        "Autotreno",
+                        "Rimorchio",
+                        "Pulmann",
+                        "Motociclo",
+                        "Mezzo Agricolo",
+                        "Roulotte",
+                        "Aeronave",
+                        "Furgone",
+                        "Caravan",
+                        "Carro",
+                        "Bicicletta",
+                        "Motrice",
+                        "Fuoristrada",
+                        "Container",
+                        "Altro"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Mezzo",
+                    "Name": "Details",
+                    "DisplayName": "Tipo",
+                    "DataType": 4,
+                    "MetaType": "guid4643D715-F85C-4339-B2D7-07C9E91B807B"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Mezzo",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                }
+            ],
+            "Name": "Vehicle",
+            "IconName": "icone_mezzo-generico",
+            "IconUri": null
+        },
+        {
+            "Label": "$PersonFirstName$ $PersonLastName$",
+            "DisplayName": "Persona",
+            "MetaType": "guid8A586959-9837-47DE-8DBF-BC7031F01545",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "PersonFirstName",
+                    "DisplayName": "Nome",
+                    "DataType": 4,
+                    "MetaType": "guid4DE7370B-60E5-4EB0-860E-4066D3DFD7B6"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Persona",
+                    "Name": "PersonLastName",
+                    "DisplayName": "Cognome",
+                    "DataType": 4,
+                    "MetaType": "guid62B01C18-2E64-46D5-B2FF-3C69B4F76FEB"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Persona",
+                    "Name": "NationalInsuranceNumber",
+                    "DisplayName": "Codice Fiscale",
+                    "DataType": 4,
+                    "MetaType": "guid32317CD5-BE69-48bb-83CC-AA91BA904489"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Persona",
+                    "Name": "DateOfBirth",
+                    "DisplayName": "Data Nascita",
+                    "DataType": 3,
+                    "MetaType": "guidFE45F1C4-B198-4111-8123-F42D2CD6419D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Persona",
+                    "Name": "PlaceofBirth",
+                    "DisplayName": "Luogo Nascita",
+                    "DataType": 4,
+                    "MetaType": "guidbfd2860d-c671-438c-a724-68031350bf69"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "BuildingNumber",
+                    "DisplayName": "Civico",
+                    "DataType": 4,
+                    "MetaType": "guidDECE0D4F-CD3C-43d7-8F52-A068EA5BF494"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Persona",
+                    "Name": "Gender",
+                    "DisplayName": "Sesso",
+                    "DataType": 4,
+                    "MetaType": "guid7548369B-BA9A-4C4B-AEAD-0CB442EAFA27"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Persona",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "AddressLine2",
+                    "DisplayName": "Particella",
+                    "DataType": 4,
+                    "MetaType": "guidD381D6E8-3446-430e-A465-9393F524269E"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "AddressLine1",
+                    "DisplayName": "Toponimo",
+                    "DataType": 4,
+                    "MetaType": "guidF56E1A86-9C0E-4248-96C0-D77D4D16704E"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "AddressLine3",
+                    "DisplayName": "Località",
+                    "DataType": 4,
+                    "MetaType": "guid407E305D-FB90-4e23-9404-593F0F9B08D1"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "RegionName",
+                    "DisplayName": "Regione",
+                    "DataType": 4,
+                    "MetaType": "guid652CB946-28FA-4172-9BD9-D13E4B385143"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "StateName",
+                    "DisplayName": "Provincia",
+                    "DataType": 4,
+                    "MetaType": "guidA29B5F8F-BA18-4262-95BD-65B8216D8841"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "CountryName",
+                    "DisplayName": "Nazione",
+                    "DataType": 4,
+                    "MetaType": "guidDAC78E2E-4C6F-4006-B291-0A42BAB2E339"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "ZipCode",
+                    "DisplayName": "CAP",
+                    "DataType": 4,
+                    "MetaType": "guidE88DF247-7CA6-4E4F-B38B-87DDE11EE98C"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Persona",
+                    "Name": "AnnotationText",
+                    "DisplayName": "Annotazione",
+                    "DataType": 4,
+                    "MetaType": "guid537C05E5-A426-4d70-B6EA-640AB6961865"
+                }
+            ],
+            "Name": "Person",
+            "IconName": "icone_persona-generica",
+            "IconUri": null
+        },
+        {
+            "Label": "$OrganizationName$ - $OrganizationIdentifier$",
+            "DisplayName": "Organizzazione",
+            "MetaType": "guidB30A4137-A537-420B-B481-C5DF922152AF",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Organizzazione",
+                    "Name": "OrganizationName",
+                    "DisplayName": "Nome",
+                    "DataType": 4,
+                    "MetaType": "guidB2A3B23C-07B8-4A87-8B45-4CD20079E79C"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Organizzazione",
+                    "Name": "LegalEntityName",
+                    "DisplayName": "Forma Giuridica",
+                    "DataType": 4,
+                    "MetaType": "guid496E2E84-B7A0-427b-8ACC-985197D06CAC"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Organizzazione",
+                    "Name": "OrganizationIdentifier",
+                    "DisplayName": "Partita IVA",
+                    "DataType": 4,
+                    "MetaType": "guid1A611A7F-FC17-4a0d-816B-018E106B0718"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Organizzazione",
+                    "Name": "OpenedDate",
+                    "DisplayName": "Data Costituzione",
+                    "DataType": 3,
+                    "MetaType": "guid9B359855-D9C4-468f-81A2-9DB9C87D32EE"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Anagrafica Organizzazione",
+                    "Name": "CompanyRegistrationNumber",
+                    "DisplayName": "CCIAA",
+                    "DataType": 4,
+                    "MetaType": "guid694EB231-9982-46FE-A40E-3D9165582101"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "BuildingNumber",
+                    "DisplayName": "Civico",
+                    "DataType": 4,
+                    "MetaType": "guidDECE0D4F-CD3C-43d7-8F52-A068EA5BF494"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Organizzazione",
+                    "Name": "AnnotationText",
+                    "DisplayName": "Annotazione",
+                    "DataType": 4,
+                    "MetaType": "guid537C05E5-A426-4d70-B6EA-640AB6961865"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Organizzazione",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "AddressLine2",
+                    "DisplayName": "Particella",
+                    "DataType": 4,
+                    "MetaType": "guidD381D6E8-3446-430e-A465-9393F524269E"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "AddressLine1",
+                    "DisplayName": "Toponimo",
+                    "DataType": 4,
+                    "MetaType": "guidF56E1A86-9C0E-4248-96C0-D77D4D16704E"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "AddressLine3",
+                    "DisplayName": "Località",
+                    "DataType": 4,
+                    "MetaType": "guid407E305D-FB90-4e23-9404-593F0F9B08D1"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "RegionName",
+                    "DisplayName": "Regione",
+                    "DataType": 4,
+                    "MetaType": "guid652CB946-28FA-4172-9BD9-D13E4B385143"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "StateName",
+                    "DisplayName": "Provincia",
+                    "DataType": 4,
+                    "MetaType": "guidA29B5F8F-BA18-4262-95BD-65B8216D8841"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "CountryName",
+                    "DisplayName": "Nazione",
+                    "DataType": 4,
+                    "MetaType": "guidDAC78E2E-4C6F-4006-B291-0A42BAB2E339"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "ZipCode",
+                    "DisplayName": "CAP",
+                    "DataType": 4,
+                    "MetaType": "guidE88DF247-7CA6-4E4F-B38B-87DDE11EE98C"
+                }
+            ],
+            "Name": "Organization",
+            "IconName": "icone_organizzazione-criminale",
+            "IconUri": null
+        },
+        {
+            "Label": "$LocationName$",
+            "DisplayName": "Luogo",
+            "MetaType": "guidCD3DB3DB-55F6-440A-9BB8-3F3EE4DB4D52",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Luogo",
+                    "Name": "LocationName",
+                    "DisplayName": "Descrizione Generale",
+                    "DataType": 4,
+                    "MetaType": "guid23AD0BA2-6F0E-4e60-A949-13D4F2128C6C"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "BuildingNumber",
+                    "DisplayName": "Civico",
+                    "DataType": 4,
+                    "MetaType": "guidDECE0D4F-CD3C-43d7-8F52-A068EA5BF494"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Luogo",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "AddressLine2",
+                    "DisplayName": "Particella",
+                    "DataType": 4,
+                    "MetaType": "guidD381D6E8-3446-430e-A465-9393F524269E"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "AddressLine1",
+                    "DisplayName": "Toponimo",
+                    "DataType": 4,
+                    "MetaType": "guidF56E1A86-9C0E-4248-96C0-D77D4D16704E"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "AddressLine3",
+                    "DisplayName": "Località",
+                    "DataType": 4,
+                    "MetaType": "guid407E305D-FB90-4e23-9404-593F0F9B08D1"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "RegionName",
+                    "DisplayName": "Regione",
+                    "DataType": 4,
+                    "MetaType": "guid652CB946-28FA-4172-9BD9-D13E4B385143"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "StateName",
+                    "DisplayName": "Provincia",
+                    "DataType": 4,
+                    "MetaType": "guidA29B5F8F-BA18-4262-95BD-65B8216D8841"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "CountryName",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guidDAC78E2E-4C6F-4006-B291-0A42BAB2E339"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Geografici",
+                    "Name": "ZipCode",
+                    "DisplayName": "CAP",
+                    "DataType": 4,
+                    "MetaType": "guidE88DF247-7CA6-4E4F-B38B-87DDE11EE98C"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Luogo",
+                    "Name": "AnnotationText",
+                    "DisplayName": "Annotazione",
+                    "DataType": 4,
+                    "MetaType": "guid537C05E5-A426-4d70-B6EA-640AB6961865"
+                }
+            ],
+            "Name": "Location",
+            "IconName": "icone_luogo",
+            "IconUri": null
+        },
+        {
+            "Label": "$PhoneNumber$",
+            "DisplayName": "Numero",
+            "MetaType": "guidDB820CCD-D028-4B20-A3AE-57374B83EFD4",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Telefono",
+                    "Name": "PhoneNumber",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid109D5D32-EA94-4A6A-A134-1A70A629FB24"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Telefono",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Telefono",
+                    "Name": "AnnotationText",
+                    "DisplayName": "Annotazione",
+                    "DataType": 4,
+                    "MetaType": "guid537C05E5-A426-4d70-B6EA-640AB6961865"
+                }
+            ],
+            "Name": "Phone",
+            "IconName": "icone_dispositivo",
+            "IconUri": null
+        },
+        {
+            "Label": "$Description$",
+            "DisplayName": "Altro",
+            "MetaType": "guidCF6EE3D7-02E0-4209-B6FD-C5B5DF63BAD9",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli",
+                    "Name": "Description",
+                    "DisplayName": "Description",
+                    "DataType": 4,
+                    "MetaType": "guid359AD9EB-8AC2-4c0d-82E6-AA77734CC423"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli",
+                    "Name": "AnnotationText",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid537C05E5-A426-4d70-B6EA-640AB6961865"
+                }
+            ],
+            "Name": "Evidence",
+            "IconName": "icone_evidenze",
+            "IconUri": null
+        },
+        {
+            "Label": null,
+            "DisplayName": "Utente",
+            "MetaType": "guidB03AE986-4073-4C8A-9DEC-5D8BB7757CA3",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "PersonLastName",
+                    "DisplayName": "Cognome",
+                    "DataType": 4,
+                    "MetaType": "guid62B01C18-2E64-46D5-B2FF-3C69B4F76FEB"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "PersonFirstName",
+                    "DisplayName": "Nome",
+                    "DataType": 4,
+                    "MetaType": "guid4DE7370B-60E5-4EB0-860E-4066D3DFD7B6"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "PersonIdentifier",
+                    "DisplayName": "Identificativo",
+                    "DataType": 4,
+                    "MetaType": "guid56ACB4E2-8EAB-46f1-9C68-44924B26CFAC"
+                }
+            ],
+            "Name": "Person Alias",
+            "IconName": "icone_utente",
+            "IconUri": null
+        },
+        {
+            "Label": null,
+            "DisplayName": "Servizio",
+            "MetaType": "guid68514D1F-DCC4-437f-A724-9F0D6B031587",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "ClassificationTitle",
+                    "DisplayName": "Nome Servizio",
+                    "DataType": 4,
+                    "MetaType": "guidA3E76FF5-8688-46cf-84B4-E3B222820402"
+                }
+            ],
+            "Name": "ServizioDCSA",
+            "IconName": "icone_servizio",
+            "IconUri": null
+        },
+        {
+            "Label": null,
+            "DisplayName": "Sezione",
+            "MetaType": "guidC2E3418F-B35D-4AD1-A02B-9850D1473DEF",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "ClassificationTitle",
+                    "DisplayName": "Nome Sezione",
+                    "DataType": 4,
+                    "MetaType": "guidA3E76FF5-8688-46cf-84B4-E3B222820402"
+                }
+            ],
+            "Name": "SezioneDCSA",
+            "IconName": "icone_sezione",
+            "IconUri": null
+        },
+        {
+            "Label": null,
+            "DisplayName": "ProfiloDCSA",
+            "MetaType": "guid6D36ED5B-C780-4EDC-BF3F-BE73A8E9DCAF",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Amministratore",
+                        "Amministratore di sistema",
+                        "Fascicolatore",
+                        "Operatore"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "ClassificationTitle",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guidA3E76FF5-8688-46cf-84B4-E3B222820402"
+                }
+            ],
+            "Name": "ProfiloDCSA",
+            "IconName": "icone_profilo-applicativo",
+            "IconUri": null
+        },
+        {
+            "Label": "$DocumentType$",
+            "DisplayName": "Documento",
+            "MetaType": "guid24613CB9-94DC-4A22-81A2-408EF9B83728",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Altro",
+                        "Carta d'identità",
+                        "Patente",
+                        "Passaporto",
+                        "Porto d'armi",
+                        "Carta di Circolazione",
+                        "Permesso di soggiorno",
+                        "Cedola d'identità",
+                        "Carta Credito/Bancomat",
+                        "Libretto Navigazione"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "DocumentType",
+                    "DisplayName": "TipoDocumento",
+                    "DataType": 4,
+                    "MetaType": "guidc329f90d-3bf7-40c3-8d87-f6fe3cb8d5d4"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Intestatario",
+                    "Name": "Owner",
+                    "DisplayName": "Intestatario",
+                    "DataType": 4,
+                    "MetaType": "guidC4710BC4-4556-4b6f-AD64-1EBF73044B41"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "GenericIdentifier",
+                    "DisplayName": "Numero",
+                    "DataType": 4,
+                    "MetaType": "guid77591248-AE21-4853-8F0E-C91F8E33E32F"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 8,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "DocumentDate",
+                    "DisplayName": "Data Rilascio",
+                    "DataType": 3,
+                    "MetaType": "guid80529703-5488-47EE-99EF-1137D462E964"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 8,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "ExpireDate",
+                    "DisplayName": "Data Scadenza",
+                    "DataType": 3,
+                    "MetaType": "guid358B466F-2F57-4AF0-9847-ECAD2BE3018F"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "AnnotationText",
+                    "DisplayName": "Annotazioni",
+                    "DataType": 4,
+                    "MetaType": "guid537C05E5-A426-4d70-B6EA-640AB6961865"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Intestatario",
+                    "Name": "SourceGradeDescription",
+                    "DisplayName": "Autorita Rilascio",
+                    "DataType": 4,
+                    "MetaType": "guidE1F054E0-7183-4F28-AE8F-A11D6C6A33F7"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "IssuingStateName",
+                    "DisplayName": "Nazionalita",
+                    "DataType": 4,
+                    "MetaType": "guid4C43E992-22CA-4863-8A5D-28E29D10F0E0"
+                }
+            ],
+            "Name": "Public Document",
+            "IconName": "icone_richieste-interne",
+            "IconUri": null
+        },
+        {
+            "Label": "$DocumentType$",
+            "DisplayName": "Allegati",
+            "MetaType": "guid69658CCE-D9C1-42E5-A3ED-046B761AC672",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": true,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": [
+                        "Originale",
+                        "Firmato",
+                        "Protocollato",
+                        "PDF",
+                        "Anteprima",
+                        "Supporto",
+                        "Assistente",
+                        "Eliminato",
+                        "Sconosciuto"
+                    ],
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "DocumentType",
+                    "DisplayName": "Tipo",
+                    "DataType": 4,
+                    "MetaType": "guidc329f90d-3bf7-40c3-8d87-f6fe3cb8d5d4"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "DocumentTitle",
+                    "DisplayName": "Titolo",
+                    "DataType": 4,
+                    "MetaType": "guidB4EC8FC2-13EC-4df2-AE90-D7D5D4A4B621"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "ContentType",
+                    "DisplayName": "Tipo Contenuto",
+                    "DataType": 4,
+                    "MetaType": "guid1FF7C76A-8E8B-4E41-9E56-958D94EBC606"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 8,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "DocumentDate",
+                    "DisplayName": "Data Inserimento",
+                    "DataType": 3,
+                    "MetaType": "guid80529703-5488-47EE-99EF-1137D462E964"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 15,
+                    "SearchInputType": 15,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "FilingDate",
+                    "DisplayName": "Data Modifica",
+                    "DataType": 3,
+                    "MetaType": "guidD414DEF5-5D29-4BFE-AD03-336425623B8D"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": "Dettagli Documento",
+                    "Name": "DocumentText",
+                    "DisplayName": "Allegato",
+                    "DataType": 4,
+                    "MetaType": "guidCC2BDFB2-96F6-459C-92E9-7BC0556A3553"
+                }
+            ],
+            "Name": "File",
+            "IconName": "icone_allegato",
+            "IconUri": null
+        },
+        {
+            "Label": null,
+            "DisplayName": "Ente",
+            "MetaType": "guid2AF10C6B-AF82-4D91-B7B7-69FDA09526D1",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "identityProperty",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid5DBDDE6F-740A-4507-889D-7682184ACD30"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "OrganizationName",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4,
+                    "MetaType": "guidB2A3B23C-07B8-4A87-8B45-4CD20079E79C"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "FullAddress",
+                    "DisplayName": "Localita",
+                    "DataType": 4,
+                    "MetaType": "guid0CA71FDC-6CAE-4E54-B3A6-E61B5F5F46F9"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "EmailAddress",
+                    "DisplayName": "Mail",
+                    "DataType": 4,
+                    "MetaType": "guid7D0DF839-B553-457A-93B4-B333D603B7FD"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "PEC",
+                    "DisplayName": "PEC",
+                    "DataType": 4,
+                    "MetaType": "guid23407939-79FB-46C2-9867-3B2D3951E1BE"
+                },
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "PhoneNumber",
+                    "DisplayName": null,
+                    "DataType": 4,
+                    "MetaType": "guid109D5D32-EA94-4A6A-A134-1A70A629FB24"
+                }
+            ],
+            "Name": "Government Agency",
+            "IconName": "icone_persona-giuridica",
+            "IconUri": null
+        }
+    ],
+    "Links": [
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#a21018",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Controls",
+            "Name": "Controls",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Dossier",
+                    "type2": "Document"
+                }
+            ],
+            "Color": "#6417b5",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Contains",
+            "Name": "Contains",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Person"
+                }
+            ],
+            "Color": "#cb8f4f",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Involves",
+            "Name": "Involves",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Organization",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#bf2e2d",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "BasedIn",
+            "Name": "BasedIn",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#30d5bc",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Attends",
+            "Name": "Attends",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#f48e49",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Manage",
+            "Name": "Manage",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Person"
+                }
+            ],
+            "Color": "#4913d4",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "AssociatedWith",
+            "Name": "AssociatedWith",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Event"
+                }
+            ],
+            "Color": "#2e62c8",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Autorizes",
+            "Name": "Autorizes",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#df49ba",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "TookPlaceAt",
+            "Name": "TookPlaceAt",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Person"
+                }
+            ],
+            "Color": "#62f0ef",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "involves",
+            "Name": "involves",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Organization",
+                    "type2": "Event"
+                }
+            ],
+            "Color": "#58c6c9",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "MadePossible",
+            "Name": "MadePossible",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Phone"
+                }
+            ],
+            "Color": "#6a93a6",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Contact",
+            "Name": "Contact",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Phone"
+                }
+            ],
+            "Color": "#1dbc5f",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Record",
+            "Name": "Record",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Phone",
+                    "type2": "Phone"
+                }
+            ],
+            "Color": "#bc2f46",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Contact",
+            "Name": "Contact",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#f100fc",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Involves",
+            "Name": "Involves",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#d753e6",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Seller",
+            "Name": "Seller",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#93dbd9",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Involves",
+            "Name": "Involves",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#1aee47",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Owns",
+            "Name": "Owns",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#7a82a4",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "AssociatedWith",
+            "Name": "AssociatedWith",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#d7e45f",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "AssociatedWith",
+            "Name": "AssociatedWith",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Vehicle"
+                }
+            ],
+            "Color": "#973ebc",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Uses",
+            "Name": "Uses",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#7b79d3",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "MeetsAt",
+            "Name": "MeetsAt",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Phone"
+                }
+            ],
+            "Color": "#d5b36a",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Records",
+            "Name": "Records",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Organization",
+                    "type2": "Phone"
+                }
+            ],
+            "Color": "#7e2db9",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Contact",
+            "Name": "Contact",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#34c68c",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Attends",
+            "Name": "Attends",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Document"
+                }
+            ],
+            "Color": "#bc510c",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Contains",
+            "Name": "Contains",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Organization",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#fde64e",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Associates",
+            "Name": "Associates",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Organization",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#515f3c",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Controls",
+            "Name": "Controls",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#34606e",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Contains",
+            "Name": "Contains",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Organization",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#bd2bb7",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Monitors",
+            "Name": "Monitors",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#7d560a",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Records",
+            "Name": "Records",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Organization",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#99344b",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Funds",
+            "Name": "Funds",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Document",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#7a17c4",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Documents",
+            "Name": "Documents",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Person",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#375513",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Associates",
+            "Name": "Associates",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Organization",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#9c71a0",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "Transports",
+            "Name": "Transports",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Vehicle",
+                    "type2": "Location"
+                }
+            ],
+            "Color": "#6dfa29",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "UsedAt",
+            "Name": "UsedAt",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        },
+        {
+            "Label": null,
+            "EndsTypes": [
+                {
+                    "type1": "Organization",
+                    "type2": "Organization"
+                }
+            ],
+            "Color": "#d6cc3c",
+            "IsSymmetricLink": false,
+            "ShowArrows": true,
+            "DisplayName": "MoneyLaundering",
+            "Name": "MoneyLaundering",
+            "Property": [
+                {
+                    "IsMandatory": false,
+                    "InputType": 11,
+                    "SearchInputType": 11,
+                    "Mask": null,
+                    "Values": null,
+                    "IsLabel": false,
+                    "IsIndex": false,
+                    "Grouping": null,
+                    "Name": "Description",
+                    "DisplayName": "Descrizione",
+                    "DataType": 4
+                }
+            ]
+        }
+    ],
+    "Attributes": []
+}

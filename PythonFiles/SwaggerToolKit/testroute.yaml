@@ -1,0 +1,150 @@
+openapi: 2.0.0
+
+# Server configurations
+servers:
+  - url: http://localhost:5000
+    description: Local development server for testing and development purposes
+
+info:
+  title: Weather API 
+  description: |
+    A RESTful API that provides real-time weather information using.
+    This API allows users to:
+    - Retrieve current weather conditions for any city
+    - Get temperature readings in Celsius
+    - Obtain detailed weather descriptions
+    
+    The API uses RAG technology to ensure accurate and up-to-date weather information.
+  version: 0.0.1
+  contact:
+    email: support@weatherapi.com
+
+tags:
+  - name: Weather
+    description: |
+      Endpoints related to weather information retrieval.
+      These endpoints provide access to current weather conditions including temperature and weather status.
+
+paths:
+  /meteo:
+    post:
+      operationId: getWeather
+      summary: Get current weather conditions for a specified city
+      description: |
+        Retrieves the current weather conditions including temperature and weather status for a specified city.
+        
+        Usage notes:
+        - City names should be properly capitalized (e.g., "Roma" instead of "roma")
+        - The API will return temperatures in Celsius
+        - Weather conditions are provided in Italian
+        
+        Example request:
+        ```json
+        {
+          "citta": "Roma"
+        }
+        ```
+      tags:
+        - Weather
+      requestBody:
+        required: true
+        description: City information for weather lookup
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WeatherRequest'
+      responses:
+        '200':
+          description: |
+            Weather data successfully retrieved.
+            Returns a JSON object containing the city name, temperature, and current weather conditions.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherResponse'
+              example:
+                citta: "Roma"
+                temperatura: 22.5
+                condizioni: "Soleggiato con nuvole sparse"
+        '400':
+          description: |
+            Bad request error.
+            This error occurs when:
+            - The city name is missing
+            - The city name is invalid
+            - The request format is incorrect
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errore: "Città non trovata o non specificata correttamente"
+        '500':
+          description: |
+            Internal server error.
+            This error occurs when:
+            - The weather service is unavailable
+            - There's an internal processing error
+            - The RAG model encounters an error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                errore: "Errore interno durante il recupero dei dati meteo"
+
+components:
+  schemas:
+    WeatherRequest:
+      type: object
+      required:
+        - citta
+      properties:
+        citta:
+          type: string
+          description: |
+            The name of the city for which weather information is requested.
+            Should be properly capitalized (e.g., "Roma", "Milano", "Napoli")
+          example: "Roma"
+          minLength: 2
+          maxLength: 50
+    
+    WeatherResponse:
+      type: object
+      description: The weather information response object
+      properties:
+        citta:
+          type: string
+          description: The name of the city as provided in the request
+          example: "Roma"
+        temperatura:
+          type: number
+          format: float
+          description: |
+            Current temperature in degrees Celsius.
+            Provided with one decimal place precision.
+          minimum: -50
+          maximum: 50
+          example: 22.5
+        condizioni:
+          type: string
+          description: |
+            Current weather conditions in Italian.
+            Common values include:
+            - Soleggiato
+            - Nuvoloso
+            - Piovoso
+            - Temporale
+            - Nevoso
+          example: "Soleggiato"
+    
+    ErrorResponse:
+      type: object
+      description: Standard error response object
+      properties:
+        errore:
+          type: string
+          description: |
+            Detailed error message explaining what went wrong.
+            Messages are provided in Italian.
+          example: "Città non trovata o non specificata"

@@ -1,0 +1,104 @@
+swagger: '2.0'
+
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server for testing and development purposes
+
+
+schemes:
+  - http
+basePath: /api/v1
+paths:
+  /meteo: #this route provides the weather conditions for a specific city based on the celcius temperature
+    post:
+      summary: Retrieve weather conditions based on provided temperature
+      description: This route returns simulated weather conditions based on the provided temperature in Celsius.
+      tags:
+        - Weather
+      parameters:
+        - in: body
+          name: temperatureInput
+          required: true
+          schema:
+            type: object
+            properties:
+              temperatura:
+                type: number
+                format: float
+                description: Temperature in Celsius used to determine the weather condition
+      responses:
+        '200':
+          description: Successful response with estimated weather conditions based on temperature
+          schema:
+            type: object
+            properties:
+              temperatura:
+                type: number
+                format: float
+                description: Provided temperature value
+              condizioni:
+                type: string
+                description: Estimated weather condition based on temperature
+        '400':
+          description: Bad request due to missing or invalid temperature parameter
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: Error message for invalid request
+        '500':
+          description: Internal server error
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: Error message for server issues
+
+  /temperatura: #this route provides the temperature for a specific city
+    post:
+      summary: Retrieve temperature for a specific city
+      description: This route returns a simulated temperature value for the specified city.
+      tags:
+        - Weather
+      parameters:
+        - in: body
+          name: cityInput
+          required: true
+          schema:
+            type: object
+            properties:
+              citta:
+                type: string
+                description: Name of the city for which temperature is requested
+      responses:
+        '200':
+          description: Successful response with temperature data for the specified city
+          schema:
+            type: object
+            properties:
+              citta:
+                type: string
+                description: Requested city name
+              temperatura:
+                type: number
+                format: float
+                description: Simulated temperature in Celsius for the specified city
+        '400':
+          description: Bad request due to missing or invalid city parameter
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: Error message for invalid request
+        '500':
+          description: Internal server error
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                description: Error message for server issues

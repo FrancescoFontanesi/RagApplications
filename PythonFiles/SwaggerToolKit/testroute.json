@@ -1,0 +1,164 @@
+{
+  "openapi": "2.0.0",
+  "servers": [
+      {
+          "url": "http://localhost:5000",
+          "description": "Local development server"
+      }
+  ],
+  "info": {
+      "title": "Weather API (RAG-based)",
+      "description": "API per ottenere informazioni meteo",
+      "version": "0.0.1"
+  },
+  "tags": [
+      {
+          "name": "Weather",
+          "description": "Endpoints per ottenere informazioni meteorologiche"
+      }
+  ],
+  "paths": {
+      "/meteo": {
+          "post": {
+              "operationId": "getWeather",
+              "summary": "Ottieni le condizioni meteo per una città specificata",
+              "description": "Restituisce temperatura e condizioni meteo attuali per la città richiesta",
+              "tags": [
+                  "Weather"
+              ],
+              "requestBody": {
+                  "required": true,
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "type": "object",
+                              "required": [
+                                  "citta"
+                              ],
+                              "properties": {
+                                  "citta": {
+                                      "type": "string",
+                                      "description": "Nome della città",
+                                      "example": "Roma"
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "responses": {
+                  "200": {
+                      "description": "Dati meteo generati con successo",
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "citta": {
+                                          "type": "string",
+                                          "description": "Nome della città richiesta",
+                                          "example": "Roma"
+                                      },
+                                      "temperatura": {
+                                          "type": "number",
+                                          "format": "float",
+                                          "description": "Temperatura in gradi Celsius",
+                                          "example": 22.5
+                                      },
+                                      "condizioni": {
+                                          "type": "string",
+                                          "description": "Condizioni meteo attuali",
+                                          "example": "Soleggiato"
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  },
+                  "400": {
+                      "description": "Errore nella richiesta",
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "errore": {
+                                          "type": "string",
+                                          "description": "Messaggio di errore",
+                                          "example": "Città non trovata o non specificata"
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  },
+                  "500": {
+                      "description": "Errore interno del server",
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "errore": {
+                                          "type": "string",
+                                          "description": "Messaggio di errore",
+                                          "example": "Errore nel recupero dei dati meteo"
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  },
+  "components": {
+      "schemas": {
+          "WeatherRequest": {
+              "type": "object",
+              "required": [
+                  "citta"
+              ],
+              "properties": {
+                  "citta": {
+                      "type": "string",
+                      "description": "Nome della città",
+                      "example": "Roma"
+                  }
+              }
+          },
+          "WeatherResponse": {
+              "type": "object",
+              "properties": {
+                  "citta": {
+                      "type": "string",
+                      "description": "Nome della città richiesta",
+                      "example": "Roma"
+                  },
+                  "temperatura": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "Temperatura in gradi Celsius",
+                      "example": 22.5
+                  },
+                  "condizioni": {
+                      "type": "string",
+                      "description": "Condizioni meteo attuali",
+                      "example": "Soleggiato"
+                  }
+              }
+          },
+          "ErrorResponse": {
+              "type": "object",
+              "properties": {
+                  "errore": {
+                      "type": "string",
+                      "description": "Messaggio di errore",
+                      "example": "Città non trovata o non specificata"
+                  }
+              }
+          }
+      }
+  }
+}

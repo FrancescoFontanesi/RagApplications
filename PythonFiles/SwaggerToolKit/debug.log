@@ -1,0 +1,155 @@
+2024-10-21 13:24:27,839 INFO - werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.217:5000
+2024-10-21 13:24:27,840 INFO - werkzeug : [33mPress CTRL+C to quit[0m
+2024-10-21 13:24:45,874 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:24:45] "GET / HTTP/1.1" 200 -
+2024-10-21 13:24:47,243 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:24:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-21 13:40:16,426 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:40:16] "[32mGET /swagger HTTP/1.1[0m" 308 -
+2024-10-21 13:40:16,445 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:40:16] "GET /swagger/ HTTP/1.1" 200 -
+2024-10-21 13:40:16,850 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:40:16] "GET /swagger/index.css HTTP/1.1" 200 -
+2024-10-21 13:40:17,046 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:40:17] "GET /swagger/swagger-ui.css HTTP/1.1" 200 -
+2024-10-21 13:40:17,066 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:40:17] "GET /swagger/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2024-10-21 13:40:17,111 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:40:17] "GET /swagger/swagger-ui-bundle.js HTTP/1.1" 200 -
+2024-10-21 13:40:17,806 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:40:17] "GET /swagger/favicon-32x32.png HTTP/1.1" 200 -
+2024-10-21 13:40:18,072 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:40:18] "GET /swagger-file HTTP/1.1" 200 -
+2024-10-21 13:40:18,164 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:40:18] "[36mGET /swagger/favicon-32x32.png HTTP/1.1[0m" 304 -
+2024-10-21 13:55:51,228 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 13:55:51] "GET / HTTP/1.1" 200 -
+2024-10-21 14:34:24,339 INFO - werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-21 14:34:24,340 INFO - werkzeug : [33mPress CTRL+C to quit[0m
+2024-10-21 14:34:24,342 INFO - werkzeug :  * Restarting with stat
+2024-10-21 14:34:24,967 WARNING - werkzeug :  * Debugger is active!
+2024-10-21 14:34:24,971 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-10-21 14:34:28,438 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:28] "GET /swagger/ HTTP/1.1" 200 -
+2024-10-21 14:34:29,027 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:29] "[36mGET /swagger/index.css HTTP/1.1[0m" 304 -
+2024-10-21 14:34:29,047 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:29] "[36mGET /swagger/swagger-ui.css HTTP/1.1[0m" 304 -
+2024-10-21 14:34:29,169 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:29] "[36mGET /swagger/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2024-10-21 14:34:29,206 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:29] "[36mGET /swagger/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2024-10-21 14:34:29,976 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:29] "[36mGET /swagger/favicon-32x32.png HTTP/1.1[0m" 304 -
+2024-10-21 14:34:30,214 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:30] "GET /swagger-file HTTP/1.1" 200 -
+2024-10-21 14:34:30,456 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:30] "[36mGET /swagger/favicon-32x32.png HTTP/1.1[0m" 304 -
+2024-10-21 14:34:35,183 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:35] "GET / HTTP/1.1" 200 -
+2024-10-21 14:34:39,603 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:39] "GET /swagger/ HTTP/1.1" 200 -
+2024-10-21 14:34:39,912 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:39] "[36mGET /swagger/index.css HTTP/1.1[0m" 304 -
+2024-10-21 14:34:40,216 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:40] "[36mGET /swagger/swagger-ui.css HTTP/1.1[0m" 304 -
+2024-10-21 14:34:40,225 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:40] "[36mGET /swagger/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2024-10-21 14:34:40,225 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:40] "[36mGET /swagger/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2024-10-21 14:34:40,620 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:40] "[36mGET /swagger/favicon-32x32.png HTTP/1.1[0m" 304 -
+2024-10-21 14:34:40,869 INFO - werkzeug : 127.0.0.1 - - [21/Oct/2024 14:34:40] "GET /swagger-file HTTP/1.1" 200 -
+2024-11-06 09:57:48,909 INFO - werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-06 09:57:48,909 INFO - werkzeug : [33mPress CTRL+C to quit[0m
+2024-11-06 09:57:48,913 INFO - werkzeug :  * Restarting with stat
+2024-11-06 09:57:49,524 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 09:57:49,528 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:04:12,618 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\testToolkit.py', reloading
+2024-11-06 12:04:12,764 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:04:13,662 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:04:13,668 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:08:49,912 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 12:08:49,952 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:08:51,112 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:08:51,116 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:09:58,893 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 12:09:58,926 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:09:59,535 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:09:59,540 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:10:41,055 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 12:10:41,095 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:10:41,717 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:10:41,721 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:10:58,993 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 12:10:59,034 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:10:59,652 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:10:59,656 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:11:33,059 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 12:11:33,094 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:11:33,732 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:11:33,738 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:11:45,913 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 12:11:45,965 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:11:46,631 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:11:46,635 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:13:30,581 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 12:13:30,667 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:13:31,750 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:13:31,757 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:14:16,441 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 12:14:16,496 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:14:17,212 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:14:17,217 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:15:34,410 INFO - werkzeug :  * Detected change in 'd:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 12:15:34,462 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:15:35,346 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:15:35,350 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:36:28,942 INFO - werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-06 12:36:28,943 INFO - werkzeug : [33mPress CTRL+C to quit[0m
+2024-11-06 12:36:28,944 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:36:29,521 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:36:29,524 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:36:33,598 INFO - werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-06 12:36:33,599 INFO - werkzeug : [33mPress CTRL+C to quit[0m
+2024-11-06 12:36:33,601 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:36:34,392 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:36:34,396 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:37:07,016 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\testToolkit.py', reloading
+2024-11-06 12:37:07,054 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:37:07,630 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:37:07,634 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:37:24,877 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\testToolkit.py', reloading
+2024-11-06 12:37:24,918 INFO - werkzeug :  * Restarting with stat
+2024-11-06 12:37:25,601 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 12:37:25,606 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 12:38:47,675 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 12:38:47] "POST /meteo HTTP/1.1" 200 -
+2024-11-06 16:02:09,899 INFO - werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-06 16:02:09,900 INFO - werkzeug : [33mPress CTRL+C to quit[0m
+2024-11-06 16:02:09,913 INFO - werkzeug :  * Restarting with stat
+2024-11-06 16:02:11,506 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 16:02:11,517 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 16:47:32,110 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 16:47:32,171 INFO - werkzeug :  * Restarting with stat
+2024-11-06 16:47:32,734 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 16:47:32,738 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 16:48:33,574 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\testRoutes.py', reloading
+2024-11-06 16:48:33,648 INFO - werkzeug :  * Restarting with stat
+2024-11-06 16:48:34,312 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 16:48:34,316 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 16:49:02,764 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\testRoutes.py', reloading
+2024-11-06 16:49:02,818 INFO - werkzeug :  * Restarting with stat
+2024-11-06 16:49:03,546 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 16:49:03,550 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 16:49:10,654 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\testRoutes.py', reloading
+2024-11-06 16:49:10,688 INFO - werkzeug :  * Restarting with stat
+2024-11-06 16:49:11,369 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 16:49:11,372 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 16:49:16,449 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\testRoutes.py', reloading
+2024-11-06 16:49:16,484 INFO - werkzeug :  * Restarting with stat
+2024-11-06 16:49:17,090 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 16:49:17,097 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 16:49:24,210 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\testRoutes.py', reloading
+2024-11-06 16:49:24,318 INFO - werkzeug :  * Restarting with stat
+2024-11-06 16:49:24,897 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 16:49:24,901 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 16:49:56,837 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:49:56] "GET /swagger/ HTTP/1.1" 200 -
+2024-11-06 16:49:57,375 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:49:57] "GET /swagger/index.css HTTP/1.1" 200 -
+2024-11-06 16:49:57,384 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:49:57] "GET /swagger/swagger-ui.css HTTP/1.1" 200 -
+2024-11-06 16:49:57,548 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:49:57] "GET /swagger/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2024-11-06 16:49:57,585 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:49:57] "GET /swagger/swagger-ui-bundle.js HTTP/1.1" 200 -
+2024-11-06 16:49:58,143 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:49:58] "GET /swagger/favicon-32x32.png HTTP/1.1" 200 -
+2024-11-06 16:49:58,396 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:49:58] "GET /swagger-file HTTP/1.1" 200 -
+2024-11-06 16:49:58,631 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:49:58] "[36mGET /swagger/favicon-32x32.png HTTP/1.1[0m" 304 -
+2024-11-06 16:50:04,576 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:50:04] "GET /swagger-file HTTP/1.1" 200 -
+2024-11-06 16:50:06,260 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:50:06] "GET /swagger-file HTTP/1.1" 200 -
+2024-11-06 16:50:07,622 INFO - werkzeug : 127.0.0.1 - - [06/Nov/2024 16:50:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-11-06 17:05:45,664 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 17:05:45,720 INFO - werkzeug :  * Restarting with stat
+2024-11-06 17:05:46,397 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 17:05:46,402 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-06 18:26:42,867 INFO - werkzeug :  * Detected change in 'D:\\Tirocinio\\test rotte\\openApiToolKit.py', reloading
+2024-11-06 18:26:43,129 INFO - werkzeug :  * Restarting with stat
+2024-11-06 18:26:45,266 WARNING - werkzeug :  * Debugger is active!
+2024-11-06 18:26:45,285 INFO - werkzeug :  * Debugger PIN: 641-918-281

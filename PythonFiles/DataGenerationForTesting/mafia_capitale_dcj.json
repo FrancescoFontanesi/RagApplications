@@ -1,0 +1,4931 @@
+{
+    "items": [
+        {
+            "itemType": "entity",
+            "key": "1",
+            "label": "Michele Senese",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Senese"
+                },
+                "PersonFirstName": {
+                    "value": "Michele"
+                },
+                "AnnotationText": {
+                    "value": "Noto come 'O Pazzo, capo dell'organizzazione criminale, gestisce il traffico di droga e il controllo del territorio nell'area sud di Roma"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "2",
+            "label": "Operazione Michele Senese 2024",
+            "type": "Dossier",
+            "properties": {
+                "CaseNumber": {
+                    "value": "156/2024"
+                },
+                "EventTitle": {
+                    "value": "Indagine Collegamenti Senese-Mafia Capitale"
+                },
+                "OpenedDate": {
+                    "value": "2024-01-15"
+                },
+                "FilingDate": {
+                    "value": "2024-04-01"
+                },
+                "AnnotationText": {
+                    "value": "Fascicolo principale dell'indagine sui collegamenti tra il clan Senese e Mafia Capitale"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "3",
+            "label": "Bar Augusto",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Bar Augusto"
+                },
+                "AnnotationText": {
+                    "value": "Locale utilizzato come base operativa per incontri con esponenti di Mafia Capitale"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "4",
+            "label": "Intercettazione Bar Augusto",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Intercettazione ambientale presso Bar Augusto"
+                },
+                "FilingNumber": {
+                    "value": "INT/2024/001"
+                },
+                "Direction": {
+                    "value": "Entrante"
+                },
+                "ProtEE": {
+                    "value": "INT/2024/001"
+                },
+                "DataEE": {
+                    "value": "2024-01-20"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "5",
+            "label": "Massimo Carminati",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Carminati"
+                },
+                "PersonFirstName": {
+                    "value": "Massimo"
+                },
+                "AnnotationText": {
+                    "value": "Incontri documentati con Senese per accordi su zone di influenza"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "6",
+            "label": "Immobiliare Roma Sud",
+            "type": "Location",
+            "properties": {
+                "LocationName": {
+                    "value": "Immobiliare Roma Sud"
+                },
+                "AnnotationText": {
+                    "value": "Società utilizzata per il riciclaggio, collegata alle cooperative di Buzzi"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "7",
+            "label": "+39 333 1234567",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 333 1234567"
+                },
+                "FilingDate": {
+                    "value": "2024-01-20"
+                },
+                "AnnotationText": {
+                    "value": "Utenza dedicata ai contatti con Carminati"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "8",
+            "label": "Documentazione Riciclaggio",
+            "type": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Documenti attestanti operazioni di riciclaggio attraverso le società immobiliari"
+                },
+                "FilingDate": {
+                    "value": "2024-02-10"
+                },
+                "AnnotationText": {
+                    "value": "Collegamenti finanziari tra clan Senese e sistema Mafia Capitale"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "9",
+            "label": "Salvatore Buzzi",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Buzzi"
+                },
+                "PersonFirstName": {
+                    "value": "Salvatore"
+                },
+                "AnnotationText": {
+                    "value": "Capo delle cooperative sociali coinvolte in affari illeciti con Mafia Capitale"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "10",
+            "label": "Cooperativa 29 Giugno",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Cooperativa 29 Giugno"
+                },
+                "AnnotationText": {
+                    "value": "Cooperativa usata per coprire attività di riciclaggio e traffici illeciti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "11",
+            "label": "Assegnazione Appalti",
+            "type": "Event",
+            "properties": {
+                "EventTitle": {
+                    "value": "Appalti Pubblici Roma"
+                },
+                "Date": {
+                    "value": "2023-12-15"
+                },
+                "AnnotationText": {
+                    "value": "Appalti assegnati a cooperative legate a Mafia Capitale per progetti di servizio pubblico"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "12",
+            "label": "+39 333 9876543",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 333 9876543"
+                },
+                "FilingDate": {
+                    "value": "2024-02-01"
+                },
+                "AnnotationText": {
+                    "value": "Utenza di contatto tra Buzzi e Senese"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "13",
+            "label": "Luca Gramazio",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Gramazio"
+                },
+                "PersonFirstName": {
+                    "value": "Luca"
+                },
+                "AnnotationText": {
+                    "value": "Politico locale implicato nelle attività di sostegno politico alla rete di Mafia Capitale"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "14",
+            "label": "Franco Testa",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Testa"
+                },
+                "PersonFirstName": {
+                    "value": "Franco"
+                },
+                "AnnotationText": {
+                    "value": "Imprenditore coinvolto nel riciclaggio di denaro attraverso società immobiliari"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "15",
+            "label": "Cooperativa Sant'Anna",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Cooperativa Sant'Anna"
+                },
+                "AnnotationText": {
+                    "value": "Cooperativa minore con contratti di gestione per conto di Mafia Capitale"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "16",
+            "label": "Villa Bianca",
+            "type": "Location",
+            "properties": {
+                "LocationName": {
+                    "value": "Villa Bianca"
+                },
+                "AnnotationText": {
+                    "value": "Luogo di incontro per le trattative di appalti tra politici e membri di Mafia Capitale"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "17",
+            "label": "Documentazione Coinvolgimenti Politici",
+            "type": "Document",
+            "properties": {
+                "DocumentName": {
+                    "value": "Coinvolgimenti Politici"
+                },
+                "AnnotationText": {
+                    "value": "Documenti che attestano il coinvolgimento di politici locali nelle attività illecite"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "18",
+            "label": "Intercettazioni Telefoniche",
+            "type": "Document",
+            "properties": {
+                "DocumentName": {
+                    "value": "Intercettazioni Telefoniche"
+                },
+                "AnnotationText": {
+                    "value": "Documenti che contengono intercettazioni telefoniche tra membri dell'organizzazione"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "19",
+            "label": "Bar Augusto",
+            "type": "Location",
+            "properties": {
+                "LocationName": {
+                    "value": "Bar Augusto"
+                },
+                "AnnotationText": {
+                    "value": "Locale utilizzato come base operativa per incontri con esponenti di Mafia Capitale"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "20",
+            "label": "Giorgio Bianchi",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Bianchi"
+                },
+                "PersonFirstName": {
+                    "value": "Giorgio"
+                },
+                "AnnotationText": {
+                    "value": "Consulente per affari illeciti, con collegamenti con il clan Senese."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "21",
+            "label": "Ristorante Da Michele",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Ristorante Da Michele"
+                },
+                "AnnotationText": {
+                    "value": "Ristorante usato come punto di incontro per affari illeciti."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "22",
+            "label": "Documentazione di Attività",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Documentazione di Attività Illecite"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/001"
+                },
+                "Direction": {
+                    "value": "Uscente"
+                },
+                "DataEE": {
+                    "value": "2024-05-10"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "23",
+            "label": "+39 366 9876543",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 366 9876543"
+                },
+                "AnnotationText": {
+                    "value": "Numero di telefono di Giorgio Bianchi, consulente per affari illeciti."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "24",
+            "label": "Sede Legale Roma",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Sede legale utilizzata per la registrazione di attività illecite."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "46",
+            "label": "Marco Rossi",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Rossi"
+                },
+                "PersonFirstName": {
+                    "value": "Marco"
+                },
+                "AnnotationText": {
+                    "value": "Collaboratore di Giorgio Bianchi, coinvolto in attività di riciclaggio."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "47",
+            "label": "Auto Blu",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "AB123CD"
+                },
+                "Description": {
+                    "value": "Auto utilizzata per il trasporto di documenti illeciti."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "48",
+            "label": "Intercettazione Telefonica",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Intercettazione Telefonica di Marco Rossi"
+                },
+                "FilingNumber": {
+                    "value": "INT/2024/002"
+                },
+                "Direction": {
+                    "value": "Entrante"
+                },
+                "DataEE": {
+                    "value": "2024-06-15"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "49",
+            "label": "Via Roma 10",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Indirizzo utilizzato per incontri segreti."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "50",
+            "label": "+39 366 1234567",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 366 1234567"
+                },
+                "AnnotationText": {
+                    "value": "Numero di telefono di Marco Rossi, utilizzato per contatti illeciti."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "51",
+            "label": "Giovanni Esposito",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Esposito"
+                },
+                "PersonFirstName": {
+                    "value": "Giovanni"
+                },
+                "AnnotationText": {
+                    "value": "Collaboratore di Marco Rossi, coinvolto in attività di riciclaggio."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "52",
+            "label": "Via Napoli 20",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Indirizzo utilizzato per incontri segreti tra Giovanni Esposito e Marco Rossi."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "53",
+            "label": "Intercettazione Telefonica Esposito",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Intercettazione Telefonica di Giovanni Esposito"
+                },
+                "FilingNumber": {
+                    "value": "INT/2024/003"
+                },
+                "Direction": {
+                    "value": "Entrante"
+                },
+                "DataEE": {
+                    "value": "2024-07-10"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "54",
+            "label": "+39 366 6543210",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 366 6543210"
+                },
+                "AnnotationText": {
+                    "value": "Numero di telefono di Giovanni Esposito, utilizzato per contatti illeciti."
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "55",
+            "label": "Nota Sorveglianza Bar",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota di Sorveglianza Bar Centro"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/005"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-08-01"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "56",
+            "label": "Bar Centro",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Bar Centro"
+                },
+                "AnnotationText": {
+                    "value": "Bar utilizzato per incontri tra membri dell'organizzazione"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "57",
+            "label": "Antonio Verdi",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Verdi"
+                },
+                "PersonFirstName": {
+                    "value": "Antonio"
+                },
+                "AnnotationText": {
+                    "value": "Gestore del Bar Centro, facilita incontri illeciti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "58",
+            "label": "Via Centro 15",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Indirizzo del Bar Centro dove avvengono gli incontri"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "59",
+            "label": "+39 345 7890123",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 7890123"
+                },
+                "AnnotationText": {
+                    "value": "Telefono del Bar Centro usato per coordinare incontri"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "60",
+            "label": "Nota Riunioni Segrete",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Riunioni al Garage Milano"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/006"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-08-15"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "61",
+            "label": "Garage Milano",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Garage Milano"
+                },
+                "AnnotationText": {
+                    "value": "Garage utilizzato come copertura per incontri illeciti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "62",
+            "label": "Roberto Ferrari",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Ferrari"
+                },
+                "PersonFirstName": {
+                    "value": "Roberto"
+                },
+                "AnnotationText": {
+                    "value": "Proprietario del Garage Milano, facilita incontri illeciti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "63",
+            "label": "Via Milano 45",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Indirizzo del Garage Milano, luogo di incontri segreti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "64",
+            "label": "+39 333 4567890",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 333 4567890"
+                },
+                "AnnotationText": {
+                    "value": "Linea dedicata del Garage Milano per organizzare incontri"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "65",
+            "label": "Fiat Ducato Nero",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "XY789AB"
+                },
+                "Description": {
+                    "value": "Furgone utilizzato per trasporto documenti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "66",
+            "label": "Nota Operazioni Bancarie",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Operazioni Bancarie Sospette"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/007"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-08-20"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "67",
+            "label": "Banco Milano",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Banco Milano SpA"
+                },
+                "AnnotationText": {
+                    "value": "Banca utilizzata per operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "68",
+            "label": "Luigi Conti",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Conti"
+                },
+                "PersonFirstName": {
+                    "value": "Luigi"
+                },
+                "AnnotationText": {
+                    "value": "Direttore di filiale coinvolto in operazioni sospette"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "69",
+            "label": "Via Bancaria 50",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Sede della filiale bancaria dove avvengono le operazioni sospette"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "70",
+            "label": "+39 345 8901234",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 8901234"
+                },
+                "AnnotationText": {
+                    "value": "Telefono utilizzato per coordinare le operazioni bancarie"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "71",
+            "label": "Documentazione Bancaria",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Estratti Conto e Operazioni"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/008"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-08-25"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "72",
+            "label": "Nota Immobili Sospetti",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Transazioni Immobiliari Sospette"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/009"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-09-01"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "73",
+            "label": "Immobiliare Luna",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Immobiliare Luna Srl"
+                },
+                "AnnotationText": {
+                    "value": "Agenzia immobiliare utilizzata per operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "74",
+            "label": "Carlo Moretti",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Moretti"
+                },
+                "PersonFirstName": {
+                    "value": "Carlo"
+                },
+                "AnnotationText": {
+                    "value": "Amministratore dell'Immobiliare Luna, coinvolto in operazioni sospette"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "75",
+            "label": "Via Tuscolo 75",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Sede dell'agenzia immobiliare Luna, luogo di incontri per transazioni sospette"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "76",
+            "label": "+39 345 7654321",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 7654321"
+                },
+                "AnnotationText": {
+                    "value": "Telefono dell'Immobiliare Luna utilizzato per coordinare le operazioni"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "77",
+            "label": "Contratti Immobiliari",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Contratti e Transazioni Immobiliari"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/010"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-09-05"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "78",
+            "label": "Nota Trasporti Sospetti",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Movimenti Merci Sospetti"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/011"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-09-10"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "79",
+            "label": "Trasporti Veloci Srl",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Trasporti Veloci Srl"
+                },
+                "AnnotationText": {
+                    "value": "Società di trasporti usata per movimentare merci illecite"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "80",
+            "label": "Paolo Ricci",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Ricci"
+                },
+                "PersonFirstName": {
+                    "value": "Paolo"
+                },
+                "AnnotationText": {
+                    "value": "Proprietario della Trasporti Veloci, collega chiave per il trasporto"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "81",
+            "label": "Via Industriale 100",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Magazzino principale della Trasporti Veloci, punto di smistamento"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "82",
+            "label": "+39 345 9998877",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 9998877"
+                },
+                "AnnotationText": {
+                    "value": "Telefono aziendale Trasporti Veloci"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "83",
+            "label": "Mercedes Actros",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "ZZ999YY"
+                },
+                "Description": {
+                    "value": "Camion principale usato per trasporti sospetti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "84",
+            "label": "Documenti Spedizioni",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Documentazione Spedizioni"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/012"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-09-15"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "85",
+            "label": "Nota Money Exchange",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Operazioni Money Exchange"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/013"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-09-20"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "86",
+            "label": "Quick Money Exchange",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Quick Money Exchange Srl"
+                },
+                "AnnotationText": {
+                    "value": "Attività di cambio valuta usata per riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "87",
+            "label": "Sofia Romano",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Romano"
+                },
+                "PersonFirstName": {
+                    "value": "Sofia"
+                },
+                "AnnotationText": {
+                    "value": "Titolare del Quick Money Exchange, collegata alle operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "88",
+            "label": "Via del Corso 200",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Sede del Quick Money Exchange, punto di cambio valuta sospetto"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "89",
+            "label": "+39 345 1112233",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 1112233"
+                },
+                "AnnotationText": {
+                    "value": "Telefono del Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "90",
+            "label": "Operazioni Sospette",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Registro Operazioni Sospette"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/014"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-09-25"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "91",
+            "label": "Toyota Yaris",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "EF456GH"
+                },
+                "Description": {
+                    "value": "Auto utilizzata per trasporto contanti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "92",
+            "label": "Nota Collegamenti Esteri",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Collegamenti Internazionali"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/015"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-09-30"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "93",
+            "label": "Global Travel Agency",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Global Travel Agency Srl"
+                },
+                "AnnotationText": {
+                    "value": "Agenzia viaggi usata per coordinare spostamenti internazionali"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "94",
+            "label": "Elena Costa",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Costa"
+                },
+                "PersonFirstName": {
+                    "value": "Elena"
+                },
+                "AnnotationText": {
+                    "value": "Proprietaria dell'agenzia viaggi, facilita spostamenti sospetti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "95",
+            "label": "Via Veneto 150",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Sede dell'agenzia viaggi, punto di coordinamento"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "96",
+            "label": "+39 345 3334444",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 3334444"
+                },
+                "AnnotationText": {
+                    "value": "Telefono dell'agenzia viaggi per prenotazioni sospette"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "97",
+            "label": "Documentazione Viaggi",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Prenotazioni e Itinerari"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/016"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-10-01"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "98",
+            "label": "BMW X5",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "GH789IJ"
+                },
+                "Description": {
+                    "value": "Auto utilizzata per trasferimenti da/per aeroporto"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "99",
+            "label": "Nota Hotel Royal",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Attività Hotel Royal"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/017"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-10-05"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "100",
+            "label": "Hotel Royal",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Hotel Royal Srl"
+                },
+                "AnnotationText": {
+                    "value": "Hotel utilizzato per incontri e riciclaggio denaro"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "101",
+            "label": "Marco Belli",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Belli"
+                },
+                "PersonFirstName": {
+                    "value": "Marco"
+                },
+                "AnnotationText": {
+                    "value": "Direttore dell'Hotel Royal, facilita operazioni illecite"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "102",
+            "label": "Via Nazionale 300",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Sede dell'Hotel Royal, luogo di incontri e operazioni sospette"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "103",
+            "label": "+39 345 5556677",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 5556677"
+                },
+                "AnnotationText": {
+                    "value": "Telefono dell'Hotel Royal per prenotazioni riservate"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "104",
+            "label": "Registri Ospiti",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Registri Prenotazioni Hotel"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/018"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-10-10"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "105",
+            "label": "Mercedes Classe S",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "KL012MN"
+                },
+                "Description": {
+                    "value": "Auto di lusso utilizzata per il trasporto di ospiti VIP"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "106",
+            "label": "Nota Logistica Sospetta",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Attività Logistiche Sospette"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/019"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-10-15"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "107",
+            "label": "Logistica Rapida Srl",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Logistica Rapida Srl"
+                },
+                "AnnotationText": {
+                    "value": "Società di logistica usata per movimentare merci illecite"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "108",
+            "label": "Giuseppe Verdi",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Verdi"
+                },
+                "PersonFirstName": {
+                    "value": "Giuseppe"
+                },
+                "AnnotationText": {
+                    "value": "Proprietario della Logistica Rapida, collega chiave per il trasporto"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "109",
+            "label": "Via Logistica 200",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Magazzino principale della Logistica Rapida, punto di smistamento"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "110",
+            "label": "+39 345 8887766",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 8887766"
+                },
+                "AnnotationText": {
+                    "value": "Telefono aziendale Logistica Rapida"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "111",
+            "label": "Scania R450",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "XY123ZZ"
+                },
+                "Description": {
+                    "value": "Camion principale usato per trasporti sospetti"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "112",
+            "label": "Documenti Logistica",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Documentazione Logistica"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/020"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-10-20"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "113",
+            "label": "Nota Trasporti Internazionali",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Trasporti Internazionali"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/021"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-10-25"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "114",
+            "label": "Porto di Genova",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Porto utilizzato per movimentare merci illecite"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "115",
+            "label": "Container XYZ123",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "XYZ123"
+                },
+                "Description": {
+                    "value": "Container utilizzato per trasporti internazionali"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "116",
+            "label": "Documenti Trasporti Internazionali",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Documentazione Trasporti Internazionali"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/022"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-10-30"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "117",
+            "label": "Nota Night Club",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Attività Night Club Paradise"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/023"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-11-05"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "118",
+            "label": "Night Club Paradise",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "Night Club Paradise Srl"
+                },
+                "AnnotationText": {
+                    "value": "Night club utilizzato per riciclaggio e incontri"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "119",
+            "label": "Alessandro Mari",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Mari"
+                },
+                "PersonFirstName": {
+                    "value": "Alessandro"
+                },
+                "AnnotationText": {
+                    "value": "Gestore del Night Club Paradise, facilita operazioni illecite"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "120",
+            "label": "Via dei Locali 50",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Sede del Night Club Paradise, luogo di incontri e riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "121",
+            "label": "+39 345 7778899",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 7778899"
+                },
+                "AnnotationText": {
+                    "value": "Telefono del Night Club Paradise per prenotazioni VIP"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "122",
+            "label": "Range Rover Sport",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "WX789YZ"
+                },
+                "Description": {
+                    "value": "SUV utilizzato per trasporto clienti VIP"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "123",
+            "label": "Registro Clienti VIP",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Registro Clienti VIP Night Club"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/024"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-11-10"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "124",
+            "label": "Nota Crypto Exchange",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Nota su Operazioni Crypto Exchange"
+                },
+                "FilingNumber": {
+                    "value": "NSV/2024/025"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-11-15"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "125",
+            "label": "BitFast Exchange",
+            "type": "Organization",
+            "properties": {
+                "OrganizationName": {
+                    "value": "BitFast Exchange Srl"
+                },
+                "AnnotationText": {
+                    "value": "Exchange di criptovalute usato per riciclaggio internazionale"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "126",
+            "label": "Davide Russo",
+            "type": "Person",
+            "properties": {
+                "PersonLastName": {
+                    "value": "Russo"
+                },
+                "PersonFirstName": {
+                    "value": "Davide"
+                },
+                "AnnotationText": {
+                    "value": "Proprietario del BitFast Exchange, esperto in transazioni crypto"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "127",
+            "label": "Via della Tecnologia 25",
+            "type": "Location",
+            "properties": {
+                "AnnotationText": {
+                    "value": "Sede del BitFast Exchange, punto di scambio cripto"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "128",
+            "label": "+39 345 2223344",
+            "type": "Phone",
+            "properties": {
+                "PhoneNumber": {
+                    "value": "+39 345 2223344"
+                },
+                "AnnotationText": {
+                    "value": "Telefono del BitFast Exchange per clienti selezionati"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "129",
+            "label": "Audi RS6",
+            "type": "Vehicle",
+            "properties": {
+                "VehicleLicensePlateNumber": {
+                    "value": "RS654AA"
+                },
+                "Description": {
+                    "value": "Auto di lusso utilizzata da Davide Russo"
+                }
+            }
+        },
+        {
+            "itemType": "entity",
+            "key": "130",
+            "label": "Registro Transazioni Crypto",
+            "type": "Document",
+            "properties": {
+                "DocumentTitle": {
+                    "value": "Registro Operazioni Cryptocurrency"
+                },
+                "FilingNumber": {
+                    "value": "DOC/2024/026"
+                },
+                "Direction": {
+                    "value": "Interno"
+                },
+                "DataEE": {
+                    "value": "2024-11-20"
+                }
+            }
+        },{
+            "itemType": "link",
+            "key": "1-3",
+            "label": "Controlla",
+            "type": "Controls",
+            "key1": "1",
+            "key2": "3",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Controllo diretto del locale utilizzato come base operativa"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-4",
+            "label": "Documenta Intercetazione Ambientale",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "4",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Intercettazioni Ambientali"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-8",
+            "label": "Documenta  Riciclaggio",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "8",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Documentazione relativa a operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-17",
+            "label": "Documenta Coinvolgimento Politico",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "17",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Intercettazioni politica"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-18",
+            "label": "Intercetazione telefonica",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "18",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Intercettazioni Telefoniche"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "4-5",
+            "label": "Documenta",
+            "type": "Involves",
+            "key1": "4",
+            "key2": "5",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Coinvolgimento intercettazione Ambientale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "3-19",
+            "label": "CollocataIn",
+            "type": "BasedIn",
+            "key1": "3",
+            "key2": "19",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Luogo fisico del locale utilizzato come base operativa"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "5-19",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "5",
+            "key2": "19",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Frequentazione del locale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "5-10",
+            "label": "Gestisce",
+            "type": "Manage",
+            "key1": "5",
+            "key2": "10",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": ""
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "1-13",
+            "label": "Associato di",
+            "type": "AssociatedWith",
+            "key1": "1",
+            "key2": "13",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": ""
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "13-11",
+            "label": "Autorizza",
+            "type": "Autorizes",
+            "key1": "13",
+            "key2": "11",
+            "type1": "Person",
+            "type2": "Event",
+            "properties": {
+                "Description": {
+                    "value": ""
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "13-16",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "13",
+            "key2": "16",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": ""
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "17-16",
+            "label": "Avvenuta",
+            "type": "TookPlaceAt",
+            "key1": "17",
+            "key2": "16",
+            "type1": "Document",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": ""
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "17-13",
+            "label": "Coinvolge",
+            "type": "involves",
+            "key1": "17",
+            "key2": "13",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": ""
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "4-19",
+            "label": "Avvenuta",
+            "type": "TookPlaceAt",
+            "key1": "4",
+            "key2": "19",
+            "type1": "Document",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Intercettazione ambientale presso Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "4-1",
+            "label": "Coinvolge",
+            "type": "Involves",
+            "key1": "4",
+            "key2": "1",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Intercettazione di michele Senese ambientale presso Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "9-10",
+            "label": "Controlla",
+            "type": "Controls",
+            "key1": "9",
+            "key2": "10",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Controllo della cooperativa per attività illecite"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "10-11",
+            "label": "Avvenuta",
+            "type": "MadePossible",
+            "key1": "10",
+            "key2": "11",
+            "type1": "Organization",
+            "type2": "Event",
+            "properties": {
+                "Description": {
+                    "value": "Assegnazione di appalti sospetta"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "1-7",
+            "label": "Numero telefonico personale",
+            "type": "Contact",
+            "key1": "1",
+            "key2": "7",
+            "type1": "Person",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero di telefono personale di Michele Senese"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "18-7",
+            "label": "Numero telefonico intercettato",
+            "type": "Record",
+            "key1": "18",
+            "key2": "7",
+            "type1": "Document",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero di telefono intercettato durante le indagini"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "18-12",
+            "label": "Numero telefonico intercettato",
+            "type": "Record",
+            "key1": "18",
+            "key2": "12",
+            "type1": "Document",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero di telefono intercettato durante le indagini"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "12-7",
+            "label": "Contatto",
+            "type": "Contact",
+            "key1": "12",
+            "key2": "7",
+            "type1": "Phone",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Contatti telefonici tra Salvatore Buzzi e Michele Senese"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "8-14",
+            "label": "Coinvolge",
+            "type": "Involves",
+            "key1": "8",
+            "key2": "14",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": ""
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "8-15",
+            "label": "Coinvolge",
+            "type": "Involves",
+            "key1": "8",
+            "key2": "15",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": ""
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "8-10",
+            "label": "Coinvolge",
+            "type": "Involves",
+            "key1": "8",
+            "key2": "10",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Coinvolgimento di Franco Testa in operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "14-6",
+            "label": "Venditore di",
+            "type": "Seller",
+            "key1": "14",
+            "key2": "6",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Coinvolgimento di Franco Testa in operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "8-6",
+            "label": "Coinvolge",
+            "type": "Involves",
+            "key1": "8",
+            "key2": "6",
+            "type1": "Document",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Coinvolgimento di Immobiliare Roma Sud in operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "1-6",
+            "label": "Possiede",
+            "type": "Owns",
+            "key1": "1",
+            "key2": "6",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Possedimenti Roma Sud"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-43",
+            "label": "Documenta",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "43",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La documentazione di attività illecite è parte dell'indagine principale."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "41-44",
+            "label": "Contatto",
+            "type": "Contact",
+            "key1": "41",
+            "key2": "44",
+            "type1": "Person",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Giorgio Bianchi ha questo numero di telefono per contatti diretti."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "43-42",
+            "label": "Coinvolge",
+            "type": "Involves",
+            "key1": "43",
+            "key2": "42",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Il ristorante è stato utilizzato per incontri documentati."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "41-42",
+            "label": "Collegato",
+            "type": "AssociatedWith",
+            "key1": "41",
+            "key2": "42",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giorgio Bianchi ha legami con il Ristorante Da Michele."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "42-45",
+            "label": "CollocatoIn",
+            "type": "BasedIn",
+            "key1": "42",
+            "key2": "45",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Il ristorante ha sede legale in Roma."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-48",
+            "label": "Documenta Intercettazione",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "48",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Intercettazione telefonica di Marco Rossi, parte dell'indagine principale."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-47",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "46",
+            "key2": "47",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi utilizza l'auto blu per il trasporto di documenti illeciti."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-50",
+            "label": "Contatto",
+            "type": "Contact",
+            "key1": "46",
+            "key2": "50",
+            "type1": "Person",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero di telefono di Marco Rossi per contatti illeciti."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-49",
+            "label": "Incontra",
+            "type": "MeetsAt",
+            "key1": "46",
+            "key2": "49",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi utilizza l'indirizzo di Via Roma 10 per incontri segreti."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "48-50",
+            "label": "Intercetta",
+            "type": "Records",
+            "key1": "48",
+            "key2": "50",
+            "type1": "Document",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero di telefono intercettato durante le indagini su Marco Rossi."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "48-46",
+            "label": "Coinvolge",
+            "type": "Involves",
+            "key1": "48",
+            "key2": "46",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Intercettazione telefonica che coinvolge Marco Rossi."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-53",
+            "label": "Documenta Intercettazione Esposito",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "53",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Intercettazione telefonica di Giovanni Esposito, parte dell'indagine principale."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-52",
+            "label": "Incontra",
+            "type": "MeetsAt",
+            "key1": "51",
+            "key2": "52",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito utilizza l'indirizzo di Via Napoli 20 per incontri segreti con Marco Rossi."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-54",
+            "label": "Contatto",
+            "type": "Contact",
+            "key1": "51",
+            "key2": "54",
+            "type1": "Person",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero di telefono di Giovanni Esposito per contatti illeciti."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "53-54",
+            "label": "Intercetta",
+            "type": "Records",
+            "key1": "53",
+            "key2": "54",
+            "type1": "Document",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero di telefono intercettato durante le indagini su Giovanni Esposito."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "53-51",
+            "label": "Coinvolge",
+            "type": "Involves",
+            "key1": "53",
+            "key2": "51",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Intercettazione telefonica che coinvolge Giovanni Esposito."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-51",
+            "label": "Collega",
+            "type": "AssociatedWith",
+            "key1": "46",
+            "key2": "51",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi è collegato a Giovanni Esposito nelle attività di riciclaggio."
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-55",
+            "label": "Documenta Bar",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "55",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota di sorveglianza inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "55-56",
+            "label": "Coinvolge Bar",
+            "type": "Involves",
+            "key1": "55",
+            "key2": "56",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota riguarda le attività presso il Bar Centro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "55-57",
+            "label": "Coinvolge Gestore",
+            "type": "Involves",
+            "key1": "55",
+            "key2": "57",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento del gestore del bar"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "56-58",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "56",
+            "key2": "58",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo del Bar Centro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "57-56",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "57",
+            "key2": "56",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Antonio Verdi gestisce il Bar Centro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "56-59",
+            "label": "Contatto Bar",
+            "type": "Contact",
+            "key1": "56",
+            "key2": "59",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico del Bar Centro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-56",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "56",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta il Bar Centro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-56",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "56",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta il Bar Centro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-60",
+            "label": "Documenta Garage",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "60",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sulle riunioni segrete inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "60-61",
+            "label": "Coinvolge Garage",
+            "type": "Involves",
+            "key1": "60",
+            "key2": "61",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività presso il Garage Milano"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "60-62",
+            "label": "Coinvolge Proprietario",
+            "type": "Involves",
+            "key1": "60",
+            "key2": "62",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento del proprietario del garage"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "61-63",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "61",
+            "key2": "63",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo del Garage Milano"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "62-61",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "62",
+            "key2": "61",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Roberto Ferrari gestisce il Garage Milano"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "61-64",
+            "label": "Contatto Garage",
+            "type": "Contact",
+            "key1": "61",
+            "key2": "64",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico del Garage Milano"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "62-65",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "62",
+            "key2": "65",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Roberto Ferrari utilizza il furgone per trasporto documenti"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-61",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "61",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta il Garage Milano"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-61",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "61",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta il Garage Milano"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "62-57",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "62",
+            "key2": "57",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Roberto Ferrari è associato con Antonio Verdi nelle attività illecite"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-66",
+            "label": "Documenta Banca",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "66",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sulle operazioni bancarie sospette inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "66-67",
+            "label": "Coinvolge Banca",
+            "type": "Involves",
+            "key1": "66",
+            "key2": "67",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività presso il Banco Milano"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "66-68",
+            "label": "Coinvolge Direttore",
+            "type": "Involves",
+            "key1": "66",
+            "key2": "68",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento del direttore di filiale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "67-69",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "67",
+            "key2": "69",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo della filiale bancaria"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "68-67",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "68",
+            "key2": "67",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Luigi Conti gestisce la filiale bancaria"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "68-70",
+            "label": "Contatto",
+            "type": "Contact",
+            "key1": "68",
+            "key2": "70",
+            "type1": "Person",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico di Luigi Conti"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "66-71",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "66",
+            "key2": "71",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include documentazione bancaria dettagliata"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-68",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "46",
+            "key2": "68",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi è collegato a Luigi Conti per operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-67",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "67",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta la filiale bancaria"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-72",
+            "label": "Documenta Immobili",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "72",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sulle transazioni immobiliari sospette inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "72-73",
+            "label": "Coinvolge Agenzia",
+            "type": "Involves",
+            "key1": "72",
+            "key2": "73",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività presso l'Immobiliare Luna"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "72-74",
+            "label": "Coinvolge Amministratore",
+            "type": "Involves",
+            "key1": "72",
+            "key2": "74",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento dell'amministratore dell'agenzia"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "73-75",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "73",
+            "key2": "75",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo dell'Immobiliare Luna"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "74-73",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "74",
+            "key2": "73",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Carlo Moretti gestisce l'Immobiliare Luna"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "73-76",
+            "label": "Contatto Agenzia",
+            "type": "Contact",
+            "key1": "73",
+            "key2": "76",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico dell'Immobiliare Luna"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "72-77",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "72",
+            "key2": "77",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include documentazione dettagliata sulle transazioni immobiliari"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "74-68",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "74",
+            "key2": "68",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Carlo Moretti è collegato a Luigi Conti per operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-73",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "73",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta l'Immobiliare Luna"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-73",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "73",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta l'Immobiliare Luna"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-78",
+            "label": "Documenta Trasporti",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "78",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sui trasporti sospetti inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "78-79",
+            "label": "Coinvolge Trasporti",
+            "type": "Involves",
+            "key1": "78",
+            "key2": "79",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività della Trasporti Veloci"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "78-80",
+            "label": "Coinvolge Proprietario",
+            "type": "Involves",
+            "key1": "78",
+            "key2": "80",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento del proprietario dell'azienda"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "79-81",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "79",
+            "key2": "81",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Sede operativa della Trasporti Veloci"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "80-79",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "80",
+            "key2": "79",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Paolo Ricci gestisce la Trasporti Veloci"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "79-82",
+            "label": "Contatto Azienda",
+            "type": "Contact",
+            "key1": "79",
+            "key2": "82",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico della Trasporti Veloci"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "80-83",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "80",
+            "key2": "83",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Paolo Ricci utilizza il camion per trasporti sospetti"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "78-84",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "78",
+            "key2": "84",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include documentazione dettagliata sulle spedizioni"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "80-74",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "80",
+            "key2": "74",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Paolo Ricci è collegato a Carlo Moretti per operazioni illecite"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "80-68",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "80",
+            "key2": "68",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Paolo Ricci è collegato a Luigi Conti per movimentazione denaro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-79",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "79",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta la sede della Trasporti Veloci"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-85",
+            "label": "Documenta Exchange",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "85",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sulle operazioni di cambio valuta sospette inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "85-86",
+            "label": "Coinvolge Exchange",
+            "type": "Involves",
+            "key1": "85",
+            "key2": "86",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività presso il Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "85-87",
+            "label": "Coinvolge Titolare",
+            "type": "Involves",
+            "key1": "85",
+            "key2": "87",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento della titolare dell'attività"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "86-88",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "86",
+            "key2": "88",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo del Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-86",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "87",
+            "key2": "86",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano gestisce il Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "86-89",
+            "label": "Contatto Exchange",
+            "type": "Contact",
+            "key1": "86",
+            "key2": "89",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico del Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "85-90",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "85",
+            "key2": "90",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include il registro delle operazioni sospette"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-91",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "87",
+            "key2": "91",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano utilizza l'auto per trasporto contanti"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-68",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "87",
+            "key2": "68",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano è collegata a Luigi Conti per operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-74",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "87",
+            "key2": "74",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano è collegata a Carlo Moretti per movimentazione denaro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-86",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "86",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta il Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-86",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "86",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta il Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-85",
+            "label": "Documenta Exchange",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "85",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sulle operazioni di cambio valuta sospette inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "85-86",
+            "label": "Coinvolge Exchange",
+            "type": "Involves",
+            "key1": "85",
+            "key2": "86",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività presso il Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "85-87",
+            "label": "Coinvolge Titolare",
+            "type": "Involves",
+            "key1": "85",
+            "key2": "87",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento della titolare dell'attività"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "86-88",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "86",
+            "key2": "88",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo del Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-86",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "87",
+            "key2": "86",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano gestisce il Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "86-89",
+            "label": "Contatto Exchange",
+            "type": "Contact",
+            "key1": "86",
+            "key2": "89",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico del Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "85-90",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "85",
+            "key2": "90",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include il registro delle operazioni sospette"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-91",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "87",
+            "key2": "91",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano utilizza l'auto per trasporto contanti"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-68",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "87",
+            "key2": "68",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano è collegata a Luigi Conti per operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-74",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "87",
+            "key2": "74",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano è collegata a Carlo Moretti per movimentazione denaro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-86",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "86",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta il Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-86",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "86",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta il Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-92",
+            "label": "Documenta Collegamenti",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "92",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sui collegamenti internazionali inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "92-93",
+            "label": "Coinvolge Agenzia",
+            "type": "Involves",
+            "key1": "92",
+            "key2": "93",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività della Global Travel Agency"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "92-94",
+            "label": "Coinvolge Titolare",
+            "type": "Involves",
+            "key1": "92",
+            "key2": "94",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento della titolare dell'agenzia"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "93-95",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "93",
+            "key2": "95",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo della Global Travel Agency"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "94-93",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "94",
+            "key2": "93",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Elena Costa gestisce la Global Travel Agency"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "93-96",
+            "label": "Contatto Agenzia",
+            "type": "Contact",
+            "key1": "93",
+            "key2": "96",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico della Global Travel Agency"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "92-97",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "92",
+            "key2": "97",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include documentazione sui viaggi"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "94-98",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "94",
+            "key2": "98",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Elena Costa utilizza il BMW X5 per trasferimenti"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "94-87",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "94",
+            "key2": "87",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Elena Costa è collegata a Sofia Romano per movimentazione denaro internazionale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "94-74",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "94",
+            "key2": "74",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Elena Costa è collegata a Carlo Moretti per operazioni immobiliari estere"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-93",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "93",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta la Global Travel Agency"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-93",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "93",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta la Global Travel Agency"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-99",
+            "label": "Documenta Hotel",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "99",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sulle attività dell'Hotel Royal inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "99-100",
+            "label": "Coinvolge Hotel",
+            "type": "Involves",
+            "key1": "99",
+            "key2": "100",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività presso l'Hotel Royal"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "99-101",
+            "label": "Coinvolge Direttore",
+            "type": "Involves",
+            "key1": "99",
+            "key2": "101",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento del direttore dell'hotel"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "100-102",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "100",
+            "key2": "102",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo dell'Hotel Royal"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "101-100",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "101",
+            "key2": "100",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Belli gestisce l'Hotel Royal"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "100-103",
+            "label": "Contatto Hotel",
+            "type": "Contact",
+            "key1": "100",
+            "key2": "103",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico dell'Hotel Royal"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "99-104",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "99",
+            "key2": "104",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include i registri delle prenotazioni"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "101-105",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "101",
+            "key2": "105",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Marco Belli utilizza la Mercedes per trasporto ospiti"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "101-94",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "101",
+            "key2": "94",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Marco Belli è collegato a Elena Costa per organizzazione soggiorni clienti esteri"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "101-87",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "101",
+            "key2": "87",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Marco Belli è collegato a Sofia Romano per operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "100-93",
+            "label": "Partnership",
+            "type": "Associates",
+            "key1": "100",
+            "key2": "93",
+            "type1": "Organization",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Collaborazione tra Hotel Royal e Global Travel Agency"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-100",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "100",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta l'Hotel Royal"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "45-19",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "45",
+            "key2": "19",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Frequentazione regolare del Bar Augusto da parte del soggetto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "3-67",
+            "label": "Controlla",
+            "type": "Controls",
+            "key1": "3",
+            "key2": "67",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Gestione di altra attività commerciale collegata"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "56-19",
+            "label": "Documenta",
+            "type": "Contains",
+            "key1": "56",
+            "key2": "19",
+            "type1": "Document",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Documentazione relativa alle attività presso il Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "3-78",
+            "label": "CollocataIn",
+            "type": "BasedIn",
+            "key1": "3",
+            "key2": "78",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Collegamento con altra sede operativa"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "65-19",
+            "label": "Sorveglianza",
+            "type": "Monitors",
+            "key1": "65",
+            "key2": "19",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Attività di sorveglianza presso il Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "3-82",
+            "label": "Partnership",
+            "type": "Associates",
+            "key1": "3",
+            "key2": "82",
+            "type1": "Organization",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Collegamenti con altra attività commerciale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "71-19",
+            "label": "Intercettazione",
+            "type": "Records",
+            "key1": "71",
+            "key2": "19",
+            "type1": "Document",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Nuove attività di intercettazione presso il locale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "3-88",
+            "label": "Finanziamento",
+            "type": "Funds",
+            "key1": "3",
+            "key2": "88",
+            "type1": "Organization",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Flussi finanziari verso altra società collegata"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "57-3",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "57",
+            "key2": "3",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Antonio Verdi frequenta regolarmente il Bar Augusto per incontri con membri dell'organizzazione"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "61-3",
+            "label": "Partnership",
+            "type": "Associates",
+            "key1": "61",
+            "key2": "3",
+            "type1": "Organization",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Collegamenti operativi tra Garage Milano e Bar Augusto per attività illecite"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "62-19",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "62",
+            "key2": "19",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Roberto Ferrari visita regolarmente il Bar Augusto per coordinare attività"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "68-19",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "68",
+            "key2": "19",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Luigi Conti incontra altri membri dell'organizzazione al Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "71-3",
+            "label": "Documenta",
+            "type": "Documents",
+            "key1": "71",
+            "key2": "3",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Documentazione bancaria include riferimenti alle attività del Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "74-3",
+            "label": "Partnership",
+            "type": "Associates",
+            "key1": "74",
+            "key2": "3",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Carlo Moretti mantiene collegamenti operativi con il Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "79-3",
+            "label": "Trasporta",
+            "type": "Transports",
+            "key1": "79",
+            "key2": "3",
+            "type1": "Organization",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Trasporti Veloci effettua consegne sospette al Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "80-19",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "80",
+            "key2": "19",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Paolo Ricci frequenta il Bar Augusto per coordinare le consegne"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "83-19",
+            "label": "Utilizzato",
+            "type": "UsedAt",
+            "key1": "83",
+            "key2": "19",
+            "type1": "Vehicle",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Il Mercedes Actros effettua consegne notturne al Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-3",
+            "label": "Partnership",
+            "type": "Associates",
+            "key1": "87",
+            "key2": "3",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano mantiene collegamenti finanziari con il Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "3-86",
+            "label": "Riciclaggio",
+            "type": "MoneyLaundering",
+            "key1": "3",
+            "key2": "86",
+            "type1": "Organization",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Operazioni di riciclaggio tra Bar Augusto e Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "72-3",
+            "label": "Documenta",
+            "type": "Documents",
+            "key1": "72",
+            "key2": "3",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Nota immobili include riferimenti al Bar Augusto come punto di incontro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "78-3",
+            "label": "DocumentazioneTrasporti",
+            "type": "Documents",
+            "key1": "78",
+            "key2": "3",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Note sui trasporti documentano consegne sospette al Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "87-19",
+            "label": "IncontriOperativi",
+            "type": "Attends",
+            "key1": "87",
+            "key2": "19",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Sofia Romano incontra altri membri dell'organizzazione al Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "80-19",
+            "label": "Frequentazione",
+            "type": "Attends",
+            "key1": "80",
+            "key2": "19",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Paolo Ricci coordina le consegne presso il Bar Augusto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "74-19",
+            "label": "IncontriRegolari",
+            "type": "Attends",
+            "key1": "74",
+            "key2": "19",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Carlo Moretti utilizza il Bar Augusto per incontri con altri membri dell'organizzazione"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "3-73",
+            "label": "CollegamentoImmobiliare",
+            "type": "Associates",
+            "key1": "3",
+            "key2": "73",
+            "type1": "Organization",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Collegamenti tra Bar Augusto e Immobiliare Luna per operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-106",
+            "label": "Documenta Logistica",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "106",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sulle attività logistiche sospette inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "106-107",
+            "label": "Coinvolge Logistica",
+            "type": "Involves",
+            "key1": "106",
+            "key2": "107",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività della Logistica Rapida"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "106-108",
+            "label": "Coinvolge Proprietario",
+            "type": "Involves",
+            "key1": "106",
+            "key2": "108",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento del proprietario dell'azienda"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "107-109",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "107",
+            "key2": "109",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Sede operativa della Logistica Rapida"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "108-107",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "108",
+            "key2": "107",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giuseppe Verdi gestisce la Logistica Rapida"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "107-110",
+            "label": "Contatto Azienda",
+            "type": "Contact",
+            "key1": "107",
+            "key2": "110",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico della Logistica Rapida"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "108-111",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "108",
+            "key2": "111",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Giuseppe Verdi utilizza il camion per trasporti sospetti"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "106-112",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "106",
+            "key2": "112",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include documentazione dettagliata sulle attività logistiche"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "108-74",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "108",
+            "key2": "74",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Giuseppe Verdi è collegato a Carlo Moretti per operazioni illecite"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "108-68",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "108",
+            "key2": "68",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "value": {
+                    "Description": "Giuseppe Verdi è collegato a Luigi Conti per movimentazione denaro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-107",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "107",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta la sede della Logistica Rapida"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-107",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "107",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "value": {
+                    "Description": "Giovanni Esposito frequenta la sede della Logistica Rapida"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-113",
+            "label": "Documenta Trasporti Internazionali",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "113",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sui trasporti internazionali inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "113-107",
+            "label": "Coinvolge Logistica",
+            "type": "Involves",
+            "key1": "113",
+            "key2": "107",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività della Logistica Rapida nei trasporti internazionali"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "113-108",
+            "label": "Coinvolge Proprietario",
+            "type": "Involves",
+            "key1": "113",
+            "key2": "108",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento del proprietario dell'azienda nei trasporti internazionali"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "107-114",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "107",
+            "key2": "114",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "La Logistica Rapida utilizza il Porto di Genova per movimentare merci"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "108-115",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "108",
+            "key2": "115",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Giuseppe Verdi utilizza il container XYZ123 per trasporti internazionali"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "113-116",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "113",
+            "key2": "116",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include documentazione dettagliata sui trasporti internazionali"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "108-87",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "108",
+            "key2": "87",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Giuseppe Verdi è collegato a Sofia Romano per operazioni di riciclaggio internazionali"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "108-94",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "108",
+            "key2": "94",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Giuseppe Verdi è collegato a Elena Costa per coordinare trasporti internazionali"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-114",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "114",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta il Porto di Genova per coordinare le operazioni"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-114",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "114",
+            "type1": "Person",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta il Porto di Genova per coordinare le operazioni"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-117",
+            "label": "Documenta Night Club",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "117",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sulle attività del Night Club Paradise inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "117-118",
+            "label": "Coinvolge Night Club",
+            "type": "Involves",
+            "key1": "117",
+            "key2": "118",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività presso il Night Club Paradise"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "117-119",
+            "label": "Coinvolge Gestore",
+            "type": "Involves",
+            "key1": "117",
+            "key2": "119",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento del gestore del night club"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "118-120",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "118",
+            "key2": "120",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo del Night Club Paradise"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "119-118",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "119",
+            "key2": "118",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Alessandro Mari gestisce il Night Club Paradise"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "118-121",
+            "label": "Contatto Club",
+            "type": "Contact",
+            "key1": "118",
+            "key2": "121",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico del Night Club Paradise"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "119-122",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "119",
+            "key2": "122",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Alessandro Mari utilizza la Range Rover per trasporto clienti"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "117-123",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "117",
+            "key2": "123",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include il registro dei clienti VIP"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "119-87",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "119",
+            "key2": "87",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Alessandro Mari è collegato a Sofia Romano per operazioni di riciclaggio"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "119-101",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "119",
+            "key2": "101",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Alessandro Mari è collegato a Marco Belli per gestione clienti VIP"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "118-100",
+            "label": "Partnership",
+            "type": "Associates",
+            "key1": "118",
+            "key2": "100",
+            "type1": "Organization",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Collaborazione tra Night Club Paradise e Hotel Royal"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-118",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "118",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta il Night Club Paradise"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-118",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "118",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta il Night Club Paradise"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "2-124",
+            "label": "Documenta Crypto",
+            "type": "Contains",
+            "key1": "2",
+            "key2": "124",
+            "type1": "Dossier",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "Nota sulle operazioni di cryptocurrency inclusa nel fascicolo principale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "124-125",
+            "label": "Coinvolge Exchange",
+            "type": "Involves",
+            "key1": "124",
+            "key2": "125",
+            "type1": "Document",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta le attività presso il BitFast Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "124-126",
+            "label": "Coinvolge Gestore",
+            "type": "Involves",
+            "key1": "124",
+            "key2": "126",
+            "type1": "Document",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "La nota documenta il coinvolgimento del proprietario dell'exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "125-127",
+            "label": "Situato",
+            "type": "BasedIn",
+            "key1": "125",
+            "key2": "127",
+            "type1": "Organization",
+            "type2": "Location",
+            "properties": {
+                "Description": {
+                    "value": "Indirizzo del BitFast Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "126-125",
+            "label": "Gestisce",
+            "type": "Controls",
+            "key1": "126",
+            "key2": "125",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Davide Russo gestisce il BitFast Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "125-128",
+            "label": "Contatto Exchange",
+            "type": "Contact",
+            "key1": "125",
+            "key2": "128",
+            "type1": "Organization",
+            "type2": "Phone",
+            "properties": {
+                "Description": {
+                    "value": "Numero telefonico del BitFast Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "126-129",
+            "label": "Utilizza",
+            "type": "Uses",
+            "key1": "126",
+            "key2": "129",
+            "type1": "Person",
+            "type2": "Vehicle",
+            "properties": {
+                "Description": {
+                    "value": "Davide Russo utilizza l'Audi RS6"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "124-130",
+            "label": "Contiene",
+            "type": "Contains",
+            "key1": "124",
+            "key2": "130",
+            "type1": "Document",
+            "type2": "Document",
+            "properties": {
+                "Description": {
+                    "value": "La nota include il registro delle transazioni crypto"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "126-87",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "126",
+            "key2": "87",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Davide Russo è collegato a Sofia Romano per operazioni di riciclaggio internazionale"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "126-68",
+            "label": "AssociatoCon",
+            "type": "AssociatedWith",
+            "key1": "126",
+            "key2": "68",
+            "type1": "Person",
+            "type2": "Person",
+            "properties": {
+                "Description": {
+                    "value": "Davide Russo è collegato a Luigi Conti per movimentazione denaro"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "125-86",
+            "label": "Partnership",
+            "type": "Associates",
+            "key1": "125",
+            "key2": "86",
+            "type1": "Organization",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Collaborazione tra BitFast Exchange e Quick Money Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "46-125",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "46",
+            "key2": "125",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Marco Rossi frequenta il BitFast Exchange"
+                }
+            }
+        },
+        {
+            "itemType": "link",
+            "key": "51-125",
+            "label": "Frequenta",
+            "type": "Attends",
+            "key1": "51",
+            "key2": "125",
+            "type1": "Person",
+            "type2": "Organization",
+            "properties": {
+                "Description": {
+                    "value": "Giovanni Esposito frequenta il BitFast Exchange"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,1077 @@
+{
+  "Links": [
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#a21018",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Controls",
+      "Name": "Controls",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Dossier",
+          "type2": "Document"
+        }
+      ],
+      "Color": "#6417b5",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Contains",
+      "Name": "Contains",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Person"
+        }
+      ],
+      "Color": "#cb8f4f",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Involves",
+      "Name": "Involves",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Organization",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#bf2e2d",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "BasedIn",
+      "Name": "BasedIn",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#30d5bc",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Attends",
+      "Name": "Attends",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#f48e49",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Manage",
+      "Name": "Manage",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Person"
+        }
+      ],
+      "Color": "#4913d4",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "AssociatedWith",
+      "Name": "AssociatedWith",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Event"
+        }
+      ],
+      "Color": "#2e62c8",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Autorizes",
+      "Name": "Autorizes",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#df49ba",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "TookPlaceAt",
+      "Name": "TookPlaceAt",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Person"
+        }
+      ],
+      "Color": "#62f0ef",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "involves",
+      "Name": "involves",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Organization",
+          "type2": "Event"
+        }
+      ],
+      "Color": "#58c6c9",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "MadePossible",
+      "Name": "MadePossible",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Phone"
+        }
+      ],
+      "Color": "#6a93a6",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Contact",
+      "Name": "Contact",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Phone"
+        }
+      ],
+      "Color": "#1dbc5f",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Record",
+      "Name": "Record",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Phone",
+          "type2": "Phone"
+        }
+      ],
+      "Color": "#bc2f46",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Contact",
+      "Name": "Contact",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#f100fc",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Involves",
+      "Name": "Involves",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#d753e6",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Seller",
+      "Name": "Seller",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#93dbd9",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Involves",
+      "Name": "Involves",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#1aee47",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Owns",
+      "Name": "Owns",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#7a82a4",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "AssociatedWith",
+      "Name": "AssociatedWith",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#d7e45f",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "AssociatedWith",
+      "Name": "AssociatedWith",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Vehicle"
+        }
+      ],
+      "Color": "#973ebc",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Uses",
+      "Name": "Uses",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#7b79d3",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "MeetsAt",
+      "Name": "MeetsAt",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Phone"
+        }
+      ],
+      "Color": "#d5b36a",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Records",
+      "Name": "Records",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Organization",
+          "type2": "Phone"
+        }
+      ],
+      "Color": "#7e2db9",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Contact",
+      "Name": "Contact",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#34c68c",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Attends",
+      "Name": "Attends",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Document"
+        }
+      ],
+      "Color": "#bc510c",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Contains",
+      "Name": "Contains",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Organization",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#fde64e",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Associates",
+      "Name": "Associates",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Organization",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#515f3c",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Controls",
+      "Name": "Controls",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#34606e",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Contains",
+      "Name": "Contains",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Organization",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#bd2bb7",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Monitors",
+      "Name": "Monitors",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#7d560a",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Records",
+      "Name": "Records",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Organization",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#99344b",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Funds",
+      "Name": "Funds",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Document",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#7a17c4",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Documents",
+      "Name": "Documents",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Person",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#375513",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Associates",
+      "Name": "Associates",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Organization",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#9c71a0",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "Transports",
+      "Name": "Transports",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Vehicle",
+          "type2": "Location"
+        }
+      ],
+      "Color": "#6dfa29",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "UsedAt",
+      "Name": "UsedAt",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    },
+    {
+      "Label": null,
+      "EndsTypes": [
+        {
+          "type1": "Organization",
+          "type2": "Organization"
+        }
+      ],
+      "Color": "#d6cc3c",
+      "IsSymmetricLink": false,
+      "ShowArrows": true,
+      "DisplayName": "MoneyLaundering",
+      "Name": "MoneyLaundering",
+      "Property": [
+        {
+          "IsMandatory": false,
+          "InputType": 11,
+          "SearchInputType": 11,
+          "Mask": null,
+          "Values": null,
+          "IsLabel": false,
+          "IsIndex": false,
+          "Grouping": null,
+          "Name": "Description",
+          "DisplayName": "Descrizione",
+          "DataType": 4
+        }
+      ]
+    }
+  ]
+}
