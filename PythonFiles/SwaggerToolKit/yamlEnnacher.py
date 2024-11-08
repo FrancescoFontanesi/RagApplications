@@ -4,10 +4,9 @@ import yaml
 from langchain_ollama.llms import OllamaLLM
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-from langchain import OpenAI
 
 # Define the Swagger file URL
-SWAGGER_URL = "http://localhost:5000/swagger-file.json"
+SWAGGER_URL = "http://localhost:5000/swagger-file"
 
 class SwaggerEnhancer:
     def __init__(self, swagger_url, model_name="llama3.1:70b", temperature=0.2, base_url="http://192.168.100.149:8537"):
@@ -15,7 +14,7 @@ class SwaggerEnhancer:
         self.swagger_json = None
         self.swagger_yaml = None
         self.enhanced_yaml = None
-        self.ollama_llm = OllamaLLM(model_name=model_name, temperature=temperature, base_url=base_url)
+        self.ollama_llm = OllamaLLM(model=model_name, temperature=temperature, base_url=base_url)
 
     def fetch_swagger_json(self):
         response = requests.get(self.swagger_url)
@@ -40,13 +39,13 @@ class SwaggerEnhancer:
             template=(
                 "You are an helpfull assistant designed to enhance API documentation YAML files. "
                 "Make the following YAML more informative, add explanations where needed, "
-                "and ensure it follows best practices for API documentation:\n\n"
+                "ensure it follows best practices for API documentation including the server and info field:\n\n"
                 "{yaml_content}"
             )
         )
         
-        chain = LLMChain(llm=self.ollama_llm, prompt=prompt)
-        self.enhanced_yaml = chain.run(yaml_content=self.swagger_yaml)
+        sequence = prompt | self.ollama_llm
+        self.enhanced_yaml = sequence.invoke(input=self.swagger_yaml)
         return self
 
     def save_to_file(self, filename="enhanced_swagger.yaml"):

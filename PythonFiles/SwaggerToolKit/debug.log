@@ -153,3 +153,102 @@
 2024-11-06 18:26:43,129 INFO - werkzeug :  * Restarting with stat
 2024-11-06 18:26:45,266 WARNING - werkzeug :  * Debugger is active!
 2024-11-06 18:26:45,285 INFO - werkzeug :  * Debugger PIN: 641-918-281
+2024-11-08 21:54:07,237 INFO - werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-08 21:54:07,237 INFO - werkzeug : [33mPress CTRL+C to quit[0m
+2024-11-08 21:54:07,240 INFO - werkzeug :  * Restarting with stat
+2024-11-08 21:54:07,788 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 21:54:07,793 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 21:54:27,101 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\swaggerRAG.py', reloading
+2024-11-08 21:54:27,180 INFO - werkzeug :  * Restarting with stat
+2024-11-08 21:54:27,805 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 21:54:27,810 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 21:55:18,404 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\openApiToolKit.py', reloading
+2024-11-08 21:55:18,474 INFO - werkzeug :  * Restarting with stat
+2024-11-08 21:55:19,106 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 21:55:19,109 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 21:55:45,425 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\openApiToolKit.py', reloading
+2024-11-08 21:55:45,462 INFO - werkzeug :  * Restarting with stat
+2024-11-08 21:55:46,068 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 21:55:46,073 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 21:56:14,420 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\openApiToolKit.py', reloading
+2024-11-08 21:56:14,474 INFO - werkzeug :  * Restarting with stat
+2024-11-08 21:56:15,228 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 21:56:15,233 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 21:56:34,491 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\openApiToolKit.py', reloading
+2024-11-08 21:56:34,535 INFO - werkzeug :  * Restarting with stat
+2024-11-08 21:56:35,137 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 21:56:35,141 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 21:57:54,187 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 21:57:54] "[31m[1mPOST /meteo HTTP/1.1[0m" 400 -
+2024-11-08 21:58:35,522 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 21:58:35] "[31m[1mPOST /meteo HTTP/1.1[0m" 400 -
+2024-11-08 22:00:37,847 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\openApiToolKit.py', reloading
+2024-11-08 22:00:37,883 INFO - werkzeug :  * Restarting with stat
+2024-11-08 22:00:38,479 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 22:00:38,484 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 22:01:32,085 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\openApiToolKit.py', reloading
+2024-11-08 22:01:32,137 INFO - werkzeug :  * Restarting with stat
+2024-11-08 22:01:32,844 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 22:01:32,848 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 22:05:00,632 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 22:05:00] "[31m[1mPOST /meteo HTTP/1.1[0m" 400 -
+2024-11-08 22:05:36,594 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\openApiToolKit.py', reloading
+2024-11-08 22:05:36,638 INFO - werkzeug :  * Restarting with stat
+2024-11-08 22:05:37,229 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 22:05:37,233 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 22:07:00,768 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 22:07:00] "POST /temperatura HTTP/1.1" 200 -
+2024-11-08 22:07:26,251 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 22:07:26] "POST /meteo HTTP/1.1" 200 -
+2024-11-08 23:00:01,922 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\yamlEnnacher.py', reloading
+2024-11-08 23:00:01,981 INFO - werkzeug :  * Restarting with stat
+2024-11-08 23:00:03,066 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 23:00:03,069 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 23:00:25,333 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\yamlEnnacher.py', reloading
+2024-11-08 23:00:25,390 INFO - werkzeug :  * Restarting with stat
+2024-11-08 23:00:26,068 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 23:00:26,071 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 23:02:33,556 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\yamlEnnacher.py', reloading
+2024-11-08 23:02:33,600 INFO - werkzeug :  * Restarting with stat
+2024-11-08 23:02:34,346 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 23:02:34,354 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 23:02:38,817 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:02:38] "[33mGET /swagger-file.json HTTP/1.1[0m" 404 -
+2024-11-08 23:03:33,166 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:03:33] "[33mGET / HTTP/1.1[0m" 404 -
+2024-11-08 23:03:34,590 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:03:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-11-08 23:03:49,363 INFO - werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-08 23:03:49,364 INFO - werkzeug : [33mPress CTRL+C to quit[0m
+2024-11-08 23:03:49,365 INFO - werkzeug :  * Restarting with stat
+2024-11-08 23:03:49,904 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 23:03:49,908 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 23:03:52,745 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:03:52] "[33mGET / HTTP/1.1[0m" 404 -
+2024-11-08 23:04:16,251 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:16] "[32mGET /swagger HTTP/1.1[0m" 308 -
+2024-11-08 23:04:16,270 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:16] "GET /swagger/ HTTP/1.1" 200 -
+2024-11-08 23:04:17,179 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:17] "GET /swagger/index.css HTTP/1.1" 200 -
+2024-11-08 23:04:17,188 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:17] "GET /swagger/swagger-ui.css HTTP/1.1" 200 -
+2024-11-08 23:04:17,202 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:17] "GET /swagger/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2024-11-08 23:04:17,230 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:17] "GET /swagger/swagger-ui-bundle.js HTTP/1.1" 200 -
+2024-11-08 23:04:17,403 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:17] "GET /swagger/favicon-32x32.png HTTP/1.1" 200 -
+2024-11-08 23:04:17,805 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:17] "GET /swagger-file HTTP/1.1" 200 -
+2024-11-08 23:04:17,811 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:17] "[36mGET /swagger/favicon-32x32.png HTTP/1.1[0m" 304 -
+2024-11-08 23:04:19,210 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:19] "GET /swagger-file HTTP/1.1" 200 -
+2024-11-08 23:04:32,464 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\yamlEnnacher.py', reloading
+2024-11-08 23:04:32,502 INFO - werkzeug :  * Restarting with stat
+2024-11-08 23:04:33,060 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 23:04:33,064 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 23:04:42,505 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:04:42] "GET /swagger-file HTTP/1.1" 200 -
+2024-11-08 23:05:08,488 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\yamlEnnacher.py', reloading
+2024-11-08 23:05:08,523 INFO - werkzeug :  * Restarting with stat
+2024-11-08 23:05:09,118 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 23:05:09,122 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 23:05:11,178 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\yamlEnnacher.py', reloading
+2024-11-08 23:05:11,256 INFO - werkzeug :  * Restarting with stat
+2024-11-08 23:05:11,912 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 23:05:11,916 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 23:05:16,697 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:05:16] "GET /swagger-file HTTP/1.1" 200 -
+2024-11-08 23:05:43,303 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\yamlEnnacher.py', reloading
+2024-11-08 23:05:43,349 INFO - werkzeug :  * Restarting with stat
+2024-11-08 23:05:43,926 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 23:05:43,930 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 23:05:50,179 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:05:50] "GET /swagger-file HTTP/1.1" 200 -
+2024-11-08 23:06:47,644 INFO - werkzeug :  * Detected change in 'd:\\RagApplications\\PythonFiles\\SwaggerToolKit\\yamlEnnacher.py', reloading
+2024-11-08 23:06:47,682 INFO - werkzeug :  * Restarting with stat
+2024-11-08 23:06:48,227 WARNING - werkzeug :  * Debugger is active!
+2024-11-08 23:06:48,230 INFO - werkzeug :  * Debugger PIN: 105-193-587
+2024-11-08 23:07:06,428 INFO - werkzeug : 127.0.0.1 - - [08/Nov/2024 23:07:06] "GET /swagger-file HTTP/1.1" 200 -

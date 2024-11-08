@@ -5,6 +5,17 @@ servers:
   - url: http://localhost:5000
     description: Local development server for testing and development purposes
 
+info:
+  title: Weather API 
+  description: |
+    A RESTful API that provides real-time weather information using.
+    This API allows users to:
+    - Retrieve current weather conditions for any city
+    - Get temperature readings in Celsius
+    - Obtain detailed weather descriptions
+    
+  version: 0.0.1
+
 
 schemes:
   - http

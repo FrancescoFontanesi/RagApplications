@@ -9,11 +9,10 @@ from langchain_community.utilities.requests import TextRequestsWrapper
 import yaml
 from typing import Optional, Dict, Any
 import logging
-from langsmith import ChainManager, ChainLog
 
 
 class SwaggerToolkit:
-    def __init__(self, yaml_path: str = "testroute.yaml", base_url: str = "192.168.100.149:8537", model_name: str ="llama3.1:70b"):
+    def __init__(self, yaml_path: str = "testroute2.yaml", base_url: str = "192.168.100.149:8537", model_name: str ="llama3.1:70b"):
         """
         Initialize the Weather API Toolkit.
         
@@ -21,7 +20,7 @@ class SwaggerToolkit:
             yaml_path: Path to OpenAPI specification YAML file
             base_url: Base URL for the Ollama LLM service
         """
-        self.chain_manager = ChainManager(name="OpenAPI Toolkit")
+        self.model_name = model_name
         self.yaml_path = yaml_path
         self.base_url = base_url
         self.agent = self._create_api_toolkit()
@@ -83,22 +82,7 @@ class SwaggerToolkit:
         except Exception as e:
             logging.error(f"Error processing question: {str(e)}")
             raise
-
-    def ask_custom_question(self, question: str) -> Dict[str, Any]:
-        """
-        Query the custom API using natural language, with Langsmith logging.
-        """
-        # Start Langsmith logging
-        chain_log = ChainLog(self.chain_manager, question)
-
-        try:
-            # Invoke the agent and log results
-            response = self.agent.invoke(question)
-            chain_log.add_result(response)  # Log response to Langsmith
-            return response
-        except Exception as e:
-            chain_log.add_error(str(e))  # Log error to Langsmith
-            raise
+    
     def run_interactive_cli(self):
         """Launch an interactive CLI for weather queries."""
         print("\nWeather Information Assistant")
