@@ -1,32 +1,11 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+dcj_test/
+Documenti/
+Files/
+foto/
+Langflow/
+venv/
+vpn/
+PythonFiles/DataGenerationForTesting/venv
+PythonFiles/DocumentalRag/.venv_DocumentalRag
+PythonFiles/SwaggerToolKit/.venv
+PythonFiles/SwaggerToolKit/__pycache__
