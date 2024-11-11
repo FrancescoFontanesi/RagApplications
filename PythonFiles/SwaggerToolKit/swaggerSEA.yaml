@@ -1,0 +1,1288 @@
+definitions:
+  AnalyzerResponse:
+    properties:
+      dcj:
+        description: Result of the analyzer for node analysis (If the analyzer provides
+          a result)
+      message:
+        description: Message from the task
+        type: string
+      paths:
+        description: Result of the analyzer for paths analysis (If the analyzer provides
+          a result)
+        items: {}
+        type: array
+      status:
+        $ref: '#/definitions/AnalyzerTaskStatus'
+      taskId:
+        description: Unique identifier of the task
+        type: string
+    type: object
+  AnalyzerTaskStatus:
+    enum:
+    - 0
+    - 1
+    - 2
+    - 3
+    format: int32
+    type: integer
+  Chart:
+    properties:
+      creator:
+        type: string
+      id:
+        type: string
+      insertDate:
+        format: date-time
+        type: string
+      lastAccess:
+        format: date-time
+        type: string
+      lastModifier:
+        type: string
+      name:
+        type: string
+      persistent:
+        type: boolean
+      updateDate:
+        format: date-time
+        type: string
+    type: object
+  ChartDetails:
+    properties:
+      creator:
+        type: string
+      dcj:
+        type: string
+      id:
+        type: string
+      insertDate:
+        format: date-time
+        type: string
+      lastAccess:
+        format: date-time
+        type: string
+      lastModifier:
+        type: string
+      name:
+        type: string
+      persistent:
+        type: boolean
+      updateDate:
+        format: date-time
+        type: string
+    type: object
+  ExpansionParameters:
+    description: Parametri per le operazioni di espansione
+    properties:
+      direction:
+        description: Direzione dell'espansione (default ANY, altri valori 'OUTBOUND',
+          'INBOUND')
+        type: string
+      includeInputEntities:
+        description: "Include le entit\xC3\_ di input nella risposta (default true)"
+        type: boolean
+      includeMatches:
+        description: Include i match tra i nodi e li trasforma in gruppi e mantiene
+          i link (default false)
+        type: boolean
+      includeOnlyConfirmedMatches:
+        description: "Include solo i con propriet\xC3\_ confirmed = true (considerato\
+          \ solo se IncludeMatches = true, default false)"
+        type: boolean
+      maxDepth:
+        description: Numero massimo di passi per l'espansione (default 1)
+        format: int32
+        type: integer
+      minDepth:
+        description: Numero minimo di passi per l'espansione (default 0)
+        format: int32
+        type: integer
+      types:
+        description: "Tipi di entit\xC3\_ da filtrare nella risposta (default lista\
+          \ vuota - considera tutti)"
+        items:
+          type: string
+        type: array
+    type: object
+  FILTERTYPE:
+    enum:
+    - 0
+    - 1
+    - 2
+    - 3
+    format: int32
+    type: integer
+  IFilter:
+    properties:
+      type:
+        $ref: '#/definitions/FILTERTYPE'
+    type: object
+  MatchParameters:
+    properties:
+      match:
+        type: string
+      nodesIds:
+        items:
+          type: string
+        type: array
+      user:
+        type: string
+    type: object
+  SearchParameters:
+    description: Parametri per le operazioni di search
+    properties:
+      chartIds:
+        description: Chart nei quali ricercare - usato nella SearchByParams
+        items:
+          type: string
+        type: array
+      clusterizationCriteria:
+        description: "Criterio per la clusterizzazione ('Chart' per clusterizzare\
+          \ in base ai chart di appartenenza, nome della propriet\xC3\_ per clusterizzare\
+          \ in base ai valori di essa)"
+        type: string
+      clusterizationCriteriaValue:
+        description: "Usato per espandere i cluster delle propriet\xC3\_ (es. \r\n\
+          \       \"ClusterizationCriteria\": \"City\",\r\n       \"ClusterizationCriteriaValue\"\
+          : \"Barcelona\")"
+        type: string
+      getAll:
+        description: Include tutti i nodi e estrae gli elementi appartenenti ai gruppi
+        type: boolean
+      includeCharts:
+        description: Include i chartId nei nodi - usato nella SearchByParams
+        type: boolean
+      includeEnds:
+        description: Include gli estremi dei link
+        type: boolean
+      includeInputEntities:
+        description: "Include le entit\xC3\_ di input nella risposta (default true)"
+        type: boolean
+      includeMatches:
+        description: Include i match tra i nodi e li trasforma in gruppi - usato nella
+          SearchByParams
+        type: boolean
+      includeNeighbours:
+        description: Include i vicini dei nodi (ed i relativi link)
+        type: boolean
+      limit:
+        description: "Numero di entit\xC3\_ da restituire per ciascuna entit\xC3\_\
+          \ di input (default 0 = tutte) - usato per la paginazione"
+        format: int32
+        type: integer
+      linkFilter:
+        $ref: '#/definitions/IFilter'
+      nodeFilter:
+        $ref: '#/definitions/IFilter'
+      params:
+        additionalProperties: {}
+        description: Parametri extra per la ricerca, tra cui quelli degli analyzer
+          (DA SISTEMARE)
+        type: object
+      query:
+        description: "Query di ricerca (usata nelle query full text)\r\nWildcard supportate:\r\
+          \n    `_`: Un carattere singolo\r\n    `%`: Zero, uno o pi\xC3\xB9 caratteri\r\
+          \n    `\\\\_`: Un underscore\r\n    `\\\\%`: Un segno di percentuale"
+        type: string
+      skip:
+        description: "Numero di entit\xC3\_ da ignorare (default 0) - usato per la\
+          \ paginazione"
+        format: int32
+        type: integer
+      types:
+        description: "Tipi entit\xC3\_ da ricercare (usato nelle query full text,\
+          \ default lista vuota)"
+        items:
+          type: string
+        type: array
+    type: object
+  SearchRequest:
+    description: Parametri per la ricerca
+    properties:
+      dcj:
+        description: DataCart serializzato con il metodo ToDCJ()
+        type: string
+      destination:
+        description: Parametro opzionale per STORE/STAGE
+        type: string
+      expansionParameters:
+        $ref: '#/definitions/ExpansionParameters'
+      parameters:
+        $ref: '#/definitions/SearchParameters'
+    type: object
+  User:
+    properties:
+      groups:
+        items:
+          type: string
+        type: array
+      username:
+        type: string
+    type: object
+info:
+  contact:
+    email: ''
+    name: S&A Sistemi & Automazione srl
+    url: https://sealink.it/
+  description: Graph Service ASP.NET Core Web API
+  license:
+    name: Use under LICX
+    url: https://example.com/license
+  termsOfService: https://example.com/terms
+  title: Graph REST Service API
+  version: v1
+paths:
+  /api/analyze:
+    get:
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            items:
+              type: string
+            type: array
+      summary: "GET api/analyze\r\nRetrieves the list of all the available analyzers"
+      tags:
+      - Analyzer
+  /api/analyze/status/{taskId}:
+    get:
+      consumes:
+      - multipart/form-data
+      description: "ONLY AVAILABLE FOR SNA analyzer\r\n            Perform analysis\
+        \ on stage or store with specific tool and action\r\n            <br>TASKID:\
+        \ The task id returned by the POST api/analyze request<br>USER: The username\
+        \ of the user who launched the algorithm"
+      parameters:
+      - description: The task id returned by the POST api/analyze request
+        in: path
+        name: taskId
+        required: true
+        type: string
+      - in: formData
+        name: user
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the status of the task
+          schema:
+            $ref: '#/definitions/AnalyzerResponse'
+      summary: POST api/analyze/status/{taskId}
+      tags:
+      - Analyzer
+  /api/analyze/{destination}/{tool}/{operation}:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "Perform analysis on stage or store with specific tool and action\r\
+        \n    <br>parametersString<br>\r\n    string that contains a deserialized\
+        \ json of it.sealink.graphmodel.Models.SearchRequest\r\n    {\r\n        Parameters:\
+        \ {\r\n            // filters for the search operation (if using charts saved\
+        \ on db)\r\n            IncludeCharts: bool,\r\n            ChartIds: string[],\r\
+        \n            NodeFilter: null,\r\n            IncludeNeighbours: bool,\r\n\
+        \            LinkFilter: null,\r\n            IncludeEnds: bool,\r\n     \
+        \       params: {\r\n                async: \"bool\", // always false for\
+        \ GRAPH analyzer\r\n                // KPaths params\r\n                fromVertexId:\
+        \ \"string\" // starting entity id of the path for KPaths\r\n            \
+        \    fromVertexType: \"string\", // starting entity type of the path for KPaths\r\
+        \n                toVertexId: \"string\", // target entity id of the path\
+        \ for KPaths\r\n                toVertexType: \"string\", // entity type of\
+        \ the path for KPaths\r\n                depth: int // OPTIONAL, default 3\
+        \ - depth of the path for KPaths \r\n            }\r\n        },\r\n     \
+        \   User: \"string\" // username of the current user\r\n    }\r\n    <br>dcj<br>\r\
+        \n    file named dcj.json compressed in a zip file\r\n    "
+      parameters:
+      - description: 'STAGE/STORE: which kind of persistence was used to save the
+          chart (if dcj field is filled -> STORE)'
+        in: path
+        name: destination
+        required: true
+        type: string
+      - description: The analyzer's code (available at GET api/analyze)
+        in: path
+        name: tool
+        required: true
+        type: string
+      - description: "The algorithm chosen\r\n            <br>\r\n            Available\
+          \ algorithms for the SNA analyzer: \"PageRank\", \"Betweeness\", \"ConnectedComponents\"\
+          , \"WeaklyConnectedComponents\", \"HITS\", \"EffectiveCloseness\", \"SingleSourceShortestPath\"\
+          , \"StronglyConnectedComponents\", \"LabelPropagation\", \"SpeakerListenerLabelPropagation\"\
+          \r\n            <br>\r\n            Available algorithms for the GRAPH analyzer:\
+          \ \"KPaths\"\r\n            "
+        in: path
+        name: operation
+        required: true
+        type: string
+      - in: formData
+        name: parametersString
+        type: string
+      - in: formData
+        name: ContentType
+        type: string
+      - in: formData
+        name: ContentDisposition
+        type: string
+      - in: formData
+        name: Headers
+        type: string
+      - format: int64
+        in: formData
+        name: Length
+        type: integer
+      - in: formData
+        name: Name
+        type: string
+      - in: formData
+        name: FileName
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the results of the analysis
+          schema:
+            $ref: '#/definitions/AnalyzerResponse'
+      summary: POST api/analyze/{stage|store}/{tool}/{operation}
+      tags:
+      - Analyzer
+  /api/datamodel/dmj:
+    get:
+      parameters:
+      - description: ''
+        in: query
+        name: type
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+      summary: "GET api/datamodel/dmj\r\nRetrieve the datamodel as dmj"
+      tags:
+      - Datamodel
+  /api/datapermission:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "<br>dcj: a file .json compressed in a zip file\r\n<br>dcjserialized:\
+        \ a string alternative to zip file, use only for small datacart"
+      parameters:
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+      summary: "POST api/datapermission\r\nReturns the updability and deletability\
+        \ of visible element of the data cart adding the custom property \"updatable\"\
+        \ and \"deletable\""
+      tags:
+      - DataPermissions
+  /api/datapermission/deletability:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "<br>dcj: a file .json compressed in a zip file\r\n<br>dcjserialized:\
+        \ a string alternative to zip file, use only for small datacart"
+      parameters:
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+      summary: "POST api/datapermission/deletability\r\nReturns the deletability of\
+        \ element of the visible element od data cart adding the custom property \"\
+        deletable\""
+      tags:
+      - DataPermissions
+  /api/datapermission/moveability:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "<br>dcj: a file .json compressed in a zip file\r\n<br>dcjserialized:\
+        \ a string alternative to zip file, use only for small datacart"
+      parameters:
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+      summary: "POST api/datapermission/moveability\r\nReturns the filtered data cart\
+        \ based on the moveability of the elements"
+      tags:
+      - DataPermissions
+  /api/datapermission/updatability:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "<br>dcj: a file .json compressed in a zip file\r\n<br>dcjserialized:\
+        \ a string alternative to zip file, use only for small datacart"
+      parameters:
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+      summary: "POST api/datapermission/updability\r\nReturns the updability of element\
+        \ of the data cart adding the custom property \"updatable\""
+      tags:
+      - DataPermissions
+  /api/datapermission/visibility:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "<br>dcj: a file .json compressed in a zip file\r\n<br>dcjserialized:\
+        \ a string alternative to zip file, use only for small datacart"
+      parameters:
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+      summary: "POST api/datapermission/visibility\r\nReturns the filtered data cart\
+        \ based on the visibility of the elements"
+      tags:
+      - DataPermissions
+  /api/graphs:
+    get:
+      parameters:
+      - description: 'STAGE/STORE: which kind of persistence was used to save the
+          charts'
+        in: query
+        name: destination
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            items:
+              $ref: '#/definitions/Chart'
+            type: array
+      summary: "GET api/graphs/\r\nRetrieve the list of chart for specific user"
+      tags:
+      - Graph
+    post:
+      consumes:
+      - multipart/form-data
+      description: "The entities/links in the datacart will be saved in the db, if\
+        \ the entity/link is already in the db, its MERGEMODE will be used to proceed\r\
+        \n    - MERGEMODE.MERGE -> update the item with the properties unified (ex.:\
+        \ if a property in common is text it will be concatenated)\r\n    - MERGEMODE.SKIP\
+        \ -> do not update the object in the db\r\n    - else -> substitute the object\
+        \ in the db with the new one\r\nIf the id is specified, the chart will be\
+        \ updated, otherwise a new chart will be created\r\n    <br>DESTINATION: STAGE/STORE:\
+        \ which kind of persistence to use to save the chart<br>NAME: the name to\
+        \ associate the chart with (use for a new chart). If null, the items are saved\
+        \ without a chart reference or the id is used<br>ID: the id the chart is associated\
+        \ to (use for edit purposes, it is more important than 'name')<br>DCJ: a file\
+        \ named dcj.json compressed in a zip file<br>dcjserialized: a string alternative\
+        \ to zip file, use only for small datacart<br>centralElement: a string containing\
+        \ the dcj of the central entity"
+      parameters:
+      - in: formData
+        name: destination
+        type: string
+      - in: formData
+        name: name
+        type: string
+      - in: formData
+        name: id
+        type: string
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      - in: formData
+        name: centralElement
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '201':
+          description: All the items have been added/edited
+          schema:
+            $ref: '#/definitions/Chart'
+      summary: "POST api/graphs/\r\nUpload datcart (zip/dcj string) with metadata\
+        \ to store or stage"
+      tags:
+      - Graph
+  /api/graphs/delete:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "If id is specified, remove the chartitems that link the chart\
+        \ with the entities/links in the datacart\r\nElse delete the items inside\
+        \ the datacart from the db\r\n    <br>id: the id of the chart to unlink the\
+        \ entities/links from<br>groupId: the id of the group to unlink the entities/links\
+        \ from<br>dcj: a file named dcj.json compressed in a zip file<br>dcjserialized:\
+        \ a string alternative to zip file, use only for small datacart"
+      parameters:
+      - in: formData
+        name: id
+        type: string
+      - in: formData
+        name: groupId
+        type: string
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: All the items have been deleted
+          schema:
+            type: string
+        '206':
+          description: Some of the items could not be deleted, the response contains
+            a dcj with that items and, inside each one a custom property ERROR_MESSAGE
+            with the cause
+          schema:
+            type: string
+      summary: "POST api/graphs/delete\r\nDelete items from the db or delete their\
+        \ reference from charts"
+      tags:
+      - Graph
+  /api/graphs/deleteChart/{chartId}:
+    delete:
+      description: Only the chart object and its chartitems will be deleted, the entities/links
+        in the chart will remain in the db
+      parameters:
+      - description: The id of the chart to delete
+        in: path
+        name: chartId
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+        '204':
+          description: The chart has been deleted
+      summary: "DELETE api/graphs/deleteChart/{chartId}\r\nDelete chart using chartId"
+      tags:
+      - Graph
+  /api/graphs/expand:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      parameters:
+      - description: The request object
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "POST api/graphs/expand\r\nRetrieve the list of nodes linked to nodes\
+        \ with specific key and the respective links"
+      tags:
+      - Graph
+  /api/graphs/expandCluster:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      parameters:
+      - description: Params to use for the expansion
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/ChartDetails'
+      summary: "POST api/graphs/expandCluster\r\nExpand cluster by ids"
+      tags:
+      - Graph
+  /api/graphs/graph-to-query:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      description: "The datacart in the result is the union of all the datacarts of\
+        \ the subgraphs\r\nEach item in the datacart has a custom property 'GRS_IN_PATHS'\
+        \ that contains an array of strings which identify the paths where that item\
+        \ is present"
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "POST api/graphs/graph-to-query\r\nRetrieves all the subgraphs in the\
+        \ db that have the same pattern as the input graph"
+      tags:
+      - Graph
+  /api/graphs/list:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            items:
+              $ref: '#/definitions/Chart'
+            type: array
+      summary: "POST api/graphs/list\r\nRetrieve the list of chart for specific user\
+        \ and value"
+      tags:
+      - Graph
+  /api/graphs/list-linked:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      description: "To retrieve all the entities of type 'Nota' that contain an entity\
+        \ with a specific value\r\n   search for that value in the 'Query' field and\
+        \ set the 'Types' field to the list of types you want to retrieve ex: ['Nota']"
+      parameters:
+      - description: the parameters for the search
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: string
+      summary: "POST api/graphs/list-linked\r\nRetrieve the list of types' entities\
+        \ that are linked with entities for specific user and value"
+      tags:
+      - Graph
+  /api/graphs/list-nodes:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      description: "It performs a LIKE query on all the properties' values using these\
+        \ wildcards\r\n    `_`: A single arbitrary character\r\n    `%`: Zero, one\
+        \ or many arbitrary characters\r\n    `\\\\_`: A literal underscore\r\n  \
+        \  `\\\\%`: A literal percent sign"
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "POST api/graphs/list-nodes\r\nRetrieve the list of nodes for specific\
+        \ value"
+      tags:
+      - Graph
+  /api/graphs/neighbors-frequency:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      parameters:
+      - description: The request object
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "POST api/graphs/neighbors-frequency\r\nRetrieve the neighbors of the\
+        \ nodes in the datacart and the frequency of their links"
+      tags:
+      - Graph
+  /api/graphs/properties:
+    get:
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            items:
+              type: string
+            type: array
+      summary: "GET api/graphs/properties\r\nRetrieve the list of properties in the\
+        \ DB for all the nodes"
+      tags:
+      - Graph
+  /api/graphs/search:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      description: "For each entity in the datacart, the search will return all the\
+        \ entities in the db that have the same properties (except for the key) as\
+        \ it has\r\nFor text fields, it performs a LIKE query using these wildcards\r\
+        \n    `_`: A single arbitrary character\r\n    `%`: Zero, one or many arbitrary\
+        \ characters\r\n    `\\\\_`: A literal underscore\r\n    `\\\\%`: A literal\
+        \ percent sign\r\nFor other fields' types it performs an exact match\r\nFor\
+        \ fields that have a RANGE SearchInputType it uses the properties\r\n    -\
+        \ {propertyName}__START: the start of the range\r\n    - {propertyName}__END:\
+        \ the end of the range"
+      parameters:
+      - description: Parameters to use for the search operation
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "POST api/graphs/search\r\nPerform search using the datacart in the\
+        \ requestParameters"
+      tags:
+      - Graph
+  /api/graphs/searchByParams:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      parameters:
+      - description: Parameters to use for the search operation
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "POST api/graphs/searchByParams\r\nPerform search using the requestParameters"
+      tags:
+      - Graph
+  /api/graphs/similar:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      parameters:
+      - description: Params to use for the expansion
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "POST api/graphs/similar\r\nGet graph with entities that are similar\
+        \ to the ones provided in the input graph"
+      tags:
+      - Graph
+  /api/graphs/{chartId}:
+    get:
+      parameters:
+      - description: The id of the chart to retrieve
+        in: path
+        name: chartId
+        required: true
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/ChartDetails'
+      summary: "GET api/graphs/{chartid}\r\nRetrieve chart content with chartid"
+      tags:
+      - Graph
+  /api/matches:
+    post:
+      consumes:
+      - multipart/form-data
+      description: '<br>DCJ: a file named dcj.json containing all the links (matches)
+        compressed in a zip file'
+      parameters:
+      - in: formData
+        name: ContentType
+        type: string
+      - in: formData
+        name: ContentDisposition
+        type: string
+      - in: formData
+        name: Headers
+        type: string
+      - format: int64
+        in: formData
+        name: Length
+        type: integer
+      - in: formData
+        name: Name
+        type: string
+      - in: formData
+        name: FileName
+        type: string
+      - in: formData
+        name: dcjserialized
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Chart'
+      summary: "POST api/matches\r\nUpload zip with metadata to store"
+      tags:
+      - Match
+  /api/matches/delete:
+    post:
+      consumes:
+      - multipart/form-data
+      description: '<br>DCJ: a file named dcj.json containing all the links (matches)
+        compressed in a zip file'
+      parameters:
+      - in: formData
+        name: ContentType
+        type: string
+      - in: formData
+        name: ContentDisposition
+        type: string
+      - in: formData
+        name: Headers
+        type: string
+      - format: int64
+        in: formData
+        name: Length
+        type: integer
+      - in: formData
+        name: Name
+        type: string
+      - in: formData
+        name: FileName
+        type: string
+      - in: formData
+        name: dcjserialized
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Chart'
+      summary: "POST api/matches/delete\r\nUpload zip with metadata to store"
+      tags:
+      - Match
+  /api/matches/dismatches:
+    post:
+      consumes:
+      - multipart/form-data
+      description: '<br>DCJ: a file named dcj.json containing all the links (dismatches)
+        compressed in a zip file'
+      parameters:
+      - in: formData
+        name: user
+        type: string
+      - in: formData
+        name: ContentType
+        type: string
+      - in: formData
+        name: ContentDisposition
+        type: string
+      - in: formData
+        name: Headers
+        type: string
+      - format: int64
+        in: formData
+        name: Length
+        type: integer
+      - in: formData
+        name: Name
+        type: string
+      - in: formData
+        name: FileName
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Chart'
+      summary: "POST api/matches/dismatches\r\nUpload zip with metadata to store"
+      tags:
+      - Match
+  /api/matches/dismatches/ids:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      parameters:
+      - description: Object containing user and nodes ids to filter
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/MatchParameters'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "GET api/matches/dismatches/ids\r\nRetrieve all the dismatches in the\
+        \ db or filter the dismatches by specific nodes ids"
+      tags:
+      - Match
+  /api/matches/expand:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      parameters:
+      - description: Parameters to use for the search operation
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/SearchRequest'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "POST api/matches/expand\r\nReturns all the matches related to the\
+        \ entities in the input datacart"
+      tags:
+      - Match
+  /api/matches/ids:
+    post:
+      consumes:
+      - application/json
+      - text/json
+      - application/*+json
+      parameters:
+      - description: Object containing user and nodes ids to filter
+        in: body
+        name: body
+        schema:
+          $ref: '#/definitions/MatchParameters'
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart
+          schema:
+            type: string
+      summary: "GET api/matches/ids\r\nRetrieve all the matches in the db or filter\
+        \ the matches by specific nodes ids"
+      tags:
+      - Match
+  /api/users:
+    get:
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            items:
+              $ref: '#/definitions/User'
+            type: array
+      summary: "GET api/users/\r\nRetrieve the list of all the users"
+      tags:
+      - User
+  /api/users/claims/{user}:
+    get:
+      parameters:
+      - description: The username of the user to retrieve
+        in: path
+        name: user
+        required: true
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            items:
+              type: string
+            type: array
+      summary: GET api/users/claims/{user}
+      tags:
+      - User
+  /api/users/delete:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "<br>DCJ: a file *.json compressed in a zip file\r\n<br>dcjserialized:\
+        \ a string alternative to zip file, use only for small datacart"
+      parameters:
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      responses:
+        '200':
+          description: Success
+        '204':
+          description: The user has been deleted
+      summary: "POST api/users/delete\r\ndelete entit and links in datacart"
+      tags:
+      - User
+  /api/users/hierarchy:
+    get:
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            items:
+              type: string
+            type: array
+      summary: "GET api/users/hierarchy\r\nreturns the hierarchy"
+      tags:
+      - User
+  /api/users/insert:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "<br>DCJ: a file *.json compressed in a zip file\r\n<br>dcjserialized:\
+        \ a string alternative to zip file, use only for small datacart"
+      parameters:
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      responses:
+        '200':
+          description: Success
+        '204':
+          description: The user has been insert
+      summary: "POST api/users/insert\r\ninser entit and links in datacart"
+      tags:
+      - User
+  /api/users/update:
+    post:
+      consumes:
+      - multipart/form-data
+      description: "<br>DCJ: a file *.json compressed in a zip file\r\n<br>dcjserialized:\
+        \ a string alternative to zip file, use only for small datacart"
+      parameters:
+      - in: formData
+        name: dcj
+        type: file
+      - in: formData
+        name: dcjserialized
+        type: string
+      responses:
+        '200':
+          description: Success
+        '204':
+          description: The user has been update
+      summary: "POST api/user/update\r\ninser entit and links in datacart"
+      tags:
+      - User
+  /api/users/user/{username}:
+    get:
+      parameters:
+      - description: The username of the user to retrieve
+        in: path
+        name: username
+        required: true
+        type: string
+      - description: The username of the current user
+        in: query
+        name: user
+        type: string
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/User'
+      summary: "GET api/users/user/{username}\r\nRetrieve user with username"
+      tags:
+      - User
+schemes:
+- http
+- https
+servers:
+  url: 192.168.100.149:6510
+swagger: '2.0'

@@ -1,18 +1,19 @@
 import fitz  # PyMuPDF
 import re
 from langchain.text_splitter import TokenTextSplitter
+from transformers import AutoTokenizer
 from sentence_transformers import SentenceTransformer
-import FlexibleChunker as fc
 from langchain_community.utilities import SQLDatabase
 import logging
 import textwrap
 from sqlalchemy import text
+import FlexibleChunker as fc    
 
 class DocumentProcessor:
     def __init__(self, model_name="efederici/sentence-BERTino"):
         self.model = SentenceTransformer(model_name)
-        self.chunker = fc.FlexibleChunker(768)
         self.document_path=r"D:\RagApplications\Documenti\ManualeTETRAS_modificato2.pdf"
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 
     def extract_subtitles_and_text(self, start_page=0):
@@ -48,6 +49,17 @@ class DocumentProcessor:
         return subtitles_dict
 
 
+    def chunk_text(self, text, chunk_size=768,overlap_size=70): 
+        semantic_splitter = TokenTextSplitter(
+        chunk_size=chunk_size,    # Number of characters per chunk
+        chunk_overlap=overlap_size   # Overlap to preserve context
+        )
+        chunks = semantic_splitter.split_text(text)
+    
+        return chunks
+
+
+
     def generate_chunked_dictionaries(self, data_dict, chunk_size=768, overlap_percentage=[0.1, 0.2, 0.3]):
         
         dictList = []
@@ -58,22 +70,21 @@ class DocumentProcessor:
                 if len(text[1]) <= int(chunk_size*3.5):
                     chunked_subtitles_dict[subtitle] = [text[1]]
                 else:
-                    chunked_subtitles_dict[subtitle] = self.chunker.chunk_with_overlap(text[1], overlap_size=overlap)
+                    chunked_subtitles_dict[subtitle] = self.chunk_text(text[1], overlap_size=overlap)
             dictList.append(chunked_subtitles_dict)
         return dictList
         
 
     def generate_chunked_dictionary_ii(self, data_dict):
-        custom_chunker = fc.FlexibleChunker(128)
         chunked_subtitles_dict = data_dict.copy()
         for subtitle, text in data_dict.items():
-            document = self.chunker.chunk_text(text[1])
-            chunked_subtitles_dict[subtitle] = [(large_chunk, custom_chunker.chunk_with_overlap(large_chunk, 28)) for large_chunk in document]
+            document = self.chunk_text(text[1], chunk_size=768, overlap_size=0)
+            chunked_subtitles_dict[subtitle] = [(large_chunk, self.chunk_text(large_chunk,128, 28)) for large_chunk in document]
         return chunked_subtitles_dict
     
     def generate_question_dictionary(self, data_dict, chunk_size : int = 350):
 
-        chunker = fc.FlexibleChunker(target_chunk_size=chunk_size)
+        chunker = fc.FlexibleChunker(350)
 
         dict_for_questions = {}
 
@@ -81,7 +92,7 @@ class DocumentProcessor:
             dict_for_questions[subtitle] = chunker.chunk_text(text[1])
 
         for subtitle, text in dict_for_questions.items():
-            if chunker.count_tokens(text[-1]) < 100 and len(text) > 1:
+            if len(self.tokenizer.encode(text[-1])) < 100 and len(text) > 1:
                 text[-2] += " " + text[-1]
                 text.pop(-1)
         return dict_for_questions
@@ -205,29 +216,26 @@ class DocumentProcessor:
         subtitles_dict = self.extract_subtitles_and_text()
         logging.info("Extracted subtitles and text.")
 
-        question_dict = self.generate_question_dictionary(subtitles_dict, chunk_size=350)
-        logging.info("Generated question dictionary.")
+        response = input("Do you want to generate the chunked dictionary for the questions? (yes/no): ").strip().lower()
+        if response == 'yes':
+            question_dict = self.generate_question_dictionary(subtitles_dict, chunk_size=350)
+            logging.info("Generated question dictionary.")
+            for key, value in question_dict.items():
+                print(f"{key} :")
+                for start,v in enumerate(value,1):
+                    print(f"{start}: {len(v)}")
         
 
-        dict_list = self.generate_chunked_dictionaries(subtitles_dict)
-        logging.info("Generated chunked dictionaries.")
-        """""
-        for dict in dict_list:
-            for subtitle, chunks in dict.items():
-                print(f"Subtitle: {subtitle}")
-                for chunk in chunks:
-                    print(textwrap.fill(chunk, width=80))
-                    print("\n")
-        """
+        response = input("Do you want to generate the chunked dictionary? (yes/no): ").strip().lower()
+        if response == 'yes':
+            dict_list = self.generate_chunked_dictionaries(subtitles_dict)
+            logging.info("Generated chunked dictionaries.")
 
-        hybrid_dict = self.generate_chunked_dictionary_ii(subtitles_dict)
-        logging.info("Generated hybrid chunked dictionary.")
-        """
-        for subtitle, chunks in dict.items():
-                print(f"Subtitle: {subtitle}")
-                for chunk in chunks:
-                    print(textwrap.fill(chunk, width=80))
-                    print("\n")"""
+
+        response = input("Do you want to generate the hybrid chunked dictionary? (yes/no): ").strip().lower()
+        if response == 'yes':
+            hybrid_dict = self.generate_chunked_dictionary_ii(subtitles_dict)
+            logging.info("Generated hybrid chunked dictionary.")
         
         
         db1 = self.get_connection_to_sql_database(host="localhost", data_base_name="DBTestChunking1", username="postgres", password="578366")

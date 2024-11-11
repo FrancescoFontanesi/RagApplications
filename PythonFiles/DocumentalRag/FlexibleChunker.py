@@ -67,4 +67,3 @@ class FlexibleChunker:
             chunks.append(' '.join(current_chunk))
             
         return chunks
-

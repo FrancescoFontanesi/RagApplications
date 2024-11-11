@@ -2,6 +2,7 @@ import DataProcessing as dp
 import TestsAndStats as stats
 import LLMToolKit as llm
 import logging
+import json
 
 
     
@@ -20,9 +21,16 @@ def main():
 
     response = input("Start test evaluations and stats generation(yes/no): ").strip().lower()
     if response == 'yes':
-        #Generate questions
-        questions_dict = QuestionGenerator.generate_questions_from_chunks(dictionary_for_questions)
-        logging.info("Generated question dictionary.")
+        questions_dict = {}
+        try:
+            with open("question.json", "r") as f:
+                questions_dict = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            questions_dict = QuestionGenerator.generate_questions_from_chunks(dictionary_for_questions)
+            with open("question.json", "w") as f:
+                json.dump(questions_dict, f)
+        
+        logging.info("Loaded question dictionary.")
         
 
         #TestQueries

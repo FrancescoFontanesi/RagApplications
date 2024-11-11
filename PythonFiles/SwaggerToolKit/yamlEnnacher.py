@@ -58,10 +58,12 @@ class SwaggerEnhancer:
 def main():
     # Create an instance of SwaggerEnhancer and process the swagger file
     enhancer = SwaggerEnhancer(SWAGGER_URL)
-    enhancer.fetch_swagger_json()\
+    """enhancer.fetch_swagger_json()\
             .convert_to_yaml()\
             .enhance_yaml()\
-            .save_to_file()
+            .save_to_file()"""
+            
+    
 
 if __name__ == "__main__":
     main()
