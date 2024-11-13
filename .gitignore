@@ -5,7 +5,7 @@ foto/
 Langflow/
 venv/
 vpn/
-PythonFiles/DataGenerationForTesting
+PythonFiles/DataGenerationForTesting/venv
 PythonFiles/DocumentalRag/.venv_DocumentalRag
 PythonFiles/SwaggerToolKit/.venv
 PythonFiles/SwaggerToolKit/__pycache__
