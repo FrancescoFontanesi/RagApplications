@@ -1,0 +1,873 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Graph REST Service API",
+    "description": "Graph Service ASP.NET Core Web API",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "S&A Sistemi & Automazione srl",
+      "url": "https://sealink.it/",
+      "email": ""
+    },
+    "license": {
+      "name": "Use under LICX",
+      "url": "https://example.com/license"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "192.168.100.149:6510"
+    }
+  ],
+  "paths": {
+    "/api/graphs": {
+      "get": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "GET api/graphs/\r\nRetrieve the list of chart for specific user",
+        "parameters": [
+          {
+            "name": "destination",
+            "in": "query",
+            "description": "STAGE/STORE: which kind of persistence was used to save the charts",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Here is a clear and natural language description of the API endpoint:\n\n**Retrieve Charts for Specific User**\n\nThe `/api/graphs` endpoint allows you to retrieve a list of charts associated with a specific user. This endpoint provides access to visual representations of data, such as graphs and charts, that are relevant to a particular user's interests or activities.\n\n**Parameters:**\n\n* **destination**: This optional parameter specifies the type of persistence used to save the charts. It can take on one of two values:\n\t+ \"STAGE\": indicates that the charts were saved in a temporary storage area.\n\t+ \"STORE\": indicates that the charts were saved in a permanent storage area.\n\n**Expected Response:**\n\nWhen you make a GET request to `/api/graphs`, you will receive an array of chart objects. Each chart object contains information about a specific chart, such as its title, data points, and other relevant details. The response can be returned in one of three formats:\n\n* Text/plain\n* Application/json\n* Text/json\n\n**Important Notes:**\n\n* This endpoint is designed to retrieve charts for a specific user. If you need to retrieve charts for multiple users, please contact our support team for guidance.\n* The `destination` parameter is optional and only needed if you want to specify the type of persistence used to save the charts.\n\nBy following these guidelines, you should be able to use this endpoint to retrieve the list of charts associated with a specific user. If you have any questions or need further assistance, please don't hesitate to reach out!",
+        "x-description-generated": true
+      },
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/\r\nUpload datcart (zip/dcj string) with metadata to store or stage",
+        "description": "Here is a clear natural language description for the API endpoint:\n\n**Create or Update a Graph**\n\nThis API endpoint allows you to upload data and metadata to create or update a graph. A graph represents a visual representation of data, such as charts and plots.\n\n**What does this endpoint do?**\n\nWhen you call this endpoint with a valid dataset (in the form of a zip file or a string), it will process the data and store it in our system. If the data is successfully stored, we will return a confirmation message with details about the newly created graph.\n\n**No parameters are required for this endpoint.**\n\nHowever, you must provide a valid dataset as part of the request body. The dataset can be in one of two formats:\n\n* A zip file containing the data\n* A string representing the data\n\nPlease note that the format and structure of the dataset is specific to our system, and we cannot guarantee successful processing if the data is not formatted correctly.\n\n**What response can I expect?**\n\nIf the request is successful, we will return a 201 Created status code with details about the newly created graph in one of the following formats:\n\n* Text/plain\n* Application/json\n* Text/json\n\nThe response body will contain a JSON object representing the graph, which includes its metadata and other relevant information.\n\n**Important notes**\n\nPlease ensure that you have the necessary permissions to access this endpoint. Additionally, be aware that large datasets may take some time to process, so please plan accordingly. If you encounter any issues or errors during processing, we will return an error message with details about what went wrong.",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "destination": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "dcj": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "dcjserialized": {
+                    "type": "string"
+                  },
+                  "centralElement": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "All the items have been added/edited",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Chart"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Chart"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Chart"
+                }
+              }
+            }
+          }
+        },
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/properties": {
+      "get": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "GET api/graphs/properties\r\nRetrieve the list of properties in the DB for all the nodes",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Here is a clear natural language description for this API endpoint:\n\n**Retrieve Node Properties**\n\nThis API endpoint allows you to retrieve a list of properties associated with all nodes in the database. The purpose of this endpoint is to provide access to the metadata and attributes stored for each node, enabling you to understand the characteristics and relationships between different entities.\n\n**What does it do?**\n\nWhen you call this endpoint, it returns an array of strings representing the properties available for each node in the database. This information can be used to inform business decisions, data analysis, or other applications that rely on understanding the attributes and metadata associated with nodes.\n\n**No Parameters Required**\n\nThis endpoint does not require any parameters to be passed. Simply calling the URL `/api/graphs/properties` will retrieve the list of properties for all nodes in the database.\n\n**Expected Response**\n\nThe response from this endpoint is an array of strings, which can be returned in various formats (text/plain, application/json, or text/json). The response will contain a list of property names associated with each node, allowing you to access and utilize this information as needed.\n\n**Important Notes**\n\n* This endpoint is designed for retrieving properties for all nodes in the database. If you need to retrieve properties for specific nodes, please refer to other API endpoints.\n* The returned array of strings represents the properties available for each node. You can use this information to inform your application or business decisions.\n\nI hope this description helps! Let me know if you have any further questions or need additional clarification.",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/{chartId}": {
+      "get": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "GET api/graphs/{chartid}\r\nRetrieve chart content with chartid",
+        "parameters": [
+          {
+            "name": "chartId",
+            "in": "path",
+            "description": "The id of the chart to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              }
+            }
+          }
+        },
+        "description": "Here is a clear natural language description for this API endpoint:\n\n**Retrieve Chart Content**\n\nThis API endpoint allows you to retrieve the content of a specific chart by its unique identifier.\n\n**What does it do?**\n\nWhen you call this endpoint with the ID of the chart you want to view, it will return the detailed information about that chart in a format that can be easily read and understood. This includes any data, settings, or other relevant details associated with the chart.\n\n**Required Parameter: Chart ID**\n\n* **Name:** `chartId`\n* **Description:** The unique identifier of the chart you want to retrieve.\n* **Data Type:** A string (text) value.\n* **Business Impact:** Providing the correct chart ID is essential for retrieving the right chart content. Without it, the endpoint will not function correctly.\n\n**Expected Response**\n\nWhen the endpoint successfully retrieves the chart content, it will return a response in one of three formats: plain text, JSON, or JSON text. The response will contain detailed information about the chart, including any relevant data and settings.\n\n**Important Notes**\n\n* Make sure to provide the correct `chartId` value when calling this endpoint.\n* This endpoint is part of the \"Graph\" API tag, which means it's related to working with charts in your application.\n* If you encounter any issues or errors while using this endpoint, please refer to our API documentation and support resources for assistance.",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/deleteChart/{chartId}": {
+      "delete": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "DELETE api/graphs/deleteChart/{chartId}\r\nDelete chart using chartId",
+        "description": "Here is a clear natural language description for this API endpoint:\n\n**Delete Chart Endpoint**\n\nThis endpoint allows you to permanently delete a chart from your graph collection.\n\n**What it does**\n\nWhen you call this endpoint, it will remove the specified chart from your database. This action cannot be undone, so use caution when deleting charts.\n\n**Required Parameter: chartId**\n\n* **Name:** chartId\n* **Description:** The unique identifier of the chart you want to delete.\n* **Type:** String (text)\n* **Importance:** Required - you must provide a valid chart ID to delete a chart.\n* **Format:** A string containing the chart's ID.\n\n**Expected Response**\n\nWhen you successfully call this endpoint, you will receive one of two responses:\n\n* **200 Success**: This indicates that your request was received and processed correctly. However, it does not confirm whether the chart was actually deleted (since deletion is a permanent action).\n* **204 No Content**: This response confirms that the chart has been permanently deleted from your graph collection.\n\n**Important Notes**\n\n* Be careful when deleting charts, as this action cannot be undone.\n* Make sure you have the correct chart ID to avoid errors or unintended consequences.",
+        "parameters": [
+          {
+            "name": "chartId",
+            "in": "path",
+            "description": "The id of the chart to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {}
+          },
+          "204": {
+            "description": "The chart has been deleted",
+            "content": {}
+          }
+        },
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/delete": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/delete\r\nDelete items from the db or delete their reference from charts",
+        "description": "Here is a clear natural language description for this API endpoint:\n\n**Delete Graph Items**\n\nThe `POST /api/graphs/delete` endpoint allows you to delete items from the database or remove their reference from charts. This can be useful when you want to remove outdated or unnecessary data from your system.\n\n**What happens when I use this endpoint?**\n\nWhen you send a request to this endpoint, it will attempt to delete all the specified items from the database or remove their reference from charts. If successful, you will receive a response indicating that all items have been deleted.\n\n**Expected Response**\n\nIf the deletion is successful, you can expect a response with a status code of 200 and a message indicating that all items have been deleted. The response body will contain a string message confirming the deletion.\n\nHowever, if some items cannot be deleted due to errors or conflicts, you may receive a response with a status code of 206. In this case, the response body will contain a list of items that could not be deleted, along with a custom property `ERROR_MESSAGE` that provides more information about the cause of the error.\n\n**Important Notes**\n\n* This endpoint requires no parameters to be passed.\n* The endpoint is designed for deleting items from the database or removing their reference from charts. Be cautious when using this endpoint, as it can permanently remove data from your system.\n* If you encounter any issues or errors while using this endpoint, please refer to the response body for more information about the cause of the error.\n\nI hope this description helps! Let me know if you have any further questions or need clarification on any points.",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "groupId": {
+                    "type": "string"
+                  },
+                  "dcj": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "dcjserialized": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "All the items have been deleted",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Some of the items could not be deleted, the response contains a dcj with that items and, inside each one a custom property ERROR_MESSAGE with the cause",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/search": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/search\r\nPerform search using the datacart in the requestParameters",
+        "description": "Here is a clear natural language description for this API endpoint:\n\n**Search Graphs Endpoint**\n\nThe Search Graphs endpoint allows you to perform a search across all graphs in your system. This endpoint takes a data cart as input and returns the results of the search, represented as a DCJ (Data Cart Join) string.\n\n**What it does:**\n\nUsing the data cart provided in the request, this endpoint searches for relevant information across all graphs in your system. The search results are then returned to you in the form of a DCJ string.\n\n**No parameters required:**\n\nThis endpoint does not require any specific parameters to be passed in the request. Simply include the data cart containing the search criteria in the request body, and the endpoint will perform the search.\n\n**Expected response:**\n\nIf the search is successful, this endpoint returns a DCJ string representing the results of the search. The response will be in one of three formats:\n\n* Plain text (text/plain)\n* JSON format (application/json)\n* Text/JSON format (text/json)\n\nAll responses will contain a single string value.\n\n**Important notes:**\n\n* Make sure to include the data cart containing the search criteria in the request body.\n* The response will be a DCJ string representing the results of the search.",
+        "requestBody": {
+          "description": "Parameters to use for the search operation",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/list": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/list\r\nRetrieve the list of chart for specific user and value",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "description": "Here is a clear natural language description for this API endpoint:\n\n**Retrieve Chart List**\n\nThis API endpoint allows you to retrieve a list of charts associated with a specific user and value. You can use this endpoint to get an overview of the charts available to a particular user, which can be useful for managing and analyzing data.\n\n**No Parameters Required**\n\nThere are no parameters required to call this endpoint. Simply making a POST request to `/api/graphs/list` will return the list of charts.\n\n**Expected Response**\n\nA successful response will contain an array of chart objects. Each chart object will include information such as the chart's ID, name, and other relevant details. The response will be in JSON format by default, but can also be returned in plain text or JSON text formats.\n\n**Example Use Case**\n\nFor example, if you want to retrieve a list of charts for a specific user with ID 123, you would make a POST request to `/api/graphs/list` without any parameters. The response will contain an array of chart objects associated with that user.\n\nNote: This endpoint is designed for retrieving a list of charts and does not require any input parameters. If you need to filter or sort the chart list based on specific criteria, please contact our support team for further assistance.",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/list-linked": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/list-linked\r\nRetrieve the list of types' entities that are linked with entities for specific user and value",
+        "description": "Here is a clear natural language description for this API endpoint:\n\n**Retrieve Linked Entities**\n\nThis API endpoint allows you to retrieve the list of entities that are linked with specific types' entities for a given user and value.\n\n**What it does in business terms:**\n\nWhen a user wants to see which entities are related or connected to specific types of entities, they can use this endpoint to get a list of those linked entities. This is useful for understanding the relationships between different data points and making informed decisions.\n\n**No parameters required:**\n\nThere are no parameters that need to be passed in with your request. Simply sending a POST request to this endpoint will retrieve the list of linked entities.\n\n**Expected response:**\n\nThe response will be a string containing the list of linked entities. The format can be either plain text, JSON, or JSON text, depending on how you have configured your API client.\n\n**Important notes about usage:**\n\n* This endpoint is designed for retrieving information and does not modify any data.\n* Make sure to handle errors and exceptions properly in your application code.\n* If you need help with configuring your API client or troubleshooting issues, please refer to our documentation and support resources.",
+        "requestBody": {
+          "description": "the parameters for the search",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/list-nodes": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/list-nodes\r\nRetrieve the list of nodes for specific value",
+        "description": "Here is a clear and natural language description for the API endpoint:\n\n**Retrieve Node List**\n\nThis API endpoint allows you to retrieve a list of nodes related to a specific value.\n\n**What it does:**\n\nUsing this endpoint, you can obtain a list of nodes that match a particular criteria. This is useful when you need to understand the structure or hierarchy of data within your system.\n\n**No Parameters Required**\n\nThere are no parameters required for this endpoint, which means you don't need to provide any additional information to retrieve the node list.\n\n**Expected Response:**\n\nWhen you make a successful request using this endpoint, you will receive a response in one of the following formats:\n\n* Text/plain\n* Application/json\n* Text/json\n\nThe response will contain a string value representing the result datacart, which is a specific type of data cart used by the system.\n\n**Important Notes:**\n\n* This endpoint returns a list of nodes related to a specific value. If you're unsure what this means in your business context, please consult with your technical team or documentation.\n* Make sure to handle any errors that may occur during the request process, as they will be returned in the response.\n* Always verify the format and structure of the response data before using it in your application.\n\nI hope this description helps! Let me know if you have any further questions.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/expand": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/expand\r\nRetrieve the list of nodes linked to nodes with specific key and the respective links",
+        "requestBody": {
+          "description": "The request object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "description": "Here is a clear natural language description for the API endpoint:\n\n**Expand Graph Endpoint**\n\nThe Expand Graph endpoint allows you to retrieve a list of nodes linked to specific nodes in your graph, along with the respective links between them.\n\n**What does it do?**\n\nThis endpoint helps you to navigate and understand the relationships within your graph by providing a list of connected nodes. This can be useful for various business purposes such as:\n\n* Identifying related entities or events\n* Building network visualizations\n* Analyzing data connections\n\n**No parameters required**\n\nThere are no parameters required for this endpoint, making it easy to use.\n\n**Expected Response**\n\nWhen you call the Expand Graph endpoint, you will receive a response in one of the following formats: text/plain, application/json, or text/json. The response will contain a string value representing the dcj (data cart) of the result datacart.\n\n**Important Notes**\n\n* Make sure to handle errors and exceptions properly when using this endpoint.\n* This endpoint is part of the Graph API, which provides various features for working with graphs.\n* If you have any questions or need further assistance, please don't hesitate to reach out.",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/neighbors-frequency": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/neighbors-frequency\r\nRetrieve the neighbors of the nodes in the datacart and the frequency of their links",
+        "requestBody": {
+          "description": "The request object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "description": "Here is a clear natural language description for this API endpoint:\n\n**Retrieve Neighbor Information and Link Frequency**\n\nThis API endpoint allows you to retrieve information about the neighboring nodes in your data graph and the frequency of their connections. By sending a POST request to `/api/graphs/neighbors-frequency`, you can get detailed insights into how different nodes are connected, which is essential for understanding complex relationships within your data.\n\n**No Parameters Required**\n\nThere are no parameters required for this endpoint, making it easy to use without needing to specify any additional information.\n\n**Expected Response**\n\nWhen the request is successful (200 status code), the API will return a string value representing the result of the operation. This response can be provided in plain text, JSON format, or as a JSON object, depending on your specific needs.\n\n**Important Notes**\n\nPlease note that this endpoint is designed for retrieving information about the neighbors and link frequency within your data graph. It does not modify any existing data or create new nodes or links. If you need to update or add new data, please use other API endpoints specifically designed for those purposes.\n\nBy using this endpoint, you can gain valuable insights into the structure of your data graph, which is essential for making informed decisions and optimizing your data-driven processes.",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/expandCluster": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/expandCluster\r\nExpand cluster by ids",
+        "requestBody": {
+          "description": "Params to use for the expansion",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "description": "Here is a clear natural language description for the API endpoint:\n\n**Expand Cluster**\n\nThe `POST /api/graphs/expandCluster` endpoint allows you to expand a cluster by adding new nodes and relationships. This operation is used to grow or modify an existing graph structure.\n\n**What does it do?**\n\nWhen you call this endpoint, you're essentially asking the system to add more data points (nodes) and connections (relationships) to an existing cluster. This can be useful when you want to include additional information or expand the scope of your analysis.\n\n**No parameters are required for this operation.**\n\nHowever, please note that in a future release, we may require specific IDs as input to identify the cluster you'd like to expand. For now, simply sending an empty request will trigger the expansion process using default settings.\n\n**Response**\n\nThe endpoint returns a success message with detailed information about the expanded chart structure. The response format is either JSON or plain text, and it includes the following data:\n\n* Chart ID: A unique identifier for the newly expanded chart.\n* Node count: The total number of nodes (data points) in the updated graph.\n* Relationship count: The total number of connections between nodes.\n\n**Important notes**\n\nPlease be aware that expanding a cluster can significantly increase the size and complexity of your graph. Make sure you have sufficient resources and permissions to handle the resulting data before proceeding with this operation. Additionally, if you're unsure about any aspect of this endpoint or its usage, please consult our documentation or reach out to our support team for assistance.",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/graph-to-query": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/graph-to-query\r\nRetrieves all the subgraphs in the db that have the same pattern as the input graph",
+        "description": "Here is a clear and natural language description of the API endpoint:\n\n**Retrieving Similar Graphs**\n\nThis API endpoint allows you to retrieve all subgraphs in the database that have the same pattern as the input graph. This can be useful for identifying related data or finding similar patterns within your dataset.\n\n**No Parameters Required**\n\nThere are no parameters required for this endpoint, making it easy to use and minimizing the amount of data you need to provide.\n\n**Expected Response**\n\nWhen you make a request to this endpoint, you will receive a response in one of three formats: plain text, JSON, or JSON with a text payload. The response will contain a string value representing the dcj (data cart) of the result datacart.\n\n**Important Notes**\n\n* This endpoint is part of the Graph API, which provides functionality for working with graph data.\n* Make sure to authenticate your request before calling this endpoint, as it requires access to the database.\n* The response may contain a large amount of data if there are many subgraphs that match the input pattern. Be prepared to handle this in your application.\n\nBy following these guidelines and using this API endpoint, you can easily retrieve similar graphs from your dataset and gain valuable insights into your data.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/similar": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/similar\r\nGet graph with entities that are similar to the ones provided in the input graph",
+        "requestBody": {
+          "description": "Params to use for the expansion",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "description": "Here is a clear natural language description for this API endpoint:\n\n**Get Similar Graphs**\n\nThis API endpoint allows you to retrieve a graph that contains entities similar to the ones provided in your input graph. This can be useful when you want to explore related data or find new connections.\n\n**What it does:**\n\nWhen you send a POST request to this endpoint with your input graph, we will analyze it and return a new graph that includes entities that are similar to those in your original graph. The resulting graph is based on the concept of \"similarity\" which can be influenced by various factors such as entity relationships, attributes, and other relevant data.\n\n**No parameters required:**\n\nThis endpoint does not require any input parameters. Simply send a POST request with an empty body or no additional data to retrieve the similar graph.\n\n**Response:**\n\nThe response will be in one of three formats:\n\n* Text/plain\n* Application/json\n* Text/json\n\nEach format will contain a string value representing the DCJ (Data Cart) of the result data cart, which is a unique identifier for the returned graph. This allows you to reference and work with the resulting graph in your application.\n\n**Important notes:**\n\nPlease note that this endpoint is part of the Graph API, which means it's designed to handle large datasets and complex relationships between entities. Be aware of any usage limits or requirements when working with this endpoint to ensure optimal performance.",
+        "x-description-generated": true
+      }
+    },
+    "/api/graphs/searchByParams": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/searchByParams\r\nPerform search using the requestParameters",
+        "requestBody": {
+          "description": "Parameters to use for the search operation",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body",
+        "description": "Here is a clear and natural language description for the API endpoint:\n\n**Search Graphs by Parameters**\n\nThis API endpoint allows you to search for graphs based on specific parameters. You can use this endpoint to find relevant graph data by specifying certain criteria.\n\n**What it does**\n\nWhen you send a request to this endpoint, it will perform a search using the parameters you provide. The search results will be returned in a standardized format, which can be easily consumed and used for further analysis or visualization.\n\n**Parameters**\n\nTo use this endpoint, you need to specify the following parameters:\n\n* **None**: There are no required parameters for this endpoint. You can simply send an empty request body if you don't want to provide any specific criteria.\n* **Optional Parameters**: If you want to filter the search results further, you can include optional parameters such as `filter1`, `filter2`, etc. These parameters will be used to narrow down the search results.\n\n**Data Type and Format**\n\nThe data type for each parameter is specified in the API documentation. Please refer to the technical details section for more information on the expected format and data types.\n\n**Business Impact/Importance**\n\nUsing this endpoint can help you find relevant graph data quickly and efficiently, which can be useful for various business purposes such as data analysis, visualization, or reporting.\n\n**Expected Response**\n\nIf the search is successful, the API will return a response in one of the following formats:\n\n* Text/plain\n* Application/json\n* Text/json\n\nThe response will contain the DCJ (Data Cart) of the result data cart, which can be used for further analysis or visualization.\n\n**Important Notes**\n\nPlease note that this endpoint may have usage limits or restrictions. Please refer to the API documentation and guidelines for more information on how to use this endpoint correctly and efficiently.",
+        "x-description-generated": true
+      }
+    }
+  }
+}

@@ -1,1762 +1,848 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Graph REST Service API",
+    "description": "Graph Service ASP.NET Core Web API",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "S&A Sistemi & Automazione srl",
+      "url": "https://sealink.it/",
+      "email": ""
+    },
+    "license": {
+      "name": "Use under LICX",
+      "url": "https://example.com/license"
+    },
+    "version": "v1"
+  },
+  "servers": [
     {
-        "swagger": "2.0",
-        "info": {
-        "title": "Graph REST Service API",
-        "description": "Graph Service ASP.NET Core Web API",
-        "termsOfService": "https://example.com/terms",
-        "contact": {
-            "name": "S&A Sistemi & Automazione srl",
-            "url": "https://sealink.it/",
-            "email": ""
-        },
-        "license": {
-            "name": "Use under LICX",
-            "url": "https://example.com/license"
-        },
-        "version": "v1"
-        },
-        "servers":{ "url": "192.168.100.149:6510"},
-        "schemes": [
-        "http",
-        "https"
-        ],
-        "paths": {
-        "/api/analyze": {
-            "get": {
-            "tags": [
-                "Analyzer"
-            ],
-            "summary": "GET api/analyze\r\nRetrieves the list of all the available analyzers",
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "array",
-                    "items": {
-                    "type": "string"
-                    }
-                }
-                }
-            }
-            }
-        },
-        "/api/analyze/{destination}/{tool}/{operation}": {
-            "post": {
-            "tags": [
-                "Analyzer"
-            ],
-            "summary": "POST api/analyze/{stage|store}/{tool}/{operation}",
-            "description": "Perform analysis on stage or store with specific tool and action\r\n    \u003Cbr\u003EparametersString\u003Cbr\u003E\r\n    string that contains a deserialized json of it.sealink.graphmodel.Models.SearchRequest\r\n    {\r\n        Parameters: {\r\n            // filters for the search operation (if using charts saved on db)\r\n            IncludeCharts: bool,\r\n            ChartIds: string[],\r\n            NodeFilter: null,\r\n            IncludeNeighbours: bool,\r\n            LinkFilter: null,\r\n            IncludeEnds: bool,\r\n            params: {\r\n                async: \"bool\", // always false for GRAPH analyzer\r\n                // KPaths params\r\n                fromVertexId: \"string\" // starting entity id of the path for KPaths\r\n                fromVertexType: \"string\", // starting entity type of the path for KPaths\r\n                toVertexId: \"string\", // target entity id of the path for KPaths\r\n                toVertexType: \"string\", // entity type of the path for KPaths\r\n                depth: int // OPTIONAL, default 3 - depth of the path for KPaths \r\n            }\r\n        },\r\n        User: \"string\" // username of the current user\r\n    }\r\n    \u003Cbr\u003Edcj\u003Cbr\u003E\r\n    file named dcj.json compressed in a zip file\r\n    ",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "path",
-                "name": "destination",
-                "description": "STAGE/STORE: which kind of persistence was used to save the chart (if dcj field is filled -\u003E STORE)",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "in": "path",
-                "name": "tool",
-                "description": "The analyzer's code (available at GET api/analyze)",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "in": "path",
-                "name": "operation",
-                "description": "The algorithm chosen\r\n            \u003Cbr\u003E\r\n            Available algorithms for the SNA analyzer: \"PageRank\", \"Betweeness\", \"ConnectedComponents\", \"WeaklyConnectedComponents\", \"HITS\", \"EffectiveCloseness\", \"SingleSourceShortestPath\", \"StronglyConnectedComponents\", \"LabelPropagation\", \"SpeakerListenerLabelPropagation\"\r\n            \u003Cbr\u003E\r\n            Available algorithms for the GRAPH analyzer: \"KPaths\"\r\n            ",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "parametersString",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "ContentType",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "ContentDisposition",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "Headers",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "Length",
-                "type": "integer",
-                "format": "int64"
-                },
-                {
-                "in": "formData",
-                "name": "Name",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "FileName",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the results of the analysis",
-                "schema": {
-                    "$ref": "#/definitions/AnalyzerResponse"
-                }
-                }
-            }
-            }
-        },
-        "/api/analyze/status/{taskId}": {
-            "get": {
-            "tags": [
-                "Analyzer"
-            ],
-            "summary": "POST api/analyze/status/{taskId}",
-            "description": "ONLY AVAILABLE FOR SNA analyzer\r\n            Perform analysis on stage or store with specific tool and action\r\n            \u003Cbr\u003ETASKID: The task id returned by the POST api/analyze request\u003Cbr\u003EUSER: The username of the user who launched the algorithm",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "path",
-                "name": "taskId",
-                "description": "The task id returned by the POST api/analyze request",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "user",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the status of the task",
-                "schema": {
-                    "$ref": "#/definitions/AnalyzerResponse"
-                }
-                }
-            }
-            }
-        },
-        "/api/datapermission/visibility": {
-            "post": {
-            "tags": [
-                "DataPermissions"
-            ],
-            "summary": "POST api/datapermission/visibility\r\nReturns the filtered data cart based on the visibility of the elements",
-            "description": "\u003Cbr\u003Edcj: a file .json compressed in a zip file\r\n\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/datapermission/moveability": {
-            "post": {
-            "tags": [
-                "DataPermissions"
-            ],
-            "summary": "POST api/datapermission/moveability\r\nReturns the filtered data cart based on the moveability of the elements",
-            "description": "\u003Cbr\u003Edcj: a file .json compressed in a zip file\r\n\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/datapermission/deletability": {
-            "post": {
-            "tags": [
-                "DataPermissions"
-            ],
-            "summary": "POST api/datapermission/deletability\r\nReturns the deletability of element of the visible element od data cart adding the custom property \"deletable\"",
-            "description": "\u003Cbr\u003Edcj: a file .json compressed in a zip file\r\n\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/datapermission/updatability": {
-            "post": {
-            "tags": [
-                "DataPermissions"
-            ],
-            "summary": "POST api/datapermission/updability\r\nReturns the updability of element of the data cart adding the custom property \"updatable\"",
-            "description": "\u003Cbr\u003Edcj: a file .json compressed in a zip file\r\n\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/datapermission": {
-            "post": {
-            "tags": [
-                "DataPermissions"
-            ],
-            "summary": "POST api/datapermission\r\nReturns the updability and deletability of visible element of the data cart adding the custom property \"updatable\" and \"deletable\"",
-            "description": "\u003Cbr\u003Edcj: a file .json compressed in a zip file\r\n\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/datamodel/dmj": {
-            "get": {
-            "tags": [
-                "Datamodel"
-            ],
-            "summary": "GET api/datamodel/dmj\r\nRetrieve the datamodel as dmj",
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "query",
-                "name": "type",
-                "description": "",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs": {
-            "get": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "GET api/graphs/\r\nRetrieve the list of chart for specific user",
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "query",
-                "name": "destination",
-                "description": "STAGE/STORE: which kind of persistence was used to save the charts",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "array",
-                    "items": {
-                    "$ref": "#/definitions/Chart"
-                    }
-                }
-                }
-            }
-            },
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/\r\nUpload datcart (zip/dcj string) with metadata to store or stage",
-            "description": "The entities/links in the datacart will be saved in the db, if the entity/link is already in the db, its MERGEMODE will be used to proceed\r\n    - MERGEMODE.MERGE -\u003E update the item with the properties unified (ex.: if a property in common is text it will be concatenated)\r\n    - MERGEMODE.SKIP -\u003E do not update the object in the db\r\n    - else -\u003E substitute the object in the db with the new one\r\nIf the id is specified, the chart will be updated, otherwise a new chart will be created\r\n    \u003Cbr\u003EDESTINATION: STAGE/STORE: which kind of persistence to use to save the chart\u003Cbr\u003ENAME: the name to associate the chart with (use for a new chart). If null, the items are saved without a chart reference or the id is used\u003Cbr\u003EID: the id the chart is associated to (use for edit purposes, it is more important than 'name')\u003Cbr\u003EDCJ: a file named dcj.json compressed in a zip file\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart\u003Cbr\u003EcentralElement: a string containing the dcj of the central entity",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "destination",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "name",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "id",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "centralElement",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "201": {
-                "description": "All the items have been added/edited",
-                "schema": {
-                    "$ref": "#/definitions/Chart"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/properties": {
-            "get": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "GET api/graphs/properties\r\nRetrieve the list of properties in the DB for all the nodes",
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "array",
-                    "items": {
-                    "type": "string"
-                    }
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/{chartId}": {
-            "get": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "GET api/graphs/{chartid}\r\nRetrieve chart content with chartid",
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "path",
-                "name": "chartId",
-                "description": "The id of the chart to retrieve",
-                "required": true,
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "$ref": "#/definitions/ChartDetails"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/deleteChart/{chartId}": {
-            "delete": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "DELETE api/graphs/deleteChart/{chartId}\r\nDelete chart using chartId",
-            "description": "Only the chart object and its chartitems will be deleted, the entities/links in the chart will remain in the db",
-            "parameters": [
-                {
-                "in": "path",
-                "name": "chartId",
-                "description": "The id of the chart to delete",
-                "required": true,
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success"
-                },
-                "204": {
-                "description": "The chart has been deleted"
-                }
-            }
-            }
-        },
-        "/api/graphs/delete": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/delete\r\nDelete items from the db or delete their reference from charts",
-            "description": "If id is specified, remove the chartitems that link the chart with the entities/links in the datacart\r\nElse delete the items inside the datacart from the db\r\n    \u003Cbr\u003Eid: the id of the chart to unlink the entities/links from\u003Cbr\u003EgroupId: the id of the group to unlink the entities/links from\u003Cbr\u003Edcj: a file named dcj.json compressed in a zip file\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "id",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "groupId",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "All the items have been deleted",
-                "schema": {
-                    "type": "string"
-                }
-                },
-                "206": {
-                "description": "Some of the items could not be deleted, the response contains a dcj with that items and, inside each one a custom property ERROR_MESSAGE with the cause",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/search": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/search\r\nPerform search using the datacart in the requestParameters",
-            "description": "For each entity in the datacart, the search will return all the entities in the db that have the same properties (except for the key) as it has\r\nFor text fields, it performs a LIKE query using these wildcards\r\n    `_`: A single arbitrary character\r\n    `%`: Zero, one or many arbitrary characters\r\n    `\\\\_`: A literal underscore\r\n    `\\\\%`: A literal percent sign\r\nFor other fields' types it performs an exact match\r\nFor fields that have a RANGE SearchInputType it uses the properties\r\n    - {propertyName}__START: the start of the range\r\n    - {propertyName}__END: the end of the range",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "Parameters to use for the search operation",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/list": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/list\r\nRetrieve the list of chart for specific user and value",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "array",
-                    "items": {
-                    "$ref": "#/definitions/Chart"
-                    }
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/list-linked": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/list-linked\r\nRetrieve the list of types' entities that are linked with entities for specific user and value",
-            "description": "To retrieve all the entities of type 'Nota' that contain an entity with a specific value\r\n   search for that value in the 'Query' field and set the 'Types' field to the list of types you want to retrieve ex: ['Nota']",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "the parameters for the search",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/list-nodes": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/list-nodes\r\nRetrieve the list of nodes for specific value",
-            "description": "It performs a LIKE query on all the properties' values using these wildcards\r\n    `_`: A single arbitrary character\r\n    `%`: Zero, one or many arbitrary characters\r\n    `\\\\_`: A literal underscore\r\n    `\\\\%`: A literal percent sign",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/expand": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/expand\r\nRetrieve the list of nodes linked to nodes with specific key and the respective links",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "The request object",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/neighbors-frequency": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/neighbors-frequency\r\nRetrieve the neighbors of the nodes in the datacart and the frequency of their links",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "The request object",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/expandCluster": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/expandCluster\r\nExpand cluster by ids",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "Params to use for the expansion",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "$ref": "#/definitions/ChartDetails"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/graph-to-query": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/graph-to-query\r\nRetrieves all the subgraphs in the db that have the same pattern as the input graph",
-            "description": "The datacart in the result is the union of all the datacarts of the subgraphs\r\nEach item in the datacart has a custom property 'GRS_IN_PATHS' that contains an array of strings which identify the paths where that item is present",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/similar": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/similar\r\nGet graph with entities that are similar to the ones provided in the input graph",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "Params to use for the expansion",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/graphs/searchByParams": {
-            "post": {
-            "tags": [
-                "Graph"
-            ],
-            "summary": "POST api/graphs/searchByParams\r\nPerform search using the requestParameters",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "Parameters to use for the search operation",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/matches": {
-            "post": {
-            "tags": [
-                "Match"
-            ],
-            "summary": "POST api/matches\r\nUpload zip with metadata to store",
-            "description": "\u003Cbr\u003EDCJ: a file named dcj.json containing all the links (matches) compressed in a zip file",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "ContentType",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "ContentDisposition",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "Headers",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "Length",
-                "type": "integer",
-                "format": "int64"
-                },
-                {
-                "in": "formData",
-                "name": "Name",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "FileName",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "$ref": "#/definitions/Chart"
-                }
-                }
-            }
-            }
-        },
-        "/api/matches/delete": {
-            "post": {
-            "tags": [
-                "Match"
-            ],
-            "summary": "POST api/matches/delete\r\nUpload zip with metadata to store",
-            "description": "\u003Cbr\u003EDCJ: a file named dcj.json containing all the links (matches) compressed in a zip file",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "ContentType",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "ContentDisposition",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "Headers",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "Length",
-                "type": "integer",
-                "format": "int64"
-                },
-                {
-                "in": "formData",
-                "name": "Name",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "FileName",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "$ref": "#/definitions/Chart"
-                }
-                }
-            }
-            }
-        },
-        "/api/matches/ids": {
-            "post": {
-            "tags": [
-                "Match"
-            ],
-            "summary": "GET api/matches/ids\r\nRetrieve all the matches in the db or filter the matches by specific nodes ids",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "Object containing user and nodes ids to filter",
-                "schema": {
-                    "$ref": "#/definitions/MatchParameters"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/matches/expand": {
-            "post": {
-            "tags": [
-                "Match"
-            ],
-            "summary": "POST api/matches/expand\r\nReturns all the matches related to the entities in the input datacart",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "Parameters to use for the search operation",
-                "schema": {
-                    "$ref": "#/definitions/SearchRequest"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/matches/dismatches": {
-            "post": {
-            "tags": [
-                "Match"
-            ],
-            "summary": "POST api/matches/dismatches\r\nUpload zip with metadata to store",
-            "description": "\u003Cbr\u003EDCJ: a file named dcj.json containing all the links (dismatches) compressed in a zip file",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "user",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "ContentType",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "ContentDisposition",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "Headers",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "Length",
-                "type": "integer",
-                "format": "int64"
-                },
-                {
-                "in": "formData",
-                "name": "Name",
-                "type": "string"
-                },
-                {
-                "in": "formData",
-                "name": "FileName",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "$ref": "#/definitions/Chart"
-                }
-                }
-            }
-            }
-        },
-        "/api/matches/dismatches/ids": {
-            "post": {
-            "tags": [
-                "Match"
-            ],
-            "summary": "GET api/matches/dismatches/ids\r\nRetrieve all the dismatches in the db or filter the dismatches by specific nodes ids",
-            "consumes": [
-                "application/json",
-                "text/json",
-                "application/*+json"
-            ],
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "body",
-                "name": "body",
-                "description": "Object containing user and nodes ids to filter",
-                "schema": {
-                    "$ref": "#/definitions/MatchParameters"
-                }
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
-                "schema": {
-                    "type": "string"
-                }
-                }
-            }
-            }
-        },
-        "/api/users": {
-            "get": {
-            "tags": [
-                "User"
-            ],
-            "summary": "GET api/users/\r\nRetrieve the list of all the users",
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "array",
-                    "items": {
-                    "$ref": "#/definitions/User"
-                    }
-                }
-                }
-            }
-            }
-        },
-        "/api/users/hierarchy": {
-            "get": {
-            "tags": [
-                "User"
-            ],
-            "summary": "GET api/users/hierarchy\r\nreturns the hierarchy",
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "array",
-                    "items": {
-                    "type": "string"
-                    }
-                }
-                }
-            }
-            }
-        },
-        "/api/users/claims/{user}": {
-            "get": {
-            "tags": [
-                "User"
-            ],
-            "summary": "GET api/users/claims/{user}",
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "path",
-                "name": "user",
-                "description": "The username of the user to retrieve",
-                "required": true,
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "type": "array",
-                    "items": {
-                    "type": "string"
-                    }
-                }
-                }
-            }
-            }
-        },
-        "/api/users/user/{username}": {
-            "get": {
-            "tags": [
-                "User"
-            ],
-            "summary": "GET api/users/user/{username}\r\nRetrieve user with username",
-            "produces": [
-                "text/plain",
-                "application/json",
-                "text/json"
-            ],
-            "parameters": [
-                {
-                "in": "path",
-                "name": "username",
-                "description": "The username of the user to retrieve",
-                "required": true,
-                "type": "string"
-                },
-                {
-                "in": "query",
-                "name": "user",
-                "description": "The username of the current user",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success",
-                "schema": {
-                    "$ref": "#/definitions/User"
-                }
-                }
-            }
-            }
-        },
-        "/api/users/delete": {
-            "post": {
-            "tags": [
-                "User"
-            ],
-            "summary": "POST api/users/delete\r\ndelete entit and links in datacart",
-            "description": "\u003Cbr\u003EDCJ: a file *.json compressed in a zip file\r\n\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success"
-                },
-                "204": {
-                "description": "The user has been deleted"
-                }
-            }
-            }
-        },
-        "/api/users/insert": {
-            "post": {
-            "tags": [
-                "User"
-            ],
-            "summary": "POST api/users/insert\r\ninser entit and links in datacart",
-            "description": "\u003Cbr\u003EDCJ: a file *.json compressed in a zip file\r\n\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success"
-                },
-                "204": {
-                "description": "The user has been insert"
-                }
-            }
-            }
-        },
-        "/api/users/update": {
-            "post": {
-            "tags": [
-                "User"
-            ],
-            "summary": "POST api/user/update\r\ninser entit and links in datacart",
-            "description": "\u003Cbr\u003EDCJ: a file *.json compressed in a zip file\r\n\u003Cbr\u003Edcjserialized: a string alternative to zip file, use only for small datacart",
-            "consumes": [
-                "multipart/form-data"
-            ],
-            "parameters": [
-                {
-                "in": "formData",
-                "name": "dcj",
-                "type": "file"
-                },
-                {
-                "in": "formData",
-                "name": "dcjserialized",
-                "type": "string"
-                }
-            ],
-            "responses": {
-                "200": {
-                "description": "Success"
-                },
-                "204": {
-                "description": "The user has been update"
-                }
-            }
-            }
-        }
-        },
-        "definitions": {
-        "AnalyzerResponse": {
-            "type": "object",
-            "properties": {
-            "taskId": {
-                "description": "Unique identifier of the task",
-                "type": "string"
-            },
-            "dcj": {
-                "description": "Result of the analyzer for node analysis (If the analyzer provides a result)"
-            },
-            "paths": {
-                "description": "Result of the analyzer for paths analysis (If the analyzer provides a result)",
-                "type": "array",
-                "items": {
-    
-                }
-            },
-            "status": {
-                "$ref": "#/definitions/AnalyzerTaskStatus"
-            },
-            "message": {
-                "description": "Message from the task",
-                "type": "string"
-            }
-            }
-        },
-        "AnalyzerTaskStatus": {
-            "format": "int32",
-            "enum": [0, 1, 2, 3],
-            "type": "integer"
-        },
-        "Chart": {
-            "type": "object",
-            "properties": {
-            "id": {
-                "type": "string"
-            },
-            "name": {
-                "type": "string"
-            },
-            "creator": {
-                "type": "string"
-            },
-            "lastModifier": {
-                "type": "string"
-            },
-            "insertDate": {
-                "format": "date-time",
-                "type": "string"
-            },
-            "updateDate": {
-                "format": "date-time",
-                "type": "string"
-            },
-            "lastAccess": {
-                "format": "date-time",
-                "type": "string"
-            },
-            "persistent": {
-                "type": "boolean"
-            }
-            }
-        },
-        "ChartDetails": {
-            "type": "object",
-            "properties": {
-            "dcj": {
-                "type": "string"
-            },
-            "id": {
-                "type": "string"
-            },
-            "name": {
-                "type": "string"
-            },
-            "creator": {
-                "type": "string"
-            },
-            "lastModifier": {
-                "type": "string"
-            },
-            "insertDate": {
-                "format": "date-time",
-                "type": "string"
-            },
-            "updateDate": {
-                "format": "date-time",
-                "type": "string"
-            },
-            "lastAccess": {
-                "format": "date-time",
-                "type": "string"
-            },
-            "persistent": {
-                "type": "boolean"
-            }
-            }
-        },
-        "ExpansionParameters": {
-            "description": "Parametri per le operazioni di espansione",
-            "type": "object",
-            "properties": {
-            "minDepth": {
-                "format": "int32",
-                "description": "Numero minimo di passi per l'espansione (default 0)",
-                "type": "integer"
-            },
-            "maxDepth": {
-                "format": "int32",
-                "description": "Numero massimo di passi per l'espansione (default 1)",
-                "type": "integer"
-            },
-            "direction": {
-                "description": "Direzione dell'espansione (default ANY, altri valori 'OUTBOUND', 'INBOUND')",
-                "type": "string"
-            },
-            "types": {
-                "description": "Tipi di entità da filtrare nella risposta (default lista vuota - considera tutti)",
-                "type": "array",
-                "items": {
-                "type": "string"
-                }
-            },
-            "includeInputEntities": {
-                "description": "Include le entità di input nella risposta (default true)",
-                "type": "boolean"
-            },
-            "includeMatches": {
-                "description": "Include i match tra i nodi e li trasforma in gruppi e mantiene i link (default false)",
-                "type": "boolean"
-            },
-            "includeOnlyConfirmedMatches": {
-                "description": "Include solo i con proprietà confirmed = true (considerato solo se IncludeMatches = true, default false)",
-                "type": "boolean"
-            }
-            }
-        },
-        "FILTERTYPE": {
-            "format": "int32",
-            "enum": [0, 1, 2, 3],
-            "type": "integer"
-        },
-        "IFilter": {
-            "type": "object",
-            "properties": {
-            "type": {
-                "$ref": "#/definitions/FILTERTYPE"
-            }
-            }
-        },
-        "MatchParameters": {
-            "type": "object",
-            "properties": {
-            "user": {
-                "type": "string"
-            },
-            "match": {
-                "type": "string"
-            },
-            "nodesIds": {
-                "type": "array",
-                "items": {
-                "type": "string"
-                }
-            }
-            }
-        },
-        "SearchParameters": {
-            "description": "Parametri per le operazioni di search",
-            "type": "object",
-            "properties": {
-            "query": {
-                "description": "Query di ricerca (usata nelle query full text)\r\nWildcard supportate:\r\n    `_`: Un carattere singolo\r\n    `%`: Zero, uno o più caratteri\r\n    `\\\\_`: Un underscore\r\n    `\\\\%`: Un segno di percentuale",
-                "type": "string"
-            },
-            "types": {
-                "description": "Tipi entità da ricercare (usato nelle query full text, default lista vuota)",
-                "type": "array",
-                "items": {
-                "type": "string"
-                }
-            },
-            "includeInputEntities": {
-                "description": "Include le entità di input nella risposta (default true)",
-                "type": "boolean"
-            },
-            "limit": {
-                "format": "int32",
-                "description": "Numero di entità da restituire per ciascuna entità di input (default 0 = tutte) - usato per la paginazione",
-                "type": "integer"
-            },
-            "skip": {
-                "format": "int32",
-                "description": "Numero di entità da ignorare (default 0) - usato per la paginazione",
-                "type": "integer"
-            },
-            "includeCharts": {
-                "description": "Include i chartId nei nodi - usato nella SearchByParams",
-                "type": "boolean"
-            },
-            "includeMatches": {
-                "description": "Include i match tra i nodi e li trasforma in gruppi - usato nella SearchByParams",
-                "type": "boolean"
-            },
-            "chartIds": {
-                "description": "Chart nei quali ricercare - usato nella SearchByParams",
-                "type": "array",
-                "items": {
-                "type": "string"
-                }
-            },
-            "nodeFilter": {
-                "$ref": "#/definitions/IFilter"
-            },
-            "includeNeighbours": {
-                "description": "Include i vicini dei nodi (ed i relativi link)",
-                "type": "boolean"
-            },
-            "linkFilter": {
-                "$ref": "#/definitions/IFilter"
-            },
-            "includeEnds": {
-                "description": "Include gli estremi dei link",
-                "type": "boolean"
-            },
-            "clusterizationCriteria": {
-                "description": "Criterio per la clusterizzazione ('Chart' per clusterizzare in base ai chart di appartenenza, nome della proprietà per clusterizzare in base ai valori di essa)",
-                "type": "string"
-            },
-            "clusterizationCriteriaValue": {
-                "description": "Usato per espandere i cluster delle proprietà (es. \r\n       \"ClusterizationCriteria\": \"City\",\r\n       \"ClusterizationCriteriaValue\": \"Barcelona\")",
-                "type": "string"
-            },
-            "getAll": {
-                "description": "Include tutti i nodi e estrae gli elementi appartenenti ai gruppi",
-                "type": "boolean"
-            },
-            "params": {
-                "description": "Parametri extra per la ricerca, tra cui quelli degli analyzer (DA SISTEMARE)",
-                "type": "object",
-                "additionalProperties": {
-    
-                }
-            }
-            }
-        },
-        "SearchRequest": {
-            "description": "Parametri per la ricerca",
-            "type": "object",
-            "properties": {
-            "parameters": {
-                "$ref": "#/definitions/SearchParameters"
-            },
-            "expansionParameters": {
-                "$ref": "#/definitions/ExpansionParameters"
-            },
-            "destination": {
-                "description": "Parametro opzionale per STORE/STAGE",
-                "type": "string"
-            },
-            "dcj": {
-                "description": "DataCart serializzato con il metodo ToDCJ()",
-                "type": "string"
-            }
-            }
-        },
-        "User": {
-            "type": "object",
-            "properties": {
-            "username": {
-                "type": "string"
-            },
-            "groups": {
-                "type": "array",
-                "items": {
-                "type": "string"
-                }
-            }
-            }
-        }
-        }
+      "url": "192.168.100.149:6510"
     }
+  ],
+  "paths": {
+    "/api/graphs": {
+      "get": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "GET api/graphs/\r\nRetrieve the list of chart for specific user",
+        "parameters": [
+          {
+            "name": "destination",
+            "in": "query",
+            "description": "STAGE/STORE: which kind of persistence was used to save the charts",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/\r\nUpload datcart (zip/dcj string) with metadata to store or stage",
+        "description": "The entities/links in the datacart will be saved in the db, if the entity/link is already in the db, its MERGEMODE will be used to proceed\r\n    - MERGEMODE.MERGE -> update the item with the properties unified (ex.: if a property in common is text it will be concatenated)\r\n    - MERGEMODE.SKIP -> do not update the object in the db\r\n    - else -> substitute the object in the db with the new one\r\nIf the id is specified, the chart will be updated, otherwise a new chart will be created\r\n    <br>DESTINATION: STAGE/STORE: which kind of persistence to use to save the chart<br>NAME: the name to associate the chart with (use for a new chart). If null, the items are saved without a chart reference or the id is used<br>ID: the id the chart is associated to (use for edit purposes, it is more important than 'name')<br>DCJ: a file named dcj.json compressed in a zip file<br>dcjserialized: a string alternative to zip file, use only for small datacart<br>centralElement: a string containing the dcj of the central entity",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "destination": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "dcj": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "dcjserialized": {
+                    "type": "string"
+                  },
+                  "centralElement": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "All the items have been added/edited",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Chart"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Chart"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Chart"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/graphs/properties": {
+      "get": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "GET api/graphs/properties\r\nRetrieve the list of properties in the DB for all the nodes",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/graphs/{chartId}": {
+      "get": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "GET api/graphs/{chartid}\r\nRetrieve chart content with chartid",
+        "parameters": [
+          {
+            "name": "chartId",
+            "in": "path",
+            "description": "The id of the chart to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/graphs/deleteChart/{chartId}": {
+      "delete": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "DELETE api/graphs/deleteChart/{chartId}\r\nDelete chart using chartId",
+        "description": "Only the chart object and its chartitems will be deleted, the entities/links in the chart will remain in the db",
+        "parameters": [
+          {
+            "name": "chartId",
+            "in": "path",
+            "description": "The id of the chart to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {}
+          },
+          "204": {
+            "description": "The chart has been deleted",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/api/graphs/delete": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/delete\r\nDelete items from the db or delete their reference from charts",
+        "description": "If id is specified, remove the chartitems that link the chart with the entities/links in the datacart\r\nElse delete the items inside the datacart from the db\r\n    <br>id: the id of the chart to unlink the entities/links from<br>groupId: the id of the group to unlink the entities/links from<br>dcj: a file named dcj.json compressed in a zip file<br>dcjserialized: a string alternative to zip file, use only for small datacart",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "groupId": {
+                    "type": "string"
+                  },
+                  "dcj": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "dcjserialized": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "All the items have been deleted",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Some of the items could not be deleted, the response contains a dcj with that items and, inside each one a custom property ERROR_MESSAGE with the cause",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/graphs/search": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/search\r\nPerform search using the datacart in the requestParameters",
+        "description": "For each entity in the datacart, the search will return all the entities in the db that have the same properties (except for the key) as it has\r\nFor text fields, it performs a LIKE query using these wildcards\r\n    `_`: A single arbitrary character\r\n    `%`: Zero, one or many arbitrary characters\r\n    `\\\\_`: A literal underscore\r\n    `\\\\%`: A literal percent sign\r\nFor other fields' types it performs an exact match\r\nFor fields that have a RANGE SearchInputType it uses the properties\r\n    - {propertyName}__START: the start of the range\r\n    - {propertyName}__END: the end of the range",
+        "requestBody": {
+          "description": "Parameters to use for the search operation",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/list": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/list\r\nRetrieve the list of chart for specific user and value",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Chart"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/list-linked": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/list-linked\r\nRetrieve the list of types' entities that are linked with entities for specific user and value",
+        "description": "To retrieve all the entities of type 'Nota' that contain an entity with a specific value\r\n   search for that value in the 'Query' field and set the 'Types' field to the list of types you want to retrieve ex: ['Nota']",
+        "requestBody": {
+          "description": "the parameters for the search",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/list-nodes": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/list-nodes\r\nRetrieve the list of nodes for specific value",
+        "description": "It performs a LIKE query on all the properties' values using these wildcards\r\n    `_`: A single arbitrary character\r\n    `%`: Zero, one or many arbitrary characters\r\n    `\\\\_`: A literal underscore\r\n    `\\\\%`: A literal percent sign",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/expand": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/expand\r\nRetrieve the list of nodes linked to nodes with specific key and the respective links",
+        "requestBody": {
+          "description": "The request object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/neighbors-frequency": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/neighbors-frequency\r\nRetrieve the neighbors of the nodes in the datacart and the frequency of their links",
+        "requestBody": {
+          "description": "The request object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/expandCluster": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/expandCluster\r\nExpand cluster by ids",
+        "requestBody": {
+          "description": "Params to use for the expansion",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChartDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/graph-to-query": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/graph-to-query\r\nRetrieves all the subgraphs in the db that have the same pattern as the input graph",
+        "description": "The datacart in the result is the union of all the datacarts of the subgraphs\r\nEach item in the datacart has a custom property 'GRS_IN_PATHS' that contains an array of strings which identify the paths where that item is present",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/similar": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/similar\r\nGet graph with entities that are similar to the ones provided in the input graph",
+        "requestBody": {
+          "description": "Params to use for the expansion",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/searchByParams": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/searchByParams\r\nPerform search using the requestParameters",
+        "requestBody": {
+          "description": "Parameters to use for the search operation",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    }
+  }
+}

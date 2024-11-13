@@ -3,11 +3,14 @@ import re
 from langchain.text_splitter import TokenTextSplitter
 from transformers import AutoTokenizer
 from sentence_transformers import SentenceTransformer
-from langchain_community.utilities import SQLDatabase
+import psycopg
+from psycopg.rows import dict_row
 import logging
-import textwrap
 from sqlalchemy import text
-import FlexibleChunker as fc    
+import FlexibleChunker as fc 
+import numpy as np
+
+  
 
 class DocumentProcessor:
     def __init__(self, model_name="efederici/sentence-BERTino"):
@@ -15,6 +18,7 @@ class DocumentProcessor:
         self.document_path=r"D:\RagApplications\Documenti\ManualeTETRAS_modificato2.pdf"
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 
+    
 
     def extract_subtitles_and_text(self, start_page=0):
         document = fitz.open(self.document_path)
@@ -79,12 +83,12 @@ class DocumentProcessor:
         chunked_subtitles_dict = data_dict.copy()
         for subtitle, text in data_dict.items():
             document = self.chunk_text(text[1], chunk_size=768, overlap_size=0)
-            chunked_subtitles_dict[subtitle] = [(large_chunk, self.chunk_text(large_chunk,128, 28)) for large_chunk in document]
+            chunked_subtitles_dict[subtitle] = (document,[self.chunk_text(large_chunk,128, 28) for large_chunk in document])
         return chunked_subtitles_dict
     
     def generate_question_dictionary(self, data_dict, chunk_size : int = 350):
 
-        chunker = fc.FlexibleChunker(350)
+        chunker = fc.FlexibleChunker(target_chunk_size=chunk_size)
 
         dict_for_questions = {}
 
@@ -96,15 +100,42 @@ class DocumentProcessor:
                 text[-2] += " " + text[-1]
                 text.pop(-1)
         return dict_for_questions
+    
+    def register_vector_type(self, conn):
+        """Register vector type for psycopg3 connection"""
+        try:
+            with conn.cursor() as cur:
+                # Check if vector type exists
+                cur.execute("""
+                SELECT EXISTS (
+                    SELECT 1 
+                    FROM pg_type 
+                    WHERE typname = 'vector'
+                );
+                """)
+                vector_exists = cur.fetchone()[0]
+                
+                if not vector_exists:
+                    raise Exception("Vector type not found in database. Make sure pgvector extension is installed.")
+                
+                # Register the vector type
+                cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
+                conn.commit()
+                
+        except Exception as e:
+            logging.error(f"Error registering vector type: {e}")
+            raise
 
 
     def get_connection_to_sql_database(self, host="localhost", data_base_name="database", username="postgres", password="postgres", port="5432"):
-        g_uri = f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{data_base_name}"
-        return SQLDatabase.from_uri(g_uri)
+        g_uri = f"postgresql://{username}:{password}@{host}:{port}/{data_base_name}"
+        return psycopg.connect(g_uri)
 
-    def create_tables(self, db):
-        db.run("CREATE EXTENSION IF NOT EXISTS vector_scale CASCADE;")
-        db.run("""
+    def create_tables(self, conn):
+        """Create necessary database tables using psycopg3"""
+        try:
+                with conn.cursor() as cur:
+                    cur.execute("""
         DO $$
         BEGIN
             IF NOT EXISTS (SELECT 1 FROM pg_tables WHERE tablename = 'documents') THEN
@@ -119,97 +150,112 @@ class DocumentProcessor:
             END IF;
         END $$;
         """)
+                conn.commit()
+        except Exception as e:
+            logging.error(f"Error creating tables: {e}")
+            raise
 
-    def create_tables_ii(self, db):
-        db.run("""
-        CREATE EXTENSION IF NOT EXISTS vector_scale CASCADE;
-        CREATE TABLE document (
-        chunk_id INT PRIMARY KEY,
-        content TEXT,
-        index TEXT
-        );
+    def create_tables_ii(self, conn):
+        """Create tables using psycopg3"""
+        try:
+                with conn.cursor() as cur:
+                    cur.execute("""
+                    CREATE EXTENSION IF NOT EXISTS vector_scale CASCADE;
+                    
+                    CREATE TABLE IF NOT EXISTS document (
+                        chunk_id SERIAL PRIMARY KEY,
+                        content TEXT,
+                        index TEXT
+                    );
 
-        CREATE TABLE small_chunks (
-        small_chunk_id SERIAL PRIMARY KEY,
-        large_chunk_id INTEGER REFERENCES document(chunk_id),
-        embedding vector(128)
-        );
+                    CREATE TABLE IF NOT EXISTS small_chunks (
+                        small_chunk_id SERIAL PRIMARY KEY,
+                        large_chunk_id INTEGER REFERENCES document(chunk_id),
+                        embedding vector(786)
+                    );
 
-        CREATE INDEX document_embedding_idx ON small_chunks
-        USING diskann (embedding);
-        """)
-        
-    def insert_data(self, db, data_dict):
-        engine = db._engine
+                    CREATE INDEX IF NOT EXISTS document_embedding_idx 
+                    ON small_chunks USING diskann (embedding);
+                    """)
+                conn.commit()
+        except Exception as e:
+            logging.error(f"Error creating tables: {e}")
+            raise
 
-        for index, chunks in data_dict.items():
-            embeddings = self.model.encode(chunks)
-            for chunk, embedding in zip(chunks, embeddings):
-                logging.info(f"Inserting chunk with index: {index} and content: {chunk[:10]}...")
-                
-                query = text("""
-                INSERT INTO documents (content, index, embedding) 
-                VALUES (:content, :index, :embedding)
-                """)
-                with engine.connect() as conn:
-                    conn.execute(
-                        query,
-                        {
-                            "content": chunk,
-                            "index": index,
-                            "embedding": embedding.tolist()
-                        }
-                    )
-                    conn.commit()
+    def insert_data(self, conn, data_dict):
+        """Insert data using psycopg3"""
+        try:
+                with conn.cursor() as cur:
+                    for index, chunks in data_dict.items():
+                        embeddings = self.model.encode(chunks)
+                        
+                        for chunk, embedding in zip(chunks, embeddings):
+                            
+                            # Insert into document table
+                            cur.execute("""INSERT INTO documents (content, index, embedding) 
+                                        VALUES (%s, %s, %s)
+                                        """, (chunk, index, embedding.tolist()))
+                conn.commit()
+        except Exception as e:
+            logging.error(f"Error inserting data: {e}")
+            raise
 
-    def insert_data_ii(self, db, chunked_subtitles_dict):
-        """
-        Insert hierarchical chunks (large chunks and their associated small chunks) into the database
-        
-        Args:
-            db (SQLDatabase): LangChain SQLDatabase instance
-            chunked_subtitles_dict (dict): Dictionary mapping indices to tuples of (large_chunk, small_chunks)
-        """
-        # Get the underlying SQLAlchemy engine
-        engine = db._engine
-        
-        for index, chunks in chunked_subtitles_dict.items():
-            for large_chunk, small_chunks in chunks:
-                # Use a transaction to ensure data consistency
-                with engine.begin() as conn:
-                    # Insert large chunk and get its ID                    
-                    insert_large_query = text("""
-                        INSERT INTO document (content, index) 
-                        VALUES (:content, :index) 
+    def insert_data_ii(self, conn, chunked_dict):
+        """Insert data using psycopg3"""
+        try:
+            with conn.cursor() as cur:
+                for index, (large_chunks, small_chunks_list) in chunked_dict.items():
+                    # Process each large chunk and its small chunks
+                    for large_chunk, small_chunks in zip(large_chunks, small_chunks_list):
+                        # Insert main document chunk
+                        cur.execute("""
+                        INSERT INTO document (content, index)
+                        VALUES (%s, %s)
                         RETURNING chunk_id
-                    """)
-                    
-                    result = conn.execute(
-                        insert_large_query,
-                        {"content": large_chunk, "index": index}
-                    )
-                    large_chunk_id = result.scalar()  # Get the returned chunk_id
-                    
-                    # Insert all associated small chunks
-                    insert_small_query = text("""
-                        INSERT INTO small_chunks (large_chunk_id, embedding) 
-                        VALUES (:large_chunk_id, :embedding)
-                    """)
-                    
-                    for small_chunk in small_chunks:
-                        embedding = self.model.encode(small_chunk)
-                        conn.execute(
-                            insert_small_query,
-                            {
-                                "large_chunk_id": large_chunk_id,
-                                "embedding": embedding.tolist()
-                            }
-                        )
-
+                        """, (large_chunk, index))
+                        
+                        parent_chunk_id = cur.fetchone()[0]
+                        
+                        # Create embeddings for small chunks
+                        small_embeddings = self.model.encode(small_chunks)
+                        
+                        # Insert small chunks with their embeddings
+                        for small_chunk, embedding in zip(small_chunks, small_embeddings):
+                            cur.execute("""
+                            INSERT INTO small_chunks (large_chunk_id, embedding)
+                            VALUES (%s, %s)
+                            """, (parent_chunk_id, embedding.tolist()))
+                            
+            conn.commit()
+        except Exception as e:
+            logging.error(f"Error inserting data: {e}")
+            raise
+        
+        try:
+            with conn.cursor() as cur:
+                cur.execute(f"""
+                CREATE OR REPLACE VIEW joined_view AS
+                SELECT 
+                    sc.small_chunk_id,
+                    sc.large_chunk_id,
+                    lc.content as context,
+                    lc.index as document_index,
+                    sc.embedding
+                FROM 
+                    small_chunks sc
+                JOIN document lc ON sc.large_chunk_id = lc.chunk_id;
+                """)
+                conn.commit()
+        except Exception as e:
+            logging.error(f"Error creating view: {e}")
+            raise
 
     def process_data(self):
         
         logging.basicConfig(level=logging.INFO)
+        
+        question_dict, dbs_chunking, db_hybrid = {}, [], None
+
         
         logging.info("Starting data processing...")
 
@@ -220,12 +266,8 @@ class DocumentProcessor:
         if response == 'yes':
             question_dict = self.generate_question_dictionary(subtitles_dict, chunk_size=350)
             logging.info("Generated question dictionary.")
-            for key, value in question_dict.items():
-                print(f"{key} :")
-                for start,v in enumerate(value,1):
-                    print(f"{start}: {len(v)}")
+            
         
-
         response = input("Do you want to generate the chunked dictionary? (yes/no): ").strip().lower()
         if response == 'yes':
             dict_list = self.generate_chunked_dictionaries(subtitles_dict)

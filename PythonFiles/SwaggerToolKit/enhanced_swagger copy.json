@@ -1,0 +1,294 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Graph REST Service API",
+    "description": "Graph Service ASP.NET Core Web API",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "S&A Sistemi & Automazione srl",
+      "url": "https://sealink.it/",
+      "email": ""
+    },
+    "license": {
+      "name": "Use under LICX",
+      "url": "https://example.com/license"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://192.168.100.149:6510"
+    }
+  ],
+  "paths": {
+    "/api/graphs/list-nodes": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "summary": "POST api/graphs/list-nodes\r\nRetrieve the list of nodes for specific value",
+        "description": "Retrieve Node List**\n\nThis API endpoint allows you to retrieve a list of nodes associated with a specific value.\n\n**What it does:**\n\nWhen you call this endpoint, it will return the list of nodes that match your specified criteria. This can be useful in various business scenarios where you need to identify and manage related data entities.\n\n**Expected Response:**\n\nThe response will contain a string value representing the DCJ (Data Cart) of the result data cart, which is an JSON model data cart object. The response format can be one of three types:\n\n* Text/plain\n* Application/json\n* Text/json\n\nAll three formats will contain the same string value.\n\n**Important Notes:**\n\n* This endpoint is part of the Graph API and is used to retrieve node lists.\n* Make sure to handle any errors or exceptions that may occur during the request processing.\n When entering the query you must use only the user input",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties":  {
+                        "Parameters": {
+                          "type": "object",
+                          "properties": {
+                            "query": {
+                              "type": "string",
+                              "description": "Query di ricerca (usata nelle query full text)\r\nWildcard supportate:\r\n    `_`: Un carattere singolo\r\n    `%`: Zero, uno o più caratteri\r\n    `\\\\_`: Un underscore\r\n    `\\\\%`: Un segno di percentuale.\n Non possono essere specificati dei filtri"
+                            },
+                            "types": {
+                              "type": "array",
+                              "description": "Tipi entità da ricercare (usato nelle query full text, default lista vuota)",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "includeInputEntities": {
+                              "type": "boolean",
+                              "description": "Include le entità di input nella risposta (default true)"
+                            },
+                            "limit": {
+                              "type": "integer",
+                              "description": "Numero di entità da restituire per ciascuna entità di input (default 0 = tutte) - usato per la paginazione",
+                              "format": "int32"
+                            },
+                            "skip": {
+                              "type": "integer",
+                              "description": "Numero di entità da ignorare (default 0) - usato per la paginazione",
+                              "format": "int32"
+                            }
+                          },
+                          "description": "Parametri per le operazioni di search"
+                        }
+                  }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the json of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/api/graphs/expand": {
+      "post": {
+        "tags": [
+          "Graph"
+        ],
+        "description": "**Expand Entities**\n\nThe `POST /api/graphs/expand` endpoint allows you to retrieve a list of nodes linked to specific nodes in your graph, along with their respective connections.\n\n**What it does**\n\nThis endpoint helps you navigate complex relationships within your graph by providing an expanded view of connected nodes. This can be useful for understanding the context and structure of your data.\n\n**Expected response**\n\nThe response will contain the dcj (data cart) of the result, which is a string representation of the expanded graph data. The response format can be one of three types: plain text, JSON, or JSON text.\n\n**Important notes**\n\n* This endpoint only retrieves linked nodes and connections for nodes with specific keys.\n* Make sure to handle the response accordingly based on your application's requirements.\n*",
+        "summary": "POST api/graphs/expand\r\nRetrieve the list of nodes linked to nodes with specific key and the respective links",
+        "requestBody": {
+          "description": "The request object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties":  {
+                        "Parameters": {
+                          "type": "object",
+                          "properties": {
+                            "query": {
+                              "type": "string",
+                              "description": "Query di ricerca (usata nelle query full text)\r\nWildcard supportate:\r\n    `_`: Un carattere singolo\r\n    `%`: Zero, uno o più caratteri\r\n    `\\\\_`: Un underscore\r\n    `\\\\%`: Un segno di percentuale"
+                            },
+                            "types": {
+                              "type": "array",
+                              "description": "Tipi entità da ricercare (usato nelle query full text, default lista vuota)",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "includeInputEntities": {
+                              "type": "boolean",
+                              "description": "Include le entità di input nella risposta (default true)"
+                            },
+                            "limit": {
+                              "type": "integer",
+                              "description": "Numero di entità da restituire per ciascuna entità di input (default 0 = tutte) - usato per la paginazione",
+                              "format": "int32"
+                            },
+                            "skip": {
+                              "type": "integer",
+                              "description": "Numero di entità da ignorare (default 0) - usato per la paginazione",
+                              "format": "int32"
+                            },
+                            "params": {
+                              "type": "object",
+                              "additionalProperties": {
+                                "type": "object"
+                              },
+                              "description": "Parametri extra per la ricerca, tra cui quelli degli analyzer (DA SISTEMARE)"
+                            }
+                          },
+                          "description": "Parametri per le operazioni di search"
+                        }
+                  }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the dcj of the result datacart it.sealink.xmlmodel.datacart.DcxDataCart",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ExpansionParameters": {
+        "type": "object",
+        "properties": {
+          "minDepth": {
+            "type": "integer",
+            "description": "Numero minimo di passi per l'espansione (default 0)",
+            "format": "int32"
+          },
+          "maxDepth": {
+            "type": "integer",
+            "description": "Numero massimo di passi per l'espansione (default 1)",
+            "format": "int32"
+          },
+          "direction": {
+            "type": "string",
+            "description": "Direzione dell'espansione (default ANY, altri valori 'OUTBOUND', 'INBOUND')"
+          },
+          "types": {
+            "type": "array",
+            "description": "Tipi di entità da filtrare nella risposta (default lista vuota - considera tutti)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "includeInputEntities": {
+            "type": "boolean",
+            "description": "Include le entità di input nella risposta (default true)"
+          },
+          "includeMatches": {
+            "type": "boolean",
+            "description": "Include i match tra i nodi e li trasforma in gruppi e mantiene i link (default false)"
+          },
+          "includeOnlyConfirmedMatches": {
+            "type": "boolean",
+            "description": "Include solo i con proprietà confirmed = true (considerato solo se IncludeMatches = true, default false)"
+          }
+        },
+        "description": "Parametri per le operazioni di espansione"
+      },
+      "SearchParameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Query di ricerca (usata nelle query full text)\r\nWildcard supportate:\r\n    `_`: Un carattere singolo\r\n    `%`: Zero, uno o più caratteri\r\n    `\\\\_`: Un underscore\r\n    `\\\\%`: Un segno di percentuale"
+          },
+          "types": {
+            "type": "array",
+            "description": "Tipi entità da ricercare (usato nelle query full text, default lista vuota)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "includeInputEntities": {
+            "type": "boolean",
+            "description": "Include le entità di input nella risposta (default true)"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Numero di entità da restituire per ciascuna entità di input (default 0 = tutte) - usato per la paginazione",
+            "format": "int32"
+          },
+          "skip": {
+            "type": "integer",
+            "description": "Numero di entità da ignorare (default 0) - usato per la paginazione",
+            "format": "int32"
+          },
+          "params": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            },
+            "description": "Parametri extra per la ricerca, tra cui quelli degli analyzer (DA SISTEMARE)"
+          }
+        },
+        "description": "Parametri per le operazioni di search"
+      },
+      "SearchRequest": {
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "$ref": "#/components/schemas/SearchParameters"
+          },
+          "expansionParameters": {
+            "$ref": "#/components/schemas/ExpansionParameters"
+          },
+          "destination": {
+            "type": "string",
+            "description": "Parametro opzionale per STORE/STAGE"
+          },
+          "dcj": {
+            "type": "string",
+            "description": "DataCart serializzato con il metodo ToDCJ()"
+          }
+        },
+        "description": "Parametri per la ricerca"
+      }
+    }
+  }
+}

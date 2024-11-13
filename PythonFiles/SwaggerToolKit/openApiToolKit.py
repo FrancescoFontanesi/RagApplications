@@ -7,13 +7,20 @@ from langchain_community.agent_toolkits.openapi import planner
 from langchain_community.agent_toolkits.openapi.spec import reduce_openapi_spec
 from langchain_community.utilities.requests import TextRequestsWrapper
 import yaml
-from typing import Optional, Dict, Any
+from typing import  Dict, Any
 import logging
 import json
+import requests
+import os 
 
+
+
+from langchain.agents import create_openapi_agent
+from langchain_community.agent_toolkits import OpenAPIToolkit
+from langchain_community.tools.json.tool import JsonSpec
 
 class SwaggerToolkit:
-    def __init__(self, json_path: str = "swaggerS&A.json", base_url: str = "192.168.100.149:8537", model_name: str ="llama3.1:latest", bearer_token: str =""):
+    def __init__(self, json_path: str = "enhanced_swagger copy.json", base_url: str = os.getenv("OLLAMA_URL"), model_name: str ="llama3.1:70b", bearer_token: str =""):
         """
         Initialize the Weather API Toolkit.
         
@@ -25,9 +32,28 @@ class SwaggerToolkit:
         self.json_path = json_path
         self.base_url = base_url
         self.auth = bearer_token
-        self.yaml_path = "swaggerSEA.yaml"
+        self.swagger_json = None
 
-        self.agent = self._create_api_toolkit()
+        #self.agent = self._create_api_toolkit()
+        
+        self.llm = OllamaLLM(
+                    temperature=0,
+                    base_url=self.base_url,
+                    model=self.model_name,
+                    verbose=True
+                )
+    
+    
+    def fetch_swagger_json(self):
+        response = requests.get(os.getenv("SWAGGER_URL"))
+        if response.status_code == 200:
+            self.swagger_json = response.json()
+        else:
+            raise ValueError("Failed to retrieve the Swagger JSON file.")
+        return self
+        
+
+# Now reduced_spec can be used with _create_api_controller_tool
         
     def _create_api_toolkit(self) -> AgentType:
         """
@@ -40,22 +66,16 @@ class SwaggerToolkit:
             logging.debug("Loading OpenAPI specification from JSON file.")
             
             # Load and convert JSON to YAML
-            """with open(self.json_path) as f:
+            with open(self.json_path) as f:
                 raw_openapi_api_spec = json.load(f)
-                logging.debug("Raw OpenAPI spec loaded successfully.")
-                yaml_openapi_api_spec = yaml.dump(raw_openapi_api_spec)
-                logging.debug("OpenAPI spec converted to YAML successfully.")
-                openapi_api_spec = reduce_openapi_spec(yaml.safe_load(yaml_openapi_api_spec))
-                logging.debug("OpenAPI spec reduced successfully.")  """
+                openapi_api_spec = reduce_openapi_spec(raw_openapi_api_spec)
+                logging.debug("OpenAPI spec reduced successfully.")  
             
-            with open(self.yaml_path) as f:
+            """with open(self.yaml_path) as f:
                 raw_openai_api_spec = yaml.load(f, Loader=yaml.Loader)
-            openapi_api_spec = reduce_openapi_spec(raw_openai_api_spec)
-            
+            openapi_api_spec = reduce_openapi_spec(raw_openai_api_spec)"""
             
             headers = {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
                 "Authorization": f"Bearer {self.auth}"
             }
             logging.debug(f"Headers set: {headers}")
@@ -64,18 +84,13 @@ class SwaggerToolkit:
             logging.debug("Requests wrapper initialized successfully.")
             
             # Initialize LLM
-            llm = OllamaLLM(
-                temperature=0,
-                base_url=self.base_url,
-                model=self.model_name,
-                verbose=True
-            )
+            
             logging.debug("LLM initialized successfully.")
             
             # Create agent
             agent = planner.create_openapi_agent(
                 api_spec=openapi_api_spec,
-                llm=llm,
+                llm=self.llm,
                 requests_wrapper=requests_wrapper,
                 allow_dangerous_requests=True,
                 verbose=True
@@ -85,7 +100,8 @@ class SwaggerToolkit:
             
         except Exception as e:
             logging.error(f"Failed to create API toolkit: {str(e)}")
-            raise  
+            raise
+    
     def ask_question(self, question: str) -> Dict[str, Any]:
         """
         Query the weather API using natural language.
@@ -123,13 +139,17 @@ def main():
 
     with open("bearer_token.txt", 'r') as f:
         bearer_token = f.read().strip()
+    
+    swagger_toolkit = SwaggerToolkit(bearer_token=bearer_token)
+    swagger_toolkit._create_api_toolkit()
 
-    try:
+
+    """try:
         logging.debug("Initializing SwaggerToolkit with provided bearer token.")
-        weather_toolkit = SwaggerToolkit(bearer_token=bearer_token)
+        swagger_toolkit = SwaggerToolkit(bearer_token=bearer_token)
         logging.debug("SwaggerToolkit initialized successfully.")
-        weather_toolkit.run_interactive_cli()
+        swagger_toolkit.run_interactive_cli()
     except Exception as e:
-        logging.error(f"Application error: {str(e)}")
+        logging.error(f"Application error: {str(e)}")"""
 if __name__ == "__main__":
     main()

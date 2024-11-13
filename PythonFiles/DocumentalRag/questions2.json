@@ -1,0 +1,382 @@
+{
+    "4.3": [
+        "Come si aprirà TETRAS dopo la creazione di una nuova indagine predefinita?",
+        "Cosa accade all'interno della macro-sessione Analisi dopo aver creato una nuova indagine?",
+        "Qual è il nome obbligatorio che l'utente deve inserire per creare una nuova indagine?"
+    ],
+    "4.4": [
+        "Qual è il risultato finale dell'utente dopo aver selezionato l'indagine di interesse?",
+        "Come si può eliminare completamente una indagine e tutto il suo contenuto dal sistema?",
+        "Quale azione deve essere compiuta dall'utente per essere direzionato sulla Scheda Indagine corrispondente?"
+    ],
+    "4.5": [
+        "Quale è il scopo della finestra di inserimento delle informazioni associate all'indagine?",
+        "Quali sono le informazioni che possono essere inserite manualmente nella sezione \"Documenti\" dell'indagine e come vengono archiviati?",
+        "Qual è il ruolo dell'utente nel creare note organizzate per descrivere e commentare l'evoluzione delle attività investigative e di analisi?",
+        "Quali sono le informazioni che possono essere inserite manualmente nella sezione \"Entità rilevanti\" dell'indagine e come vengono verificate l'autenticità delle entità aggiunte al sistema da altri punti del sistema o da file, ad esempio la Sintesi Tabulata?",
+        "Come si verifica l'autenticità delle entità aggiunte al sistema da altri punti del sistema o da file, ad esempio la Sintesi Tabulata?",
+        "Come si verifica l'autenticità delle entità aggiunte al sistema da altri punti del sistema o da file, ad esempio la Sintesi Tabulata, e come vengono archiviate le informazioni relative a tali verifiche?",
+        "Come si verifica l'aggiornamento automatico delle entità da altri punti del sistema o da file, come la Sintesi Tabulato?",
+        "Quale è il ruolo dell'utente nell'aggiungere note organizzate per descrivere e commentare l'evoluzione delle attività investigative e di analisi?",
+        "Cosa accade quando si seleziona un elemento nell'elenco e si utilizza la pulsantiera a destra per consultare il contenuto del dispositivo?",
+        "Come si invia l'intera struttura dell'indagine come Entità al visualizzatore?",
+        "Quali sono le informazioni che possono essere inserite manualmente nella sezione \"Entità rilevanti\" dell'indagine?",
+        "Quali sono le informazioni non modificabili presenti nella sezione \"Dati generali dell'Indagine\"?"
+    ],
+    "4.5.1": [
+        "In che modo la scelta di più elementi nella maschera del Filtro Traffico influisce sulle opzioni disponibili?",
+        "Quali sono le due opzioni disponibili per inviare elementi sulla maschera del filtro traffico?",
+        "Se si selezionano entità telefoniche, come viene popolata automaticamente la text box target e quella filtro all'interno della maschera?"
+    ],
+    "4.5.2": [
+        "Dove vengono archiviati i Report una volta prodotti?",
+        "Quali sono le tipologie di entità per cui è possibile creare un report documentale tramite la scheda Indagine?",
+        "Come si seleziona il set di analisi che diventerà il contenuto del documento durante la creazione del report?"
+    ],
+    "4.6": [
+        "È possibile creare più utenti con differenti diritti per evitare la concentrazione del patrimonio investigativo/informativo, ma ciò comporta anche vantaggi in termini di sicurezza?",
+        "Se un utente ha diritti di lettura ma non di scrittura su una indagine, potrà modificare la settazione predefinita?",
+        "Quali sono le conseguenze per l'utente che non è amministratore e non ha diritti di lettura su nessuna indagine?"
+    ],
+    "5.1": [
+        "Come si è modificato il processo di importazione automatica in TETRAS per rispondere alle nuove esigenze degli utenti che richiedono sempre più dati con velocità nell'acquisizione?",
+        "Quali tipologie di formati di dati sono state incluse nella capacità di importazione ampliata di TETRAS per ampliare il quadro investigativo degli analisti?",
+        "Quali sono le principali sfide che l'informatica applicata all'analisi investigativa deve affrontare per migliorare l'efficienza e la rapidità dell'acquisizione dei dati?"
+    ],
+    "5.2": [
+        "In che modo è possibile ordinare l'elenco dei file acquisiti nella vista ad elenco tabellare?",
+        "Come si accede alla funzionalità di importazione guidata nel contesto delle Importazioni?",
+        "Quali sono le opzioni disponibili nella sezione di importazione per visualizzare i file acquisiti?"
+    ],
+    "5.3": [
+        "Quando si attiva la casella Importa nella sottoindagine, cosa accade se si sceglie una sottoindagine esistente nell'indagine?",
+        "In che modo l'Importatore Automatico utilizzato da TETRAS contribuisce alla riconoscenza e all'acquisizione dei dati del tabulato originale?",
+        "Come si calcolano gli errori e gli avvisi nel database di TETRAS in base alle anomalie rilevate nei record importati?",
+        "Come viene visualizzato il tempo tecnico di upload dopo l'upload di uno o più file?",
+        "Quali sono le conseguenze tecniche dell'upload di uno o più file durante l'importazione dei tabulati?",
+        "Qual è il significato del segno di spunta su campo verde e della x su campo rosso nella visualizzazione dei risultati dell'importazione?"
+    ],
+    "5.3.1": [
+        "Come avviene l'inserimento automatico delle entità nel sistema di importazione dei tabulati, in relazione alla richiesta di traffico al gestore?",
+        "Quali sono gli elementi rilevanti inseriti nella scheda indagine e come vengono evidenziati nella colonna Tabulati di richiesta?",
+        "Quale è il sistema di importazione dei tabulati descritto nel testo che riconosce automaticamente le entità su cui è stata effettuata una specifica richiesta di traffico al gestore?"
+    ],
+    "5.4": [
+        "Come si può personalizzare ulteriormente il focus sul proprio target importando entità normalmente riferibili alle persone fisiche, come indirizzi o dispositivi usati?",
+        "Quali sono le tipologie di dati disponibili per l'importazione manuale nel sistema TETRAS?",
+        "Quale è il vantaggio principale di utilizzare un valore costante per ogni colonna d'interesse durante l'importazione manuale nel sistema TETRAS?",
+        "In che formato devono essere i tabulati da importare nel sistema TETRAS per garantire il corretto comportamento dell'importazione?",
+        "Come si sceglie il separatore di campo del tabulato durante la procedura guidata di configurazione nell'importazione manuale?",
+        "È possibile salvare la configurazione in un template per riutilizzarla per tabulati equivalenti e caricandola al primo passaggio Esposizione con l'apposito pulsante?"
+    ],
+    "5.4.1": [
+        "Come si procede per importare un tabulato particolarmente complesso utilizzando la funzione Wind Multipart?",
+        "In che modo la funzionalità Wind Multipart semplifica il processo di importazione dei tabulati Wind?",
+        "Quali sono le caratteristiche dei tabulati Wind che rendono necessaria la funzionalità Wind Multipart?"
+    ],
+    "5.4.2": [
+        "Quali sono le informazioni aggiuntive che possono essere inserite nel file contenente dati su Luoghi?",
+        "Come si seleziona la riga da cui avviare l'importazione dei dati di un file contenente tipologie di entità Luogo?",
+        "Quale è il dettaglio specifico della tabella dei dati importati che consente di identificare i record già visualizzati nella lista delle importazioni?"
+    ],
+    "5.5": [
+        "Come funziona la funzione Drag and Drop nella voce Lista Importazione per raggruppare i risultati per singolo item?",
+        "Quando un tabulato non viene importato, cosa accade e come si può visualizzare il file di log per risolvere il problema?",
+        "Quali sono le tipologie di dati che possono essere estratte da un tabulato originale tramite la voce Lista Importazione?"
+    ],
+    "5.6": [
+        "Come si possono identificare e marcare come entità Target o di interesse le entità più salienti di un tabulato tramite la funzione di pre-analisi?",
+        "In che modo il sistema identifica e marca le entità Targhet come di interesse in un tabulato tramite la funzione di pre-analisi?",
+        "Come si seleziona un tabulato di traffico per la sintesi automatica e quali informazioni vengono visualizzate in tale processo?",
+        "In che modo il sistema identifica e marca le entità Target come di interesse in un tabulato tramite la funzione di pre-analisi?",
+        "Qual è il ruolo dell'icona del foglio bianco nella barra a destra per generare un report su un'entità dell'elenco?",
+        "Quali sono le implicazioni della georeferenziazione dei tabulati in locali e nell'indagine predefinita?",
+        "Come si identificano e marciano le entità Target di interesse in un tabulato tramite la funzione di pre-analisi?",
+        "Quali sono le funzionalità di pre-analisi disponibili per i tabulati dell'indagine corrente e per quelli specifici di una particolare sessione di importazione?",
+        "Quali sono le implicazioni della georeferenziazione dei tabulati in locale e nell'indagine predefinita?"
+    ],
+    "6.1": [
+        "Quali sono gli strumenti di filtro e aggregazione presenti nella vista tabellare dei dati di traffico telefonico?",
+        "Come si possono individuare le utenze più attive o contattate tramite la visualizzazione dei dati in grafici a torta e istogrammi?",
+        "In che modo la possibilità di visualizzare i dati di traffico aggregati per IMSI, IMEI e celle può aiutare a rilevare eventuali modelli comportamentali degli utenti?"
+    ],
+    "6.2": [
+        "Qual è la differenza tra l'istogramma e il diagramma a torta nella vista tabellare di TETRAS?",
+        "Quale azione deve compiere l'utente per escludere un numero dalla torta e eliminare dall'analisi?",
+        "Quali statistiche sono disponibili per la categoria \" Traffico telefonico\" nella tabella di visualizzazione?",
+        "Come si può accedere alla funzione di Analisi Statistica nella vista tabellare?",
+        "Come si può esportare tutta la tabella o una selezione in Excel?",
+        "Quali sono le principali categorie di statistiche disponibili nella tabella di visualizzazione dei dati?",
+        "Quale azione deve compiere l'utente per escludere un numero dalla torta e eliminarlo dall'analisi?",
+        "Quale tipo di grafico è possibile visualizzare per il traffico mensile e giornaliero, in aggiunta all'istogramma?",
+        "Quali sono i punti del software in cui la tabella di visualizzazione dei dati può essere ingaggiata?",
+        "Come si accede alla funzione di Analisi Statistica nella vista tabellare?",
+        "Come si accede alla funzione di Evidenzia valori minimi nella finestra di visualizzazione del diagramma a torta?",
+        "Quale azione deve compiere l'utente per esportare tutta la tabella o una selezione in Excel?",
+        "Quali statistiche sono disponibili per la categoria \"Traffico telefonico\" nella tabella di visualizzazione?",
+        "Come si può definire le statistiche da visualizzare per ogni categoria, ad esempio per l'utenza più contattata?"
+    ],
+    "7.1": [
+        "Qual è il vantaggio principale dell'utilizzo della funzione Ricerca all'interno del processo di analisi?",
+        "In che modo la funzione Ricerca può essere utile per ricercare informazioni dettagliate su entità specifiche all'interno dei dati complessi del Tabulato Telefonico?",
+        "Come si può utilizzare la funzione Ricerca per verificare la validità di una strategia di analisi in costante evoluzione?"
+    ],
+    "7.2": [
+        "Come si può estendere la ricerca alla sessione Persona?",
+        "Quali sono le caratteristiche peculiari delle entità giuridiche che possono essere inserite nella funzione Ricerca Intestatario di TETRAS?",
+        "Quali sono le opzioni disponibili per la personalizzazione della visualizzazione dei risultati della ricerca e come si possono personalizzare queste opzioni?",
+        "Come si può restringere la ricerca a una specifica indagine all'interno del menu a tendina in alto a sinistra?",
+        "Quale funzione è necessaria per visualizzare la schermata di dettaglio in Risultato della Ricerca?",
+        "Quale opzione di Ricerca selezionabile dall'apposito menu a tendina di destra consente l'inserimento dei dati anagrafici, P.Iva e Codici Fiscali?",
+        "Quali sono le caratteristiche peculiari delle entità giuridiche che possono essere inserite nella funzione Ricerca Intestataria di TETRAS?",
+        "Quali sono le caratteristiche peculiari delle entità giuridiche che possono essere inserite nella funzione Ricerca Intestataria di TETRAS e come si può riferire la Ricerca a una specifica Indagine all'interno del menu a tendina in alto a sinistra?",
+        "Come si può riferire la Ricerca ad una specifica Indagine all'interno del menu a tendina in alto a sinistra?",
+        "Come si può visualizzare solo gli intestatari marcato per ciascuna utenza nelle espansioni successive su Analist Note Book?",
+        "Quali sono i parametri disponibili per la ricerca delle utenze telefoniche?",
+        "Come si può estendere la ricerca a tutte le utenze presenti nella lista di intestatari?",
+        "Quali sono le opzioni disponibili per la visualizzazione dei risultati della ricerca e come si possono personalizzare queste opzioni?",
+        "Come si può visualizzare solo gli intestatari marcati per ciascuna utenza nelle espansioni successive su Analyst Notebook?"
+    ],
+    "8.1": [
+        "Quali sono le principali caratteristiche della sessione descritta nel testo che la rendono unica rispetto ad altre indagini criminale?",
+        "Qual è il ruolo fondamentale svolto dalla Persona nel contesto dell'indagine criminale complessa descritta nel testo?",
+        "In che modo l'analista può utilizzare i dati recuperati all'interno di La Persona per arricchire e modificare l'indagine in corso?"
+    ],
+    "8.2": [
+        "Quali sono le conseguenze di creare una Persona con i dati in possesso dell'analista e salvarla con l'apposita funzione Salva, come di consueto?",
+        "Come si associano due o più Persone tramite l'Unione Persona, e quali sono le conseguenze di questa azione?",
+        "Come si associa un indirizzo fisico alla persona d'interesse all'interno della sessione Scheda Persona?",
+        "Quali sono i vantaggi dell'utilizzo della Scheda Persona nella ricerca e nell'analisi criminale, secondo l'architettura di Tetras?",
+        "In che modo la gestione delle entità si integra con la creazione manuale di un'a Persona attraverso il comando \"Più\" in Tetras?",
+        "In che modo la creazione manuale di una Persona attraverso il comando \"Più\" in Tetras si integra con le funzioni dedicate alla gestione delle entità?",
+        "In che modo la Funzione Modifica consente di operare manualmente sul soggetto in Analisi?",
+        "Quali sono i parametri che possono essere inseriti nella Scheda Persona per effettuare una ricerca?",
+        "Come si possono gestire le modifiche alle schede Persona in Tetras, considerando la possibilità di eliminazione dei target di riferimento?",
+        "Come si associano due o più Persone tramite l'Unione Persone, e quali sono le conseguenze di questa azione?"
+    ],
+    "9.1": [
+        "È possibile associare più di una relazione tra un luogo e le persone presenti in quel punto?",
+        "Quali sono le tipologie di luoghi che possono essere gestiti dall'analista all'interno del sistema Tetras?",
+        "In che modo l'entità \"Luogo\" si differenzia dalle altre entità presenti nel database di Tetras?"
+    ],
+    "9.2": [
+        "Quali sono le funzioni disponibili all'interno della sezione \"Scheda Luogo\" per modificare o eliminare un luogo già presente in TETRAS?",
+        "Quali sono le informazioni che l'analista può inserire nella maschera \"Scheda Luogo\" per creare un nuovo luogo?",
+        "Quale funzione deve essere eseguita dall'analista per eliminare un luogo già presente nel sistema e non più valido?",
+        "Quali sono le tipologie di entità che possono essere connesse alla maschera \"Scheda Luogo\" tramite la procedura vista prima per le Persone?",
+        "Come si può resettare la maschera \"Scheda Luogo\" cancellando dalla Scheda i dati del Luogo in analisi?",
+        "Quale è il risultato finale dell'analista dopo aver eseguito la funzione \"Elimina\" su un luogo non ritenuto valido ai fini analitici?",
+        "Qual è il risultato finale dell'analista dopo aver eseguito la funzione \"Invia sul viewer\" su un Luogo?",
+        "Come si possono inserire i parametri di ricerca per un nuovo luogo da creare all'interno del sistema?",
+        "Come si associa una persona (fisica o giuridica) al luogo creato all'interno del sistema Tetras?"
+    ],
+    "10.1": [
+        "In che modo la creazione delle Liste rappresenta un punto cruciale dell'applicazione di una qualunque strategia di Analisi?",
+        "Quali sono le principali tipologie di entità gestite da Tetras nel Traffico Telefonico?",
+        "Come si avvicina l'analista al focus centrale dell'indagine attraverso la gestione delle Liste?"
+    ],
+    "10.2": [
+        "Come si può visualizzare il contenuto di una Lista specifica all'interno della sessione Elenco Liste?",
+        "In che modo la strategia di Analisi adottata influenza la possibilità di fruire delle Liste quando i Dati di un'indagine aumentano in volume e complessità?",
+        "Quali sono le principali funzionalità dell'interfaccia delle Liste nel software Tetras?",
+        "Quali sono le principali funzionalità della funzione Drag and Drop nel software Tetras?",
+        "Quali sono le caratteristiche principali dell'interfaccia delle Liste nel software Tetras?",
+        "In che modo l'utente ha accesso a tutte le Liste create, non solo quelle relative all'Indagine corrente?",
+        "Come si possono creare, modificare o eliminare una Lista all'interno del pannello di Navigazione di dettaglio?"
+    ],
+    "10.3": [
+        "Quale funzione deve essere azionata dalla schermata Lista per poter creare o modificare una lista esistente?",
+        "Come si procede per eliminare una Lista da Tetras che è stata creata o modificata?",
+        "Come si procede per salvare un contenuto aggiunto alla lista in Tetras?",
+        "Quale funzione deve essere azionata dalla schermata Lista per poter creare o modificare un elemento esistente in una lista in Tetras?",
+        "Come si procede per eliminare una lista da Tetras che è stata creata o modificata?",
+        "Quali sono le modalità di inserimento dei valori nella lista in Tetras?",
+        "Quali sono le principali modalità di aggiunta di un nuovo elemento in una Lista da Tetras?",
+        "Quale funzione deve essere azionata dalla schermata Lista per poter creare e modificare una Lista in Tetras?"
+    ],
+    "10.4": [
+        "In che modo Tetras supporta l'analista nel processo decisionale attraverso tooltip e altre caratteristiche dell'interfaccia?",
+        "Quali sono le azioni immediate disponibili per la lista risultato dopo aver eseguito un'operazione in Tetras, e come si possono utilizzare queste azioni per ottenere informazioni aggiuntive?",
+        "Quali sono le principali caratteristiche della funzione Lista di Tetras e come si relazionano con l'analisi investigativa?",
+        "Quali sono le tipologie di liste disponibili per l'operazione nella sessione Operazioni su Liste?",
+        "Come si seleziona la lista desiderata per eseguire un'operazione specifica in Tetras, e quali sono i passaggi necessari per raggiungere questo obiettivo?",
+        "Come si può utilizzare la funzione di esportazione dei risultati in un dossier personalizzabile per analizzare le entità e le loro relazioni?",
+        "Come funziona la funzione di ranking nell'ambito dell'insiemistica e quale è il suo scopo in questo contesto?",
+        "Come si può utilizzare la funzione di creazione di una nuova lista con i risultati dell'operazione appena eseguita in Tetras?",
+        "In che modo la funzione Operazioni su Lista in Tetras supporta l'analista nel processo decisionale attraverso strumenti e altre caratteristiche dell'interfaccia?",
+        "Quali sono le principali caratteristiche della funzione Liste di Tetras e come si relazionano con l'insiemistica?"
+    ],
+    "11.1": [
+        "Quali sono le esigenze investigative soddisfatte dalla ricerca di \"utenze vicine nello spazio e nel tempo\" e come può essere utilizzata per scopi investigativi?",
+        "Come si possono utilizzare le funzioni di analisi e visualizzazione dei risultati della ricerca per identificare tendenze e modelli nel traffico telefonico?",
+        "Quali sono gli aspetti chiave dell'analisi smart che consentono un maggior grado di approfondimento analitico durante la fase di analisi, come ad esempio l'esecuzione delle analisi più onerose in background?",
+        "Come funziona la logica del NLP (Natural Language Processing) per il raggruppamento semantico dei termini di ricerca nella voce Utenze vicine nello spazio e nel tempo?",
+        "Quali sono le esigenze investigative soddisfatte dalla ricerca di \"utente vicino nello spazio e nel tempo\" e come può essere utilizzata per scopi investigativi?",
+        "Come si può utilizzare la funzione \"detach\" per visualizzare l'analisi in corso in un box dedicato e consultare il risultato nella sezione Storico analisi?",
+        "Come funziona la logica del NLG (Natural Language Generation) per il raggruppamento semantico dei termini di ricerca nel voice Utente vicina nello spazio e nel tempo?",
+        "Quali sono le strategie di analisi adottate dall'utente analista e come influiscono sui filtri di ricerca disponibili?",
+        "Quali sono le strategie di Analisi adottate dall'utente analista e come influiscono sui filtri di ricerca disponibili?"
+    ],
+    "11.2": [
+        "Come si possono escludere entità specifiche dai risultati della ricerca di percorsi tra gruppi di utenze?",
+        "Quale informazione viene visualizzata nel Viewer quando si invia un record a tale componente?",
+        "Quali sono i filtri disponibili per selezionare le relazioni tra utenze nel Trova Percorso?"
+    ],
+    "11.3": [
+        "Come si può utilizzare il filtro Analisi degli spostamenti per identificare utenze che si muovono insieme?",
+        "Quale è la differenza tra visualizzare gli spostamenti di un target con altre utenze dell'indagine e visualizzare le coordinate dei target su una mappa?",
+        "Quali sono le caratteristiche principali dell'analisi smart Utenze vicine nello spazio e nel tempo?"
+    ],
+    "11.4": [
+        "Come viene visualizzato il match anagrafico tra persone, agende e traffico telefonico nel dispositivo selezionato e quali informazioni vengono rappresentate in questo processo?",
+        "Quali sono le principali opzioni offerte dall'analisi smart in relazione alla ricerca di dispositivi nel database del software?",
+        "Quale tipo di informazioni viene cercato nella Ricerca testuale dell'analisi smart, e quali sono i risultati forniti come output?",
+        "Come si seleziona un singolo dispositivo o più dispositivi per l'analisi tramite le text boxes nell'Analisi Smart?",
+        "Quali sono le caratteristiche dei contatti a zero interazioni e come viene visualizzata questa informazione sulla tabella a destra?",
+        "Quali sono le principali funzionalità dell'analisi smart del dispositivo e come si relazionano con la ricerca di dispositivi nel database del software?"
+    ],
+    "11.5": [
+        "Come si ottiene la visualizzazione delle organizzazioni relazionate con il target, e quali informazioni sono mostrate in questa sezione?",
+        "È possibile filtrare o ordinare le entità visualizzate nel DB in base a specifici criteri?",
+        "Quali sono le funzionalità aggiuntive disponibili per ognuna delle relazioni interpersonali visualizzate?"
+    ],
+    "11.6": [
+        "Come si selezionano e si utilizzano le liste di celle per effettuare l'analisi del traffico interno?",
+        "Quale informazione è fornita dalla colonna \"Percentuale\" nella tabella dell'analisi Presenza utenza?",
+        "Quali sono le principali funzionalità delle analisi smart introdotte nel contesto?"
+    ],
+    "11.7": [
+        "Quali sono le principali attività di analisi che possono essere effettuate sulle entità di tipo Luogo in Tetras?",
+        "Quale è la funzione del pulsante \"Più\" posto accanto al campo Inserisci valori per l'inserimento dei luoghi da esaminare?",
+        "Come si può visualizzare il traffico prodotto da utenze che hanno agganciato le celle presenti nei luoghi inseriti come dato di input?"
+    ],
+    "12.1": [
+        "Quali sono le principali caratteristiche del Viewer che lo rendono un strumento potente per la visualizzazione dei dati complessi?",
+        "Come il Viewer si relaziona con la Link Analysis e quali sono i benefici di questa correlazione?",
+        "In che modo l'analista può utilizzare le funzioni presenti nell'interfaccia di Tetras all'interno del Viewer per lavorare in modalità manuale?"
+    ],
+    "12.2": [
+        "Quali sono le informazioni che si possono visualizzare nella funzione \"Entità in Comune\" del menu contestuale?",
+        "Come si può eseguire l'Analisi Smart per l'utenza di interesse e quali sono i parametri da considerare?",
+        "Quale è la differenza tra l'Indagine di Appartenenza e l'Indagine come Attributo, e come si possono accedere a queste funzionalità nel menu contestuale della Lista?",
+        "Come si può associare un numero a una entità Persona già presente nel database e quali sono le informazioni che verranno incluse in essa?",
+        "Quali sono le informazioni anagrafiche che si possono visualizzare nella funzione \"Persona\" del menu contestuale?",
+        "Quale è la differenza tra il Filtro Traffico interno e il Filtro Traffico esterno, e come si possono accedere a queste funzionalità nel menu contestuale?",
+        "Quale è la differenza tra la funzione \"Ricerche\" di Tetras e la funzione \"Analisi\" dell'entità, e come si possono accedere a queste funzionalità nel menu contestuale?",
+        "Quali sono le tipologie di entità associate alle Ricerche oggetto d'Analisi ed inerenti alla Numerazione, al Traffico Telefonico, al Traffico dell'utenza oggetto di Analisi, alle Indagini le Sottoindagini e ai Tabulati di appartenenza?",
+        "Come si può eseguire l'Analisi Smart per l'utenza d'interesse e quali sono i parametri che verranno considerati in essa?",
+        "Come si può associare un numero ad una entità Persona già presente nel database e quali sono le informazioni che verranno incluse in esso?",
+        "Come si può modificare il contenuto di una Lista e quali sono le opzioni disponibili per visualizzarla in formato tabellare?",
+        "Come si può generare un Report per l'entità d'interesse e quali informazioni verranno incluse in esso?",
+        "Quali sono i tipi di entità associate alle Ricerche oggetto di Analisi ed inerenti alla Numerazione, al Traffico Telefonico, al Traffico dell'utenza oggetto di Analisi, alle Indagini le Sottoindagini e ai Tabulati di appartenenza?",
+        "Quali sono le funzioni disponibili nel menu contestuale della Lista quando si seleziona l'icona Telefono?"
+    ],
+    "14.1": [
+        "Quali sono i vantaggi principali dell'utilizzo della sessione Filtro Traffico di Tetras nella ricerca e nell'analisi dei dati complessi?",
+        "Come si relaziona la strategia d'ipotesi iniziale con il processo di analisi virtuoso descritto nel testo?",
+        "Quali sono i parametri offerti da Tetras che consentono all'analista di operare il Filtro Traffico Telefonico in modo efficace?"
+    ],
+    "14.2": [
+        "Quali sono le opzioni disponibili per modificare la tipologia delle entità da ricercare e come funziona il parametro \"escludi scosti\" in questa operazione?",
+        "Quali sono le opzioni disponibili per modificare la tipologia delle entità da ricercare?",
+        "Come funziona il parametro \"escludi sconosciuti\" e qual è l'effetto sulla ricerca di entità non riconosciute?",
+        "Come si selezionano le funzioni di esclusione, quali il traffico telematico e le chiamate attive nel periodo, e qual è l'effetto sulla ricerca delle entità non riconosciute?",
+        "È possibile impostare una specifica frequenza per la ricerca e come funziona l'esclusione di una categoria attraverso il flag sulla funzione \"Exclude Category\"?",
+        "È possibile annullare o confermare le scelte di Analisi tramite quali funzioni, come descritto nel contesto?"
+    ],
+    "14.2.1": [
+        "Come si possono recuperare e riutilizzare i criteri di ricerca impostati in precedenza?",
+        "Quali sono i vantaggi di utilizzare il template salvato per l'analisi di traffico telefonico?",
+        "In che modo la funzione \"Carica\" del pulsante consente di rilanciare la ricerca o di aggiungere nuovi filtri?"
+    ],
+    "15.1": [
+        "Come funziona la procedura di georeferenziazione manuale nel caso in cui gli indirizzi delle celle non siano scritti in maniera chiara?",
+        "Quali sono le nuove funzionalità aggiunte all'interfaccia grafica del GIS e come vengono utilizzate per la visualizzazione delle posizioni delle celle e delle cabine telefoniche?",
+        "Quali sono i tipi di informazioni che partecipano alla creazione del GIS e come vengono rappresentate?"
+    ],
+    "15.2": [
+        "Quali sono le opzioni disponibili per la scelta del motore di georeferenziazione nella pagina Georeferenziazione?",
+        "Come si aggiunge un proprio server di mappe o una cartografia personalizzata nella pagina Cartografico?",
+        "In che modo l'aggiunta dell'opzione Esri Server ha reso il GIS Viewer compatibile con Tetras?"
+    ],
+    "15.3": [
+        "Come si possono modificare i Layer esistenti e quali opzioni sono disponibili per personalizzarne la visualizzazione sulla mappa?",
+        "È possibile creare un Layer di default che sia sempre visibile sulla mappa, anche quando si naviga tra diversi strati dell'analisi?",
+        "Quali sono le funzionalità principali del Layer GIS e come può essere utilizzato per analizzare diverse entità?"
+    ],
+    "15.4": [
+        "Come si può generare un template di richiesta di emissione del decreto precompilato tramite l'area di ricerca?",
+        "Quali sono le funzionalità di analisi e reporting di Tetras che possono essere utilizzate per esplorare le entità presenti nell'area di ricerca?",
+        "Qual è la differenza tra la ricerca di prossimità e la ricerca di celle limitrofe a un percorso, e quali sono le istruzioni per attivarle?",
+        "Quali sono le opzioni disponibili per selezionare e visualizzare i percorsi di una utenza sul Viewer, e come si possono utilizzare per esplorare l'area di ricerca?",
+        "Come si può utilizzare la funzionalità di tracciamento delle entità georeferenziate sulla mappa per visualizzare i percorsi di una utenza su Mappa?",
+        "Come si può generare un template di emissione del decreto precostituito tramite l'area di ricerca?",
+        "Quale è la differenza tra la ricerca di prossimità e la ricerca di celle limitrofe a un percorso, e quali sono le istruzioni per attivarle?",
+        "Quali sono le funzionalità di analisi e reportistica di Tetras che possono essere utilizzate per esplorare le entità presenti nell'area di ricerca?",
+        "Come si può configurare la finestra di passaggio per scegliere i limiti temporali di interesse per visualizzare solo frazioni di tempo utili all'analisi dei percorsi?",
+        "Come si può configurare la finestra di passaggio per scegliere i limiti temporali di interesse per visualizzare solo frazioni di tempo su un percorso?"
+    ],
+    "16.1": [
+        "Quale è il significato della selezione dell'Ambito delle Espansioni e come influisce sulla visualizzazione dei risultati?",
+        "Quali sono le informazioni che vengono richieste all'autorità procedente tramite il template di richiesta di acquisizione del traffico destinato all'autorità procedente esperibile per imei, imsi, utenza o cella?",
+        "Come si possono modificare i diritti di Analisi del singolo utente che si trova a navigare TETRAS?",
+        "Qual è l'obiettivo dell'analisi forense dispositivo e quali sono le informazioni che possono essere estratte da un dispositivo (Smartphone, Tablet, ecc.)?",
+        "Quali sono le opzioni di impostazione dell'utente disponibili nella schermata degli strumenti?",
+        "Come si verifica il funzionamento del proxy e come si può cambiare la password nella sezione opzioni Proxy?"
+    ],
+    "17.1": [
+        "Quali sono le modalità di importazione dei contenuti estratti da uno smartphone che si differenziano dalle procedure viste nel capitolo precedente?",
+        "Quale elemento visivo è utilizzato per segnalare la fine della procedura di importazione dei dati del dispositivo?",
+        "Come viene visualizzato l'esito dell'importazione del file di traffico all'interno dell'applicativo Tetras?"
+    ],
+    "17.2": [
+        "Quale funzione permette all'analista di visualizzare le posizioni del dispositivo registrate nel tempo dato?",
+        "Quali sono le opzioni disponibili per l'analista per modificare le informazioni relative al dispositivo?",
+        "Come si possono associare le modifiche apportate al dispositivo ad una persona?"
+    ],
+    "17.3": [
+        "Come si accede al menu di Tetras per visualizzare le entità associate a un dispositivo?",
+        "Quale bottone deve essere cliccato in alto a destra per inviare un dispositivo al viewer?",
+        "Quali sono le azioni necessarie per visualizzare un dispositivo sul Visualizzatore di Tetras?"
+    ],
+    "17.4": [
+        "Quali sono le tipologie di dati che possono essere inviati sulla mappa per ricostruire il percorso del dispositivo?",
+        "È possibile visualizzare più percorsi contemporaneamente e, se sì, come si possono riprodurre tramite l'animazione della barra in alto a destra?",
+        "In che modo la connotazione temporale degli spostamenti geografici viene visualizzata nel viewer e nella dashboard iniziale?"
+    ],
+    "17.5": [
+        "Quali sono i passaggi necessari per associare un dispositivo a una persona tramite la scheda account?",
+        "Come si verifica l'esistenza di una previa relazione tra un soggetto e il dispositivo nella dashboard iniziale?",
+        "Quale azione deve essere compiuta per creare, modificare o eliminare una relazione con una persona nel menu Persona?"
+    ],
+    "17.6": [
+        "Quale informazione è garantita per ogni singola chat selezionata?",
+        "Come si possono associare note alle chat relative a ciascun contatto nel dispositivo?",
+        "Come si possono visualizzare tutte le posizioni in qualunque modo ed a qualunque titolo georeferenziate dal soggetto tramite il dispositivo o altri dispositivi ad esso sincronizzati?",
+        "Quale informazione è visualizzata per ogni singola immagine selezionata nella galleria del dispositivo?",
+        "Quali sono le informazioni visualizzate nella sezione \"Cronologia web\" e come vengono utilizzate per fornire contezza dell'utente?",
+        "Quali sono le funzionalità principali del menu di sinistra nella dashboard iniziale?",
+        "Come si possono filtrare i messaggi e/o contatti mediante ricerca avanzata nel menu di chat?",
+        "In quale sezione del menu di sinistra è possibile visualizzare i siti salvati dall'utente come preferiti, in quanto di frequente i più visitati?"
+    ],
+    "18.2": [
+        "Quale è l'impatto sulla sicurezza dei dati gestiti dalla versione Client di Tetras grazie all'introduzione della profilazione dell'utenza?",
+        "In che modo il tool denominato User Manager contribuisce alla configurazione del profilo dell'utente come Data Search?",
+        "Quali sono i vantaggi principali dell'implementazione della modalità di setting concernente la profilazione dell'utenza nella versione Client di Tetras?"
+    ],
+    "18.3": [
+        "Quali sono le credenziali che l'utente deve inserire per accedere alla schermata di configurazione dei Dati?",
+        "In quale momento e da qualunque luogo sarà possibile accedere ai dati dell'utente dopo aver attivato la funzione di profilazione?",
+        "Cosa succede se l'utente spunta la casella relativa alla voce Data Search, ma non ha ulteriori ruoli assegnati nel sistema Tetras?"
+    ],
+    "18.4": [
+        "Si può specificare se è possibile filtrare le entità ricercate in base a criteri specifici, come ad esempio la data o l'ora di registrazione?",
+        "Come si accede alla scheda di dettaglio di un'entità in Tetras Web, ad esempio per una persona o un numero di telefono?",
+        "Quali sono le tipologie di entità che possono essere ricercate tramite la barra di ricerca in Tetras Web?"
+    ],
+    "18.5": [
+        "Quale risorsa esterna viene raccomandata agli utenti per approfondire le complessità inerenti all'analisi del traffico telefonico?",
+        "Quali sono le caratteristiche principali della funzione di georeferenziazione resa disponibile nell'applicazione?",
+        "Come si aggiunge una cella alla mappa globale e quali vantaggi ne derivano per l'utente?"
+    ]
+}
