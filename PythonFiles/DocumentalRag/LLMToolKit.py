@@ -5,16 +5,18 @@ from sentence_transformers import SentenceTransformer
 import logging
 import os
 from typing import List
-
-
+from dotenv import load_dotenv
+load_dotenv()
 
 
 class QuestionGenerator:
-    def __init__(self, model_name="llama3.1:latest", base_url=f"{os.getenv("OLLAMA_URL")}", embedder="efederici/sentence-BERTino"):
+
+    def __init__(self, model_name="llama3.1:latest", base_url=f"{os.getenv('OLLAMA_URL')}", embedder="efederici/sentence-BERTino"):
         self.model_name = model_name
         self.base_url = base_url
         self.embedder = SentenceTransformer(embedder)
-        self.llm = OllamaLLM(model=model_name, base_url=base_url, temperature=0.3)
+        self.llm = OllamaLLM(
+            model=model_name, base_url=base_url, temperature=0.3)
         self.question_gen_prompt = PromptTemplate(
             input_variables=["context", "n_questions", "questions"],
             template="""You are an expert at generating insightful questions for vector similarity search testing.
@@ -40,44 +42,43 @@ class QuestionGenerator:
 
             Generate exactly {n_questions} questions, one per line and not enumerated:"""
         )
-        
+
     def add_strings_to_lines(self, strings):
         return '\n'.join([f"{' '.join(line)}" for line in strings])
 
     def generate_questions_from_chunks(self, chunk_dict, questions_per_chunk=3):
         questions_dict = {}
-        
+
         logging.basicConfig(level=logging.INFO)
 
-        
         for index, chunks in chunk_dict.items():
             logging.info(f"Generating questions for index {index}")
             chunk_questions = []
-            
+
             # Create a new chain instance for each chunk
             chain = (
-                {"context": itemgetter("context"), 
-                "n_questions": itemgetter("n_questions"),
-                "questions": itemgetter("questions")}
-                | self.question_gen_prompt 
+                {"context": itemgetter("context"),
+                 "n_questions": itemgetter("n_questions"),
+                 "questions": itemgetter("questions")}
+                | self.question_gen_prompt
                 | self.llm
             )
-            
+
             """response = input("Start? (yes/no): ").strip().lower()
             if response != 'no':"""
             for chunk in chunks:
                 """response = input("Start? (yes/no): ").strip().lower()
                 if response != 'no':"""
-                    # Create a new chain instance for each chunk
+                # Create a new chain instance for each chunk
                 chain = (
-                    {"context": itemgetter("context"), 
-                    "n_questions": itemgetter("n_questions"),
-                    "questions": itemgetter("questions")}
-                    | self.question_gen_prompt 
+                    {"context": itemgetter("context"),
+                     "n_questions": itemgetter("n_questions"),
+                     "questions": itemgetter("questions")}
+                    | self.question_gen_prompt
                     | self.llm
                 )
-                
-                #Previous questions
+
+                # Previous questions
                 print("Previous questions:")
                 for q in chunk_questions:
                     print(q)
@@ -86,29 +87,31 @@ class QuestionGenerator:
                     "n_questions": questions_per_chunk,
                     "questions": self.add_strings_to_lines(chunk_questions)
                 })
-                
+
                 new_questions = [
-                    q.strip() for q in result.split('\n') 
+                    q.strip() for q in result.split('\n')
                     if q.strip() and '?' in q
                 ]
                 chunk_questions.extend(new_questions[:questions_per_chunk])
-                
+
                 # Print the generated questions before continuing
                 print("Generated questions:")
                 for question in new_questions:
                     print(question)
-            
+
             questions_dict[index] = chunk_questions
-        
+
         return questions_dict
+
+
 class RagPipeline:
-    def __init__(self, model_name="llama3.2:latest", base_url=f"{os.getenv("OLLAMA_URL")}", embedder="efederici/sentence-BERTino"):
+    def __init__(self, model_name="llama3.2:latest", base_url=f"{os.getenv('OLLAMA_URL')}", embedder="efederici/sentence-BERTino"):
         self.model_name = model_name
         self.base_url = base_url
         self.embedder = SentenceTransformer(embedder)
-        self.llm = OllamaLLM(model=model_name, base_url=base_url, temperature=0.3)
-        
-        
+        self.llm = OllamaLLM(
+            model=model_name, base_url=base_url, temperature=0.3)
+
         self.tetras_rag_prompt = PromptTemplate(
             input_variables=["contexts", "question"],
             template="""Sei un esperto di manuali di utilizzo di TETRAS, specializzato nell'assistenza tecnica e nel supporto agli utenti.
@@ -147,7 +150,8 @@ class RagPipeline:
         """Format context list with relevance markers"""
         formatted_contexts = []
         for i, ctx in enumerate(context_list, 1):
-            formatted_contexts.append(f"Contesto classificato con posizione{i}:\n{ctx}\n")
+            formatted_contexts.append(
+                f"Contesto classificato con posizione{i}:\n{ctx}\n")
         return "\n".join(formatted_contexts)
 
     def process_contexts(self, contexts: List[str]) -> List[str]:
@@ -177,5 +181,3 @@ class RagPipeline:
         })
 
         return answer, indecies
-
-

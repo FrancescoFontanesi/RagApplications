@@ -1,0 +1,15 @@
+pymupdf
+langchain
+langchain_ollama
+psycopg2-binary
+python-docx
+sentence-transformers
+transformers
+flask_swagger_ui
+flask
+flask_cors
+flask_swagger
+blingfire
+pandas
+scikit-learn
+python-dotenv
