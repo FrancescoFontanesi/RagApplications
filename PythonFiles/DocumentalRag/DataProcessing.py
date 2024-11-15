@@ -388,7 +388,7 @@ class DocumentProcessor:
             db.commit()
     
     #da usare per inizializzare il database con gli schemas diversi per le varie tipologie di chunk
-    def init_for_sea(self,overlap_schemas_dict, hybrd_schemas_dict):
+    def init_for_sea(self,overlap_schemas_dict : dict, hybrd_schemas_dict: dict) -> None:
         logging.info("Starting data processing...")
 
         subtitles_dict = self.extract_subtitles_and_text()

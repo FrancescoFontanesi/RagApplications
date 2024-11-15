@@ -8,6 +8,10 @@ from typing import List
 import VectorToolKit as vs  # Import the VectorToolKit class
 from LLMToolKit import RagPipeline as rag  # Import the RagPipeline class
 import DataProcessing as dp  # Import the Dataprocessing class
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
 
 
 # Create Flask application
@@ -45,19 +49,11 @@ class SchemasNames(Enum):
     SchemasNames is an enumeration that represents different schema names used in the application.
 
     Attributes:
-        DB0 (str): Represents the schema name "Overlap0".
-        DB5 (str): Represents the schema name "Overlap0.5".
-        DB10 (str): Represents the schema name "Overlap1".
-        DB15 (str): Represents the schema name "Overlap1.5".
-        DB20 (str): Represents the schema name "Overlap2".
-        DB25 (str): Represents the schema name "Overlap2.5".
-        DB30 (str): Represents the schema name "Overlap3".
-        DB_HYBRID_54 (str): Represents the schema name "Hybrid64".
+        DB30 (str): Represents the schema name "Overlap30"
         DB_HYBRID_128 (str): Represents the schema name "Hybrid128".
-        DB_HYBRID_64 (str): Represents the schema name "Hybrid64".
-        DB_HYBRID_256 (str): Represents the schema name "Hybrid256".
+        
     """
-    DB30 = "Overlap3"
+    DB30 = "Overlap30"
     DB_HYBRID_128 = "Hybrid128"
 
 class SchemaType(Enum):
@@ -100,20 +96,14 @@ smaller pieces of specified token sizes.
 The schema name indicates either:
 - The overlap percentage (e.g. DB5 = 5% overlap)
 - The schemas_enum: Dict[SchemasNames, SchemaType] = {
-    # Overlap schemas with different overlap percentages (0-30%)
-    SchemasNames.DB0: SchemaType.OVERLAP,     # No overlap between chunks
-    SchemasNames.DB5: SchemaType.OVERLAP,     # 5% overlap between chunks
-    SchemasNames.DB10: SchemaType.OVERLAP,    # 10% overlap between chunks
-    SchemasNames.DB15: SchemaType.OVERLAP,    # 15% overlap between chunks
-    SchemasNames.DB20: SchemaType.OVERLAP,    # 20% overlap between chunks
-    SchemasNames.DB25: SchemaType.OVERLAP,    # 25% overlap between chunks
+    # Overlap schemas with different overlap percentage
+
     SchemasNames.DB30: SchemaType.OVERLAP,    # 30% overlap between chunks
     
-    # Hybrid schemas with different small chunk sizes (64-256 tokens)
-    SchemasNames.DB_HYBRID_54: SchemaType.HYBRID,    # Large chunks split into 64-token pieces
+    # Hybrid schemas with different small chunk size
+    
     SchemasNames.DB_HYBRID_128: SchemaType.HYBRID,   # Large chunks split into 128-token pieces
-    SchemasNames.DB_HYBRID_192: SchemaType.HYBRID,   # Large chunks split into 192-token pieces
-    SchemasNames.DB_HYBRID_256: SchemaType.HYBRID    # Large chunks split into 256-token pieces
+
 }
 """
 
@@ -138,10 +128,11 @@ def get_available_schemas() -> List[str]:
     return [schema_name for schema_name in SchemasNames]
 
 def get_connection_to_sql_database(
-    host: str,
-    username: str,
-    password: str,
-    data_base_name: str = "Manuale Tetras",
+    host: str = os.getenv("HOST"),
+    port: str = os.getenv("PORT"),
+    username: str = os.getenv("USERNAME"),
+    password: str = os.getenv("PASSWORD"),
+    data_base_name: str = "postgres",
     schema_name: str = SchemasNames.DB_HYBRID_128.value[0]
 ) -> psycopg2.extensions.connection:
     """
@@ -151,7 +142,7 @@ def get_connection_to_sql_database(
         host (str): Database host address
         username (str): Database username
         password (str): Database password
-        data_base_name (str): Database name (default: "Manuale Tetras")
+        data_base_name (str): Database name (default: "postgres")
         schema_name (str): Schema name (default: Hybrid128)
         
     Returns:
@@ -159,6 +150,7 @@ def get_connection_to_sql_database(
     """
     return psycopg2.connect(
         host=host,
+        port = port,
         dbname=data_base_name,
         user=username,
         password=password,
@@ -177,10 +169,44 @@ def swagger_file():
 
 
 
+
+
+"""
+    Initializes the database with schemas for different types of chunking.
+
+    This route triggers the `init_for_sea` method of the `DataProcessor` class, which performs the following steps:
+    1. Extracts subtitles and text from the document.
+    2. Generates chunked dictionaries with different overlap percentages.
+    3. Generates hybrid chunked dictionaries with different chunk sizes.
+    4. Creates schemas in the SQL database for both overlap and hybrid chunked data.
+    5. Inserts the generated data into the respective schemas in the SQL database.
+
+    The schemas for overlap and hybrid chunked data are provided as `schemas_enum_overlap` and `schemas_enum_hybrid` respectively.
+
+    Returns:
+        None
+"""
+
 @app.route('/init', methods=['GET'])
-def init():
-    DataProcessor.init_for_sea(schemas_enum_overlap, schemas_enum_hybrid)
     
+def init():
+    """
+    @swagger
+    paths:
+        /init:
+            post:
+                summary: Initialize the data processor for sea schemas
+                description: This endpoint initializes the data processor with the provided sea schemas.
+                tags:
+                    - DataProcessor
+                responses:
+                    200:
+                        description: Data processor initialized successfully
+                    400:
+                        description: Bad request, invalid input parameters
+    """
+    DataProcessor.init_for_sea(schemas_enum_overlap, schemas_enum_hybrid)
+    # funziona sulla base degli enum definiti qua dentro, l'utente non ha controllo sul'inizializzazione dei db
 
 
 @app.route('/methods', methods=['GET'])
@@ -193,17 +219,8 @@ def get_methods():
         
     Example Response:
         [
-            "Overlap0",
-            "Overlap0.5",
-            "Overlap1",
-            "Overlap1.5",
-            "Overlap2",
-            "Overlap2.5",
-            "Overlap3",
-            "Hybrid64",
-            "Hybrid128",
-            "Hybrid192",
-            "Hybrid256"
+            "Overlap30",
+            "Hybrid64"
         ]
     
     OpenAPI Spec:
@@ -220,7 +237,7 @@ def get_methods():
                 type: array
                 items:
                   type: string
-                example: ["Overlap0", "Overlap0.5", "Hybrid128"]
+                example: [ "Overlap30", "Hybrid128"]
         '500':
           description: Internal server error
           content:
@@ -232,7 +249,6 @@ def get_methods():
                     type: string
     """
     schemas = get_available_schemas()
-    print(schemas)
     try:
         return jsonify([schema.value for schema in schemas]), 200
     except Exception as e:
@@ -251,12 +267,12 @@ def vectorial_query(question, schema):
 @app.route('/save', methods=['POST'])
 def save():
     """
-    Endpoint to perform vector similarity search using specified schema.
+    Endpoint to save user valuation of the answer.
     ---
     tags:
     - Save
-    summary: Perform vector similarity search using specified schema 
-    description: Performs semantic search using specified schema and question returning the top 5 matching results as a 
+    summary: Save user valuation
+    description: Save user valuation of the answer  
     requestBody:
         required: true
         content:
@@ -264,81 +280,73 @@ def save():
                 schema:
                     type: object
                     required:
-                        - schema
                         - question
+                        - answer
+                        - valuation type 1
+                        - valuation type 2
+                        - valuation type 3
+                        - valuation type 4
+                        - valuation type 5
                     properties:
-                        schema:
-                            type: string
-                            description: Schema name to use for search
-                            enum: [DB0, DB5, DB10, DB15, DB20, DB25, DB30, DB_HYBRID_54, DB_HYBRID_128, DB_HYBRID_192, DB_HYBRID_256]
                         question:
                             type: string
-                            description: Query text to search for
-    responses:
-        200:
-            description: Search results
-            content:
-                application/json:
-                    schema:
-                        type: object
-                        properties:
-                            results:
-                                type: array
-                                items:
-                                    type: object
-                                    properties:
-                                        content: 
-                                            type: string
-                                        index: 
-                                            type: string
-                                        similarity:
-                                            type: number
-                                            format: float
-        400:
-            description: Invalid request parameters
-        500:
-            description: Internal server error
+                            description: Question text
+                        answer:
+                            type: string
+                            description: Answer to the question
+                        valuation type 1:
+                            type: string
+                            description: Valuation of to question 1
+                        valuation type 2:
+                            type: string
+                            description: Valuation of to question 2
+                        valuation type 3:
+                            type: string
+                            description: Valuation of to question 3
+                        valuation type 4:
+                            type: string
+                            description: Valuation of to question 4
+                        valuation type 5:
+                            type: string
+                            description: Valuation of to question 5                     
     """
-    try:
-        data = request.get_json()
-        
-        if not data or 'schema' not in data or 'question' not in data:
-            return jsonify({
-                'error': 'Missing required parameters',
-                'required': ['schema', 'question']
-            }), 400
-            
-        schema = data['schema']
-        question = data['question']
-        
-        if schema not in schemas_enum:
-            return jsonify({
-                'error': 'Invalid schema',
-                'valid_schemas': list(schemas_enum.keys())
-            }), 400
-            
-        results = vectorial_query(question, schema)
-        
-        formatted_results = [
-            {
-                'content': result[0],
-                'index': result[1],
-                'similarity': float(result[2])
-            }
-            for result in results
-        ]
-        
+    data = request.get_json()
+    
+    if not data or 'question' not in data or 'answer' not in data:
         return jsonify({
-            'results': formatted_results,
-            'count': len(formatted_results)
-        }), 200
+            'error': 'Missing required parameters',
+            'required': ['question', 'answer', 'valuation type 1', 'valuation type 2', 'valuation type 3', 'valuation type 4', 'valuation type 5']
+        }), 400
+        
+    question = data['question']
+    answer = data['answer']
+    valuation_type_1 = data['valuation type 1']
+    valuation_type_2 = data['valuation type 2']
+    valuation_type_3 = data['valuation type 3']
+    valuation_type_4 = data['valuation type 4']
+    valuation_type_5 = data['valuation type 5']
+    
+    try:
+        conn = get_connection_to_sql_database(schema_name='valutation')
+        cursor = conn.cursor()
+        
+        insert_query = """
+        INSERT INTO valutation (question, answer, valuation_type_1, valuation_type_2, valuation_type_3, valuation_type_4, valuation_type_5)
+        VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """
+        
+        cursor.execute(insert_query, (question, answer, valuation_type_1, valuation_type_2, valuation_type_3, valuation_type_4, valuation_type_5))
+        conn.commit()
+        
+        cursor.close()
+        conn.close()
+        
+        return jsonify({'message': 'Valuation saved successfully'}), 200
         
     except Exception as e:
-        return jsonify({
-            'error': 'Internal server error',
-            'message': str(e)
-        }), 500
-        
+        return jsonify({'error': 'Internal server error', 'message': str(e)}), 500
+    pass
+            
         
 @app.route('/question', methods=['POST'])
 def question():
@@ -362,13 +370,13 @@ def question():
                         schema:
                             type: string
                             description: Schema name to use for answering the question
-                            enum: [DB0, DB5, DB10, DB15, DB20, DB25, DB30, DB_HYBRID_54, DB_HYBRID_128, DB_HYBRID_192, DB_HYBRID_256]
+                            enum: [DB30, DB_HYBRID_128]
                         question:
                             type: string
                             description: Question text to answer
     responses:
         200:
-            description: Answer to the question
+            description: Answer to the question, the indices of the results and the question itself
             content:
                 application/json:
                     schema:
@@ -380,6 +388,8 @@ def question():
                                 type: array
                                 items:
                                     type: string
+                            question:
+                                type: string
         400:
             description: Invalid request parameters
         500:
@@ -414,7 +424,8 @@ def question():
         
         return jsonify({
             'answer': answer,
-            'indecies': indecies
+            'indecies': indecies,
+            'question': question
         }), 200
         
     except Exception as e:
