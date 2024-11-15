@@ -7,6 +7,7 @@ import psycopg2
 from typing import List
 import VectorToolKit as vs  # Import the VectorToolKit class
 from LLMToolKit import RagPipeline as rag  # Import the RagPipeline class
+import DataProcessing as dp  # Import the Dataprocessing class
 
 
 # Create Flask application
@@ -36,6 +37,7 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 app.register_blueprint(swaggerui_blueprint)
 VectorTool = vs.VectorToolKit()
 RagTool = rag()
+DataProcessor = dp.DocumentProcessor()
 
 
 class SchemasNames(Enum):
@@ -69,15 +71,25 @@ class SchemaType(Enum):
     OVERLAP = 2
     HYBRID = 1
 
-schemas_enum = {
+schemas_enum_overlap = {
     # Overlap schemas with different overlap percentages 
     
     SchemasNames.DB30: SchemaType.OVERLAP,    # 30% overlap between chunks
     
-    # Hybrid schemas with different small chunk sizes (64-256 tokens)
-    SchemasNames.DB_HYBRID_128: SchemaType.HYBRID,    # Large chunks split into 128-token pieces
     
 }
+schemas_enum_hybrid = {
+    # Hybrid schemas with different small chunk sizes (64-256 tokens)
+    SchemasNames.DB_HYBRID_128: SchemaType.HYBRID,    # Large chunks split into 128-token pieces
+}
+
+schemas_enum = {
+    **schemas_enum_overlap,
+    **schemas_enum_hybrid
+}
+
+
+    
 """
 Maps schema names to their types (OVERLAP or HYBRID).
 
@@ -115,11 +127,6 @@ def spec():
     swag['info']['title'] = APP_NAME
     return jsonify(swag)
 
-
-
-@app.route('/init', methods=['GET'])
-def init():
-    pass
 
 def get_available_schemas() -> List[str]:
     """
@@ -168,9 +175,13 @@ def swagger_file():
     """
     return app.send_from_directory('swagger.json')
 
-@app.route('/')
-def index():
-    return 'Hello, World!'
+
+
+@app.route('/init', methods=['GET'])
+def init():
+    DataProcessor.init_for_sea(schemas_enum_overlap, schemas_enum_hybrid)
+    
+
 
 @app.route('/methods', methods=['GET'])
 def get_methods():

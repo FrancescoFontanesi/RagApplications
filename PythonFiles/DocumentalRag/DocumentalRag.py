@@ -11,8 +11,9 @@ import os
 def main():
     
     QuestionGenerator = llm.QuestionGenerator()
-    StatsTool = stats.QueryTester()
-    DocumentProcessor = dp.DocumentProcessor()
+    model_name = "efederici/sentence-BERTino"
+    StatsTool = stats.QueryTester(model_name=model_name)
+    DocumentProcessor = dp.DocumentProcessor(model_name=model_name)
 
     dictionary_for_questions, db_list, dbHybrid = {}, [], []
     response = input("Initialize the data? (yes/no): ").strip().lower()
@@ -24,7 +25,7 @@ def main():
     if response == 'yes':
         questions_dict = {}
         try:
-            with open("questions.json", "r") as f:
+            with open(os.path.join("Questions_folder", "questions.json"), "r") as f:
                 questions_dict = json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
             questions_dict = QuestionGenerator.generate_questions_from_chunks(dictionary_for_questions)
@@ -41,18 +42,18 @@ def main():
             for db in db_list:
                 result = {}
                 try:
-                    with open(f"Overlap_{(db_list.index(db) * 5)}%.json", "r") as f:
+                    with open(f"Overlap_{(db_list.index(db) * 10)}%.json", "r") as f:
                         result = json.load(f)
                     logging.info("Loaded results overlap from file.")
                 except (FileNotFoundError, json.JSONDecodeError):
-                    logging.debug(f"Testing queries on DB -> {(db_list.index(db) * 5)}%")
-                    result = StatsTool.test_queries(2, questions_dict, db, f"Overlap_{(db_list.index(db) * 5)}%" )
+                    logging.debug(f"Testing queries on DB -> {(db_list.index(db) * 10)}%")
+                    result = StatsTool.test_queries(2, questions_dict, db, f"Overlap_{(db_list.index(db) * 10)}%" )
                 resultsOverlap.append(result)
                 
                 # Calculate statistics
             for idx, result in enumerate(resultsOverlap, 0):
-                logging.debug(f"Calculating statistics for DB with overlap {idx * 5}%")
-                StatsTool.generate_stats_dataframe(result, f"{idx * 5}%")
+                logging.debug(f"Calculating statistics for DB with overlap {idx * 10}%")
+                StatsTool.generate_stats_dataframe(result, f"{idx * 10}%")
         
         
         response = input("Start testing queries on Hybrid DBs? (yes/no): ").strip().lower()
@@ -62,23 +63,24 @@ def main():
             for db in dbHybrid:
                 result = {}
                 try:
-                    with open(f"Hybrid_{((dbHybrid.index(db)+1) * 64)}.json", "r") as f:
+                    with open(f"Hybrid_{(2**(dbHybrid.index(db)) * 64)}.json", "r") as f:
                         result = json.load(f)
                     logging.info("Loaded results overlap from file.")
                 except (FileNotFoundError, json.JSONDecodeError):
-                    logging.debug(f"Testing queries on DB -> {((dbHybrid.index(db)+1) * 64)}")
-                    result = StatsTool.test_queries(1, questions_dict, db, f"Hybrid_{((dbHybrid.index(db)+1) * 64)}" )
+                    logging.debug(f"Testing queries on DB -> {(2**(dbHybrid.index(db)) * 64)}")
+                    result = StatsTool.test_queries(1, questions_dict, db, f"Hybrid_{(2**(dbHybrid.index(db)) * 64)}" )
                 resultsHybrid.append(result)
             
-            for idx, result in enumerate(resultsHybrid, 1):
-                    logging.debug(f"Calculating statistics for Hybrid DB with size {idx * 64}")
-                    StatsTool.generate_stats_dataframe(result,f"Hybrid_{idx*64}%")
+            for idx, result in enumerate(resultsHybrid, 0):
+                    logging.debug(f"Calculating statistics for Hybrid DB with size {(2**idx) * 64}")
+                    StatsTool.generate_stats_dataframe(result,f"Hybrid_{(2**idx)*64}%")
                 
         logging.info("All tests completed.")
-        response = input("Wipe the databases? (yes/no): ").strip().lower()
-        if response == 'yes':
-            DocumentProcessor.wipe_databases(db_list,dbHybrid)
-            logging.info("Databases wiped.")
+    
+    response = input("Wipe the databases? (yes/no): ").strip().lower()
+    if response == 'yes':
+        DocumentProcessor.wipe_databases(db_list,dbHybrid)
+        logging.info("Databases wiped.")
         
         
 def main_v2(path : str):

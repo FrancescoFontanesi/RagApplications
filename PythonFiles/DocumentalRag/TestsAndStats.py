@@ -8,8 +8,8 @@ import os
 
 class QueryTester:
     
-    def __init__(self):
-        self.vs = vs.VectorToolKit()
+    def __init__(self, model_name=""):
+        self.vs = vs.VectorToolKit(model_name=model_name)
 
     def test_queries(self,n, queries, db, id, top_k=5):
         """
@@ -64,7 +64,7 @@ class QueryTester:
         
         df.set_index(['Index','Question'], inplace=True)
                 
-        df.to_excel(f"questions_retrieved_{id}.xlsx", index=True)
+        #df.to_excel(f"questions_retrieved_{id}.xlsx", index=True)
         
 
     # Export to CSV
@@ -84,10 +84,10 @@ class QueryTester:
 
             # Analyze each question's results
             for question_data in questions:
-                results = question_data[1][0]  # Retrieved results for this question
+                results = question_data[1]  # Retrieved results for this question
 
                 # Check if the index is in the first result
-                if results[0][1] == index:
+                if results and results[0][1] == index:
                     first_result_count += 1
 
                 # Check if the index is within the top 3 results
@@ -139,7 +139,7 @@ class QueryTester:
         total_df = pd.DataFrame([total_row])
 
         # Check if the file exists and append if it does
-        total_csv_path = "efederici_sentence-BERTino.csv"
+        total_csv_path = "tests_statistics.csv"
         if os.path.exists(total_csv_path):
             total_df.to_csv(total_csv_path, mode='a', header=False, index=False)
         else:
@@ -149,7 +149,7 @@ class QueryTester:
     def generate_stats_dataframe(self, results, id):
         
         
-        self.calculate_statistics(results, id)
+        #self.calculate_statistics(results, id)
 
         print("\n----------------------------------------------\n")
         
