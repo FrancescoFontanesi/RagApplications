@@ -7,7 +7,9 @@ import psycopg2
 from typing import List
 import VectorToolKit as vs  # Import the VectorToolKit class
 from LLMToolKit import RagPipeline as rag  # Import the RagPipeline class
+from dotenv import load_dotenv
 
+load_dotenv()
 
 # Create Flask application
 app = Flask(__name__)
@@ -38,7 +40,6 @@ VectorTool = vs.VectorToolKit()
 RagTool = rag()
 
 
-
 class SchemasNames(Enum):
     """
     SchemasNames is an enumeration that represents different schema names used in the application.
@@ -59,6 +60,7 @@ class SchemasNames(Enum):
     DB30 = "Overlap3"
     DB_HYBRID_128 = "Hybrid128"
 
+
 class SchemaType(Enum):
     """
     SchemaType is an enumeration that defines different types of schemas.
@@ -70,14 +72,16 @@ class SchemaType(Enum):
     OVERLAP = 2
     HYBRID = 1
 
+
 schemas_enum = {
-    # Overlap schemas with different overlap percentages 
-    
+    # Overlap schemas with different overlap percentages
+
     SchemasNames.DB30: SchemaType.OVERLAP,    # 30% overlap between chunks
-    
+
     # Hybrid schemas with different small chunk sizes (64-256 tokens)
-    SchemasNames.DB_HYBRID_128: SchemaType.HYBRID,    # Large chunks split into 128-token pieces
-    
+    # Large chunks split into 128-token pieces
+    SchemasNames.DB_HYBRID_128: SchemaType.HYBRID,
+
 }
 """
 Maps schema names to their types (OVERLAP or HYBRID).
@@ -109,6 +113,7 @@ The schema name indicates either:
 VERSION = "1.0.0"
 APP_NAME = "Documental Rag"
 
+
 @app.route("/swagger-file")
 def spec():
     swag = swagger(app)
@@ -117,19 +122,20 @@ def spec():
     return jsonify(swag)
 
 
-
 @app.route('/init', methods=['GET'])
 def init():
     pass
 
+
 def get_available_schemas() -> List[str]:
     """
     Returns a list of available schema names from the SchemasNames enum.
-    
+
     Returns:
         List[str]: List of schema names (e.g., ["Overlap0", "Overlap0.5", ...])
     """
     return [schema_name for schema_name in SchemasNames]
+
 
 def get_connection_to_sql_database(
     host: str,
@@ -140,14 +146,14 @@ def get_connection_to_sql_database(
 ) -> psycopg2.extensions.connection:
     """
     Creates a connection to the PostgreSQL database with the specified schema.
-    
+
     Args:
         host (str): Database host address
         username (str): Database username
         password (str): Database password
         data_base_name (str): Database name (default: "Manuale Tetras")
         schema_name (str): Schema name (default: Hybrid128)
-        
+
     Returns:
         psycopg2.extensions.connection: Database connection object
     """
@@ -159,28 +165,31 @@ def get_connection_to_sql_database(
         options=f"-c search_path={schema_name}"
     )
 
+
 @app.route('/swagger-file')
 def swagger_file():
     """
     Endpoint to serve the Swagger file.
-    
+
     Returns:
         Swagger file content
     """
     return app.send_from_directory('swagger.json')
 
+
 @app.route('/')
 def index():
     return 'Hello, World!'
+
 
 @app.route('/methods', methods=['GET'])
 def get_methods():
     """
     Endpoint to retrieve all available database schemas.
-    
+
     Returns:
         JSON response containing array of schema names
-        
+
     Example Response:
         [
             "Overlap0",
@@ -195,7 +204,7 @@ def get_methods():
             "Hybrid192",
             "Hybrid256"
         ]
-    
+
     OpenAPI Spec:
     ---
     get:
@@ -227,15 +236,15 @@ def get_methods():
         return jsonify([schema.value for schema in schemas]), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-    
-    
-def vectorial_query(question, schema):
-    
-    conn = get_connection_to_sql_database(schema_name=schema)
-    
-    results = VectorTool.query_selector(schemas_enum[schema], conn, question, 5)
-    return results
 
+
+def vectorial_query(question, schema):
+
+    conn = get_connection_to_sql_database(schema_name=schema)
+
+    results = VectorTool.query_selector(
+        schemas_enum[schema], conn, question, 5)
+    return results
 
 
 @app.route('/save', methods=['POST'])
@@ -291,24 +300,24 @@ def save():
     """
     try:
         data = request.get_json()
-        
+
         if not data or 'schema' not in data or 'question' not in data:
             return jsonify({
                 'error': 'Missing required parameters',
                 'required': ['schema', 'question']
             }), 400
-            
+
         schema = data['schema']
         question = data['question']
-        
+
         if schema not in schemas_enum:
             return jsonify({
                 'error': 'Invalid schema',
                 'valid_schemas': list(schemas_enum.keys())
             }), 400
-            
+
         results = vectorial_query(question, schema)
-        
+
         formatted_results = [
             {
                 'content': result[0],
@@ -317,19 +326,19 @@ def save():
             }
             for result in results
         ]
-        
+
         return jsonify({
             'results': formatted_results,
             'count': len(formatted_results)
         }), 200
-        
+
     except Exception as e:
         return jsonify({
             'error': 'Internal server error',
             'message': str(e)
         }), 500
-        
-        
+
+
 @app.route('/question', methods=['POST'])
 def question():
     """
@@ -377,42 +386,43 @@ def question():
     """
     try:
         data = request.get_json()
-        
+
         if not data or 'schema' not in data or 'question' not in data:
             return jsonify({
                 'error': 'Missing required parameters',
                 'required': ['schema', 'question']
             }), 400
-            
+
         schema = data['schema']
         question = data['question']
-        
+
         if schema not in schemas_enum:
             return jsonify({
                 'error': 'Invalid schema',
                 'valid_schemas': list(schemas_enum.keys())
             }), 400
-            
+
         # Create a connection to the database
         conn = get_connection_to_sql_database(schema_name=schema)
-        
+
         # Get the results for the question
-        results = VectorTool.query_selector(schemas_enum[schema], conn, question, 5)
-        
+        results = VectorTool.query_selector(
+            schemas_enum[schema], conn, question, 5)
+
         # Answer the question using the results
         answer, indecies = RagTool.answer_qestion(results, question)
-        
+
         return jsonify({
             'answer': answer,
             'indecies': indecies
         }), 200
-        
+
     except Exception as e:
         return jsonify({
             'error': 'Internal server error',
             'message': str(e)
         }), 500
-    
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
