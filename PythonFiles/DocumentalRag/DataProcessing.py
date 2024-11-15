@@ -86,7 +86,22 @@ class DocumentProcessor:
             
         return simple_chunks, hybrid_chunks
             
-
+    def json_to_word(self, json_file, word_file):
+        # Load JSON data
+        with open(json_file, 'r') as f:
+            data = json.load(f)
+        
+        # Create a new Word document
+        doc = Document()
+        
+        # Iterate through the dictionary and add content to the document
+        for key, value in data.items():
+            doc.add_heading(key, level=1)
+            for item in value:
+                doc.add_paragraph(item)
+        
+        # Save the document
+        doc.save(word_file)
 
 
 
@@ -346,7 +361,22 @@ class DocumentProcessor:
                 cur.execute("DELETE FROM small_chunks")
                 cur.execute("DROP INDEX IF EXISTS small_chunk_embedding_idx")
                 cur.execute("VACUUM")
-          
+    
+    
+    def init_for_sea(self):
+        logging.info("Starting data processing...")
+
+        subtitles_dict = self.extract_subtitles_and_text()
+        logging.info("Extracted subtitles and text.")
+        
+        dict_list = self.generate_chunked_dictionaries(subtitles_dict, overlap_percentage=[0.3])
+        logging.info("Generated chunked dictionaries.")
+        
+        hybrid_list = self.generate_chunked_dictionaries_ii(subtitles_dict, chunk_size_list=[128])
+        logging.info("Generated hybrid chunked dictionaries.")
+
+
+
     def process_data(self):
         
         logging.basicConfig(level=logging.INFO)
