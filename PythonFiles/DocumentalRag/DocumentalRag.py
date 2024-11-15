@@ -120,14 +120,6 @@ def main_v2(path : str):
     
     
 
-def main_v3():
-    QuestionGenerator = llm.QuestionGenerator()
-    while True:
-        question = input("Enter your question (or type 'exit' to quit): ").strip()
-        if question.lower() == 'exit':
-            break
-        
-        print(f"Answer: {answer}")
     
 
 if __name__ == "__main__":
@@ -137,7 +129,6 @@ if __name__ == "__main__":
     elif version == 'Document':
         path = input("Please enter the path to the document: ").strip()
         main_v2(path)
-    elif version == 'CLI':
-        main_v3()
+        
     else:
         print("Invalid selection. Exiting.")
