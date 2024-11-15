@@ -8,17 +8,18 @@ from psycopg.rows import dict_row
 import logging
 from sqlalchemy import text
 import FlexibleChunker as fc 
-import numpy as np
+from docx import Document
+
 
   
 
 class DocumentProcessor:
-    def __init__(self, model_name="efederici/sentence-BERTino"):
+    def __init__(self, model_name="efederici/sentence-BERTino", document_path=r"D:\RagApplications\Documenti\ManualeTETRAS_modificato2.pdf"):
+        self.model_name = model_name
         self.model = SentenceTransformer(model_name)
-        self.document_path=r"D:\RagApplications\Documenti\ManualeTETRAS_modificato2.pdf"
+        self.document_path=document_path
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-    
 
     def extract_subtitles_and_text(self, start_page=0):
         document = fitz.open(self.document_path)
@@ -61,30 +62,59 @@ class DocumentProcessor:
         chunks = semantic_splitter.split_text(text)
     
         return chunks
+    
+    def chunk_document_plain(self, document, chunk_size=768, overlap_size=70):
+        
+        page_texts = []
+        doc = Document(document)
+        
+        for paragraph in doc.paragraphs:
+            if paragraph.text.strip():
+                page_texts.append(paragraph.text)
+        
+        simple_chunks = []
+        for text in page_texts:
+            chunks = self.chunk_text(text, chunk_size, overlap_size)
+            simple_chunks.extend(chunks)
+        
+        chunker = fc.FlexibleChunker(target_chunk_size=chunk_size)
+        
+        hybrid_chunks = []
+        for text in page_texts:
+            hybrid_chunk = chunker.chunk_text(text)
+            hybrid_chunks.append(hybrid_chunk,[self.chunk_text(large_chunk,128, 28) for large_chunk in hybrid_chunk])
+            
+        return simple_chunks, hybrid_chunks
+            
 
 
 
-    def generate_chunked_dictionaries(self, data_dict, chunk_size=768, overlap_percentage=[0.1, 0.2, 0.3]):
+
+    def generate_chunked_dictionaries(self, data_dict, chunk_size=512, overlap_percentage=[0,0.05, 0.1, 0.15, 0.2, 0.25, 0.3]):
         
         dictList = []
         for overlap in overlap_percentage:
             overlap = int(chunk_size * overlap)
             chunked_subtitles_dict = data_dict.copy()
             for subtitle, text in data_dict.items():
-                if len(text[1]) <= int(chunk_size*3.5):
+                if len(text[1]) <= int(chunk_size * 3.1):
                     chunked_subtitles_dict[subtitle] = [text[1]]
                 else:
-                    chunked_subtitles_dict[subtitle] = self.chunk_text(text[1], overlap_size=overlap)
+                    chunked_subtitles_dict[subtitle] = self.chunk_text(text[1], chunk_size=chunk_size, overlap_size=overlap)
             dictList.append(chunked_subtitles_dict)
         return dictList
         
 
-    def generate_chunked_dictionary_ii(self, data_dict):
-        chunked_subtitles_dict = data_dict.copy()
-        for subtitle, text in data_dict.items():
-            document = self.chunk_text(text[1], chunk_size=768, overlap_size=0)
-            chunked_subtitles_dict[subtitle] = (document,[self.chunk_text(large_chunk,128, 28) for large_chunk in document])
-        return chunked_subtitles_dict
+    def generate_chunked_dictionaries_ii(self, data_dict, chunk_size_large=512, chunk_size_list=[64, 128, 192, 256]):
+        dictList = []
+        for chunk_size_small in chunk_size_list:
+            overlap = int(chunk_size_small * 0.2)
+            chunked_subtitles_dict = data_dict.copy()
+            for subtitle, text in data_dict.items():
+                document = self.chunk_text(text[1], chunk_size=chunk_size_large, overlap_size=0)
+                chunked_subtitles_dict[subtitle] = (document,[self.chunk_text(large_chunk,chunk_size_small , overlap_size=overlap) for large_chunk in document])
+            dictList.append(chunked_subtitles_dict)
+        return dictList
     
     def generate_question_dictionary(self, data_dict, chunk_size : int = 350):
 
@@ -101,31 +131,6 @@ class DocumentProcessor:
                 text.pop(-1)
         return dict_for_questions
     
-    def register_vector_type(self, conn):
-        """Register vector type for psycopg3 connection"""
-        try:
-            with conn.cursor() as cur:
-                # Check if vector type exists
-                cur.execute("""
-                SELECT EXISTS (
-                    SELECT 1 
-                    FROM pg_type 
-                    WHERE typname = 'vector'
-                );
-                """)
-                vector_exists = cur.fetchone()[0]
-                
-                if not vector_exists:
-                    raise Exception("Vector type not found in database. Make sure pgvector extension is installed.")
-                
-                # Register the vector type
-                cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
-                conn.commit()
-                
-        except Exception as e:
-            logging.error(f"Error registering vector type: {e}")
-            raise
-
 
     def get_connection_to_sql_database(self, host="localhost", data_base_name="database", username="postgres", password="postgres", port="5432"):
         g_uri = f"postgresql://{username}:{password}@{host}:{port}/{data_base_name}"
@@ -142,11 +147,10 @@ class DocumentProcessor:
                 CREATE TABLE documents (
                     id BIGINT PRIMARY KEY GENERATED BY DEFAULT AS IDENTITY,
                     content TEXT NOT NULL,
-                    index TEXT NOT NULL,
+                    index TEXT,
                     embedding VECTOR(768) NOT NULL
                 );
-                CREATE INDEX document_embedding_idx ON documents
-                USING disk_ann (embedding);
+                
             END IF;
         END $$;
         """)
@@ -154,7 +158,19 @@ class DocumentProcessor:
         except Exception as e:
             logging.error(f"Error creating tables: {e}")
             raise
-
+        
+    def create_index(self, conn):
+        """Create index using psycopg3"""
+        try:
+            with conn.cursor() as cur:
+                cur.execute("""
+                CREATE INDEX document_embedding_idx ON documents
+                USING diskann (embedding);
+                """)
+            conn.commit()
+        except Exception as e:
+            logging.error(f"Error creating index: {e}")
+        
     def create_tables_ii(self, conn):
         """Create tables using psycopg3"""
         try:
@@ -163,7 +179,7 @@ class DocumentProcessor:
                     CREATE EXTENSION IF NOT EXISTS vector_scale CASCADE;
                     
                     CREATE TABLE IF NOT EXISTS document (
-                        chunk_id SERIAL PRIMARY KEY,
+                        chunk_id BIGINT PRIMARY KEY GENERATED BY DEFAULT AS IDENTITY,
                         content TEXT,
                         index TEXT
                     );
@@ -171,18 +187,29 @@ class DocumentProcessor:
                     CREATE TABLE IF NOT EXISTS small_chunks (
                         small_chunk_id SERIAL PRIMARY KEY,
                         large_chunk_id INTEGER REFERENCES document(chunk_id),
-                        embedding vector(786)
+                        embedding vector(768)
                     );
 
-                    CREATE INDEX IF NOT EXISTS document_embedding_idx 
-                    ON small_chunks USING diskann (embedding);
+                    
                     """)
                 conn.commit()
         except Exception as e:
             logging.error(f"Error creating tables: {e}")
             raise
+    
+    def create_index_ii(self, conn):
+        """Create index using psycopg3"""
+        try:
+            with conn.cursor() as cur:
+                cur.execute("""
+                CREATE INDEX small_chunk_embedding_idx ON small_chunks
+                USING diskann (embedding);
+                """)
+            conn.commit()
+        except Exception as e:
+            logging.error(f"Error creating index: {e}")
 
-    def insert_data(self, conn, data_dict):
+    def insert_data(self, conn, data_dict: dict):
         """Insert data using psycopg3"""
         try:
                 with conn.cursor() as cur:
@@ -199,8 +226,26 @@ class DocumentProcessor:
         except Exception as e:
             logging.error(f"Error inserting data: {e}")
             raise
-
-    def insert_data_ii(self, conn, chunked_dict):
+    
+    '''
+    def insert_data(self, conn, list: list[str]):
+        """Insert data using psycopg3"""
+        try:
+                with conn.cursor() as cur:
+                    embeddings = self.model.encode(list)
+                        
+                    for chunk, embedding in zip(list, embeddings):
+                            
+                        # Insert into document table
+                        cur.execute("""INSERT INTO documents (content, embedding) 
+                                    VALUES (%s, %s)
+                                    """, (chunk, embedding.tolist()))
+                conn.commit()
+        except Exception as e:
+            logging.error(f"Error inserting data: {e}")
+            raise
+'''
+    def insert_data_ii(self, conn, chunked_dict: dict):
         """Insert data using psycopg3"""
         try:
             with conn.cursor() as cur:
@@ -231,9 +276,46 @@ class DocumentProcessor:
             logging.error(f"Error inserting data: {e}")
             raise
         
+    '''    
+    def insert_data_ii(self, conn, list: list):
+        """Insert data using psycopg3"""
         try:
             with conn.cursor() as cur:
-                cur.execute(f"""
+                for (large_chunks, small_chunks_list) in list:
+                    # Process each large chunk and its small chunks
+                    for large_chunk, small_chunks in zip(large_chunks, small_chunks_list):
+                        # Insert main document chunk
+                        cur.execute("""
+                        INSERT INTO document (content)
+                        VALUES (%s, %s)
+                        RETURNING chunk_id
+                        """, (large_chunk))
+                        
+                        parent_chunk_id = cur.fetchone()[0]
+                        
+                        # Create embeddings for small chunks
+                        small_embeddings = self.model.encode(small_chunks)
+                        
+                        # Insert small chunks with their embeddings
+                        for small_chunk, embedding in zip(small_chunks, small_embeddings):
+                            cur.execute("""
+                            INSERT INTO small_chunks (large_chunk_id, embedding)
+                            VALUES (%s, %s)
+                            """, (parent_chunk_id, embedding.tolist()))
+                            
+            conn.commit()
+        except Exception as e:
+            logging.error(f"Error inserting data: {e}")
+            raise
+        
+
+'''
+
+    def create_view(self, conn):
+        """Create a view using psycopg3"""
+        try:
+            with conn.cursor() as cur:
+                cur.execute("""
                 CREATE OR REPLACE VIEW joined_view AS
                 SELECT 
                     sc.small_chunk_id,
@@ -244,17 +326,32 @@ class DocumentProcessor:
                 FROM 
                     small_chunks sc
                 JOIN document lc ON sc.large_chunk_id = lc.chunk_id;
+                
                 """)
                 conn.commit()
         except Exception as e:
             logging.error(f"Error creating view: {e}")
             raise
-
+    
+    
+    def wipe_databases(self, dbs_overlap, dbs_hybrid):
+        for db in dbs_overlap:
+            with db.cursor() as cur:
+                cur.execute("DELETE FROM documents")
+                cur.execute("DROP INDEX IF EXISTS document_embedding_idx")
+                cur.execute("VACUUM")
+        for db in dbs_hybrid:
+            with db.cursor() as cur:
+                cur.execute("DELETE FROM document")
+                cur.execute("DELETE FROM small_chunks")
+                cur.execute("DROP INDEX IF EXISTS small_chunk_embedding_idx")
+                cur.execute("VACUUM")
+          
     def process_data(self):
         
         logging.basicConfig(level=logging.INFO)
         
-        question_dict, dbs_chunking, db_hybrid = {}, [], None
+        question_dict, dbs_overlap, dbs_hybrid = {}, [], []
 
         
         logging.info("Starting data processing...")
@@ -276,28 +373,50 @@ class DocumentProcessor:
 
         response = input("Do you want to generate the hybrid chunked dictionary? (yes/no): ").strip().lower()
         if response == 'yes':
-            hybrid_dict = self.generate_chunked_dictionary_ii(subtitles_dict)
-            logging.info("Generated hybrid chunked dictionary.")
+            hybrid_list = self.generate_chunked_dictionaries_ii(subtitles_dict)
+            logging.info("Generated hybrid chunked dictionaries.")
         
         
-        db1 = self.get_connection_to_sql_database(host="localhost", data_base_name="DBTestChunking1", username="postgres", password="578366")
-        db2 = self.get_connection_to_sql_database(host="localhost", data_base_name="DBTestChunking2", username="postgres", password="578366")
-        db3 = self.get_connection_to_sql_database(host="localhost", data_base_name="DBTestChunking3", username="postgres", password="578366")
-        db_hybrid = self.get_connection_to_sql_database(host="localhost", data_base_name="DBTestHybrid", username="postgres", password="578366")
+        
+        # The above code is creating multiple database connections to SQL databases with different
+        # names and configurations. Each database connection is being established using the
+        # `get_connection_to_sql_database` method with specific parameters such as host, database
+        # name, username, and password. The code is setting up connections to databases named
+        # "Overlap0", "Overlap0.5", "Overlap1", "Overlap1.5", "Overlap2", "Overlap2.5", "Overlap3",
+        # "Hybrid64", "Hybrid128", "Hybrid192", and "Hybrid256".
+        db0 = self.get_connection_to_sql_database(host="localhost", data_base_name="Overlap0", username="postgres", password="578366")
+        db5 = self.get_connection_to_sql_database(host="localhost", data_base_name="Overlap0.5", username="postgres", password="578366")
+        db10 = self.get_connection_to_sql_database(host="localhost", data_base_name="Overlap1", username="postgres", password="578366")
+        db15 = self.get_connection_to_sql_database(host="localhost", data_base_name="Overlap1.5", username="postgres", password="578366")
+        db20 = self.get_connection_to_sql_database(host="localhost", data_base_name="Overlap2", username="postgres", password="578366")
+        db25 = self.get_connection_to_sql_database(host="localhost", data_base_name="Overlap2.5", username="postgres", password="578366")
+        db30 = self.get_connection_to_sql_database(host="localhost", data_base_name="Overlap3", username="postgres", password="578366")
+        db_hybrid_54 = self.get_connection_to_sql_database(host="localhost", data_base_name="Hybrid64", username="postgres", password="578366")
+        db_hybrid_128 = self.get_connection_to_sql_database(host="localhost", data_base_name="Hybrid128", username="postgres", password="578366")
+        db_hybrid_192 = self.get_connection_to_sql_database(host="localhost", data_base_name="Hybrid192", username="postgres", password="578366")
+        db_hybrid_256 = self.get_connection_to_sql_database(host="localhost", data_base_name="Hybrid256", username="postgres", password="578366")
+
         logging.info("Connected to SQL databases.")
 
-        dbs_chunking = [db1, db2, db3]
+        dbs_overlap = [db0, db5, db10, db15, db20, db25, db30]
+
         response = input("Do you want to add the data to the overlap dbs? (yes/no): ").strip().lower()
         if response == 'yes':
-            for db, data_dict in zip(dbs_chunking, dict_list):
+            for db, data_dict in zip(dbs_overlap, dict_list):
                 self.insert_data(db, data_dict)
-                logging.info(f"Inserted data into database: {db}")
+                self.create_index(db)
+                logging.info(f"Inserted data into database: Overlap {10*(dbs_overlap.index(db) * 0.5)}% ")
         
-        response = input("Do you want to add the data to the hybrid db? (yes/no): ").strip().lower()
+        
+        dbs_hybrid = [db_hybrid_54, db_hybrid_128, db_hybrid_192,  db_hybrid_256]
+        response = input("Do you want to add the data to the hybrid dbs? (yes/no): ").strip().lower()
         if response == 'yes':
-            self.insert_data_ii(db_hybrid, hybrid_dict)
-            logging.info("Inserted hybrid data into database.")
+            for db, data_dict in zip(dbs_hybrid, hybrid_list):
+                self.insert_data_ii(db, data_dict)
+                self.create_view(db)
+                self.create_index_ii(db)
+                logging.info(f"Inserted hybrid data into database: {(dbs_hybrid.index(db)+1) * 64}")
 
         logging.info("Data processing completed.")
         
-        return question_dict, dbs_chunking, db_hybrid
+        return question_dict, dbs_overlap, dbs_hybrid
