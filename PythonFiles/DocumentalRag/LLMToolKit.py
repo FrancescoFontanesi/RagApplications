@@ -1,16 +1,19 @@
 from langchain_ollama.llms import OllamaLLM
 from langchain.prompts import PromptTemplate
 from operator import itemgetter
+from sentence_transformers import SentenceTransformer
 import logging
 import os
+from typing import List
 
 
 
 
 class QuestionGenerator:
-    def __init__(self, model_name="llama3.1:latest", base_url=f"{os.getenv("OLLAMA_URL")}"):
+    def __init__(self, model_name="llama3.1:latest", base_url=f"{os.getenv("OLLAMA_URL")}", embedder="efederici/sentence-BERTino"):
         self.model_name = model_name
         self.base_url = base_url
+        self.embedder = SentenceTransformer(embedder)
         self.llm = OllamaLLM(model=model_name, base_url=base_url, temperature=0.3)
         self.question_gen_prompt = PromptTemplate(
             input_variables=["context", "n_questions", "questions"],
@@ -36,13 +39,6 @@ class QuestionGenerator:
             - Questions should require understanding of the context
 
             Generate exactly {n_questions} questions, one per line and not enumerated:"""
-        )
-        self.chain = (
-            {"context": itemgetter("context"), 
-            "n_questions": itemgetter("n_questions"),
-            "questions": itemgetter("questions")}
-            | self.question_gen_prompt 
-            | self.llm
         )
         
     def add_strings_to_lines(self, strings):
@@ -105,3 +101,81 @@ class QuestionGenerator:
             questions_dict[index] = chunk_questions
         
         return questions_dict
+class RagPipeline:
+    def __init__(self, model_name="llama3.2:latest", base_url=f"{os.getenv("OLLAMA_URL")}", embedder="efederici/sentence-BERTino"):
+        self.model_name = model_name
+        self.base_url = base_url
+        self.embedder = SentenceTransformer(embedder)
+        self.llm = OllamaLLM(model=model_name, base_url=base_url, temperature=0.3)
+        
+        
+        self.tetras_rag_prompt = PromptTemplate(
+            input_variables=["contexts", "question"],
+            template="""Sei un esperto di manuali di utilizzo di TETRAS, specializzato nell'assistenza tecnica e nel supporto agli utenti.
+
+            I seguenti contesti sono ordinati per rilevanza (dal più al meno pertinente, 1 è il più pertinente è 5 il meno pertitente):
+
+            {contexts}
+
+            Domanda dell'utente:
+            {question}
+
+            Istruzioni per la risposta:
+            - Dai maggior peso alle informazioni dai contesti più rilevanti (primi della lista)
+            - Se nessun contesto è fornito, spiega che puoi rispondere solo a domande relative al manuale Tetras
+            - Basati esclusivamente sulle informazioni fornite nei contesti
+            - Mantieni un tono professionale e tecnico
+            - Ogni contesto e clasificato con una posizione che implica quanto esso sia simile alla domanda forinta dall'utente, 1 è il più simile è 5 il meno simile
+
+            Risposta:
+            """
+        )
+
+    def extract_contexts(self, context_list) -> List[str]:
+        contexts = []
+        for c in context_list:
+            contexts.append(c[0])
+        return contexts
+
+    def extract_indecies(self, context_list) -> List[str]:
+        indecies = []
+        for c in context_list:
+            indecies.append(c[1])
+        return indecies
+
+    def format_contexts(self, context_list: List[str]) -> str:
+        """Format context list with relevance markers"""
+        formatted_contexts = []
+        for i, ctx in enumerate(context_list, 1):
+            formatted_contexts.append(f"Contesto classificato con posizione{i}:\n{ctx}\n")
+        return "\n".join(formatted_contexts)
+
+    def process_contexts(self, contexts: List[str]) -> List[str]:
+        processed_contexts = []
+        for c in contexts:
+            if c[2] > 0.5:
+                processed_contexts.append(c)
+        return processed_contexts
+
+    def answer_question(self, results, question):
+        contexts = self.process_contexts(results)
+
+        # Instruct the chain
+        chain = (
+            {"contexts": itemgetter("contexts"),
+                "question": itemgetter("question")}
+            | self.question_gen_prompt
+            | self.llm
+        )
+        # Extract the indices
+        indecies = self.extract_indecies(results)
+        contexts = self.extract_contexts(results)
+        # Resolve the chain (one for each question)
+        answer = chain.invoke({
+            "contexts": self.format_contexts(contexts),
+            "question": question
+        })
+
+        return answer, indecies
+
+

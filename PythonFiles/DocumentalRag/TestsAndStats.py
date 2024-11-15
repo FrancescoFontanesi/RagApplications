@@ -4,14 +4,14 @@ import VectorToolKit as vs
 import json
 import numpy as np
 from IPython.display import display
-
+import os 
 
 class QueryTester:
     
     def __init__(self):
         self.vs = vs.VectorToolKit()
 
-    def test_queries(self,n, queries, db, id, top_k=3):
+    def test_queries(self,n, queries, db, id, top_k=5):
         """
         Test the queries and retrieve information.
 
@@ -47,16 +47,15 @@ class QueryTester:
 
             for question_data in questions:
                 question_text = question_data[0]  # Question text
-                results, elapsed_time = question_data[1]  # Retrieved results and elapsed time
+                results = question_data[1]  # Retrieved results and elapsed time
 
                 for i, (content_text, content_index, similarity) in enumerate(results):
                     rows.append({
                             "Index": index if not index_added else "",  # Only show index once per group
                             "Question": question_text if i == 0 else "",  # Only show question text once per retrieval
-                            "Elapsed Time": elapsed_time if i == 0 else "",  # Only show elapsed time once per question
                             "Content": content_text,
                             "Content Index": content_index,
-                            "Cosine Similarity": str(similarity) + "%"
+                            "Cosine Similarity": str(similarity) 
                         })
             index_added = True
 
@@ -67,10 +66,8 @@ class QueryTester:
                 
         df.to_excel(f"questions_retrieved_{id}.xlsx", index=True)
         
-        display(df)
-        
 
-    # Export to Excel
+    # Export to CSV
     def generate_stats(self, results, id):
         # Initialize a list to store each index’s statistics
         index_stats = []
@@ -80,9 +77,10 @@ class QueryTester:
             questions = questions_data[0]  # List of questions
             total_questions = questions_data[1]  # Total number of questions
 
-            # Initialize counters for first-result and top-3 occurrences
+            # Initialize counters for first-result, top-3, and top-5 occurrences
             first_result_count = 0
             top_3_result_count = 0
+            top_5_result_count = 0
 
             # Analyze each question's results
             for question_data in questions:
@@ -94,9 +92,14 @@ class QueryTester:
 
                 # Check if the index is within the top 3 results
                 top_3_result_count += int(any(result[1] == index for result in results[:3]))
-            # Calculate precision for first result and top 3 results
+
+                # Check if the index is within the top 5 results
+                top_5_result_count += int(any(result[1] == index for result in results[:5]))
+
+            # Calculate precision for first result, top 3 results, and top 5 results
             precision_first_result = first_result_count / total_questions if total_questions > 0 else 0
             precision_top_3_result = top_3_result_count / total_questions if total_questions > 0 else 0
+            precision_top_5_result = top_5_result_count / total_questions if total_questions > 0 else 0
 
             # Store statistics for this index
             index_stats.append({
@@ -104,8 +107,10 @@ class QueryTester:
                 "Total Questions": total_questions,
                 "First Result Count": first_result_count,
                 "Top 3 Result Count": top_3_result_count,
-                "Precision (First Result)": str(np.round(precision_first_result,2) * 100)+ "%",
-                "Precision (Top 3 Results)": str(np.round(precision_top_3_result,2) * 100) + "%"
+                "Top 5 Result Count": top_5_result_count,
+                "Precision (First Result)": str(np.round(precision_first_result, 3) * 100) + "%",
+                "Precision (Top 3 Results)": str(np.round(precision_top_3_result, 3) * 100) + "%",
+                "Precision (Top 5 Results)": str(np.round(precision_top_5_result, 3) * 100) + "%"
             })
 
         # Convert index statistics to a DataFrame
@@ -113,34 +118,43 @@ class QueryTester:
         
         df_stats.set_index('Index', inplace=True)
         
-        
         # Calculate totals
         total_row = {
+            'Db type': id,
             'Total Questions': df_stats['Total Questions'].sum(),
             'First Result Count': df_stats['First Result Count'].sum(),
             'Top 3 Result Count': df_stats['Top 3 Result Count'].sum(),
-            'Precision (First Result)': f"{(df_stats['First Result Count'].sum() / df_stats['Total Questions'].sum() * 100):.2f}%",
-            'Precision (Top 3 Results)': f"{(df_stats['Top 3 Result Count'].sum() / df_stats['Total Questions'].sum() * 100):.2f}%"
+            'Top 5 Result Count': df_stats['Top 5 Result Count'].sum(),
+            'Precision (First Result)': f"{(df_stats['First Result Count'].sum() / df_stats['Total Questions'].sum() * 100):.3f}%",
+            'Precision (Top 3 Results)': f"{(df_stats['Top 3 Result Count'].sum() / df_stats['Total Questions'].sum() * 100):.3f}%",
+            'Precision (Top 5 Results)': f"{(df_stats['Top 5 Result Count'].sum() / df_stats['Total Questions'].sum() * 100):.3f}%"
         }
 
         # Add totals row
         df_stats.loc['TOTAL'] = total_row
-
         # Export to Excel
-        df_stats.to_excel(f"question_retrived_statistics_{id}.xlsx", index=True)
+        #df_stats.to_excel(f"question_retrived_statistics_{id}.xlsx", index=True)
 
-        display(df_stats)
+        # Save total row to a separate CSV
+        total_df = pd.DataFrame([total_row])
+
+        # Check if the file exists and append if it does
+        total_csv_path = "efederici_sentence-BERTino.csv"
+        if os.path.exists(total_csv_path):
+            total_df.to_csv(total_csv_path, mode='a', header=False, index=False)
+        else:
+            total_df.to_csv(total_csv_path, index=False)
+
 
     def generate_stats_dataframe(self, results, id):
         
         
         self.calculate_statistics(results, id)
-        
-        
+
         print("\n----------------------------------------------\n")
         
-        
         self.generate_stats(results, id)
+
 
 
 

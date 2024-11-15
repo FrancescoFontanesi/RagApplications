@@ -14,13 +14,8 @@ import requests
 import os 
 
 
-
-from langchain.agents import create_openapi_agent
-from langchain_community.agent_toolkits import OpenAPIToolkit
-from langchain_community.tools.json.tool import JsonSpec
-
 class SwaggerToolkit:
-    def __init__(self, json_path: str = "enhanced_swagger copy.json", base_url: str = os.getenv("OLLAMA_URL"), model_name: str ="llama3.1:70b", bearer_token: str =""):
+    def __init__(self, json_path: str = "enhanced_swagger copy.json", base_url: str = os.getenv("OLLAMA_URL"), model_name: str ="llama3.1:latest", bearer_token: str =""):
         """
         Initialize the Weather API Toolkit.
         
@@ -33,15 +28,16 @@ class SwaggerToolkit:
         self.base_url = base_url
         self.auth = bearer_token
         self.swagger_json = None
-
-        #self.agent = self._create_api_toolkit()
-        
         self.llm = OllamaLLM(
                     temperature=0,
                     base_url=self.base_url,
                     model=self.model_name,
                     verbose=True
                 )
+
+        self.agent = self._create_api_toolkit()
+        
+        
     
     
     def fetch_swagger_json(self):
@@ -144,12 +140,12 @@ def main():
     swagger_toolkit._create_api_toolkit()
 
 
-    """try:
+    try:
         logging.debug("Initializing SwaggerToolkit with provided bearer token.")
         swagger_toolkit = SwaggerToolkit(bearer_token=bearer_token)
         logging.debug("SwaggerToolkit initialized successfully.")
         swagger_toolkit.run_interactive_cli()
     except Exception as e:
-        logging.error(f"Application error: {str(e)}")"""
+        logging.error(f"Application error: {str(e)}")
 if __name__ == "__main__":
     main()
