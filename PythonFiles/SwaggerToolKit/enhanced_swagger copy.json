@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Graph REST Service API",
-    "description": "Graph Service ASP.NET Core Web API",
+    "description": "Graph Service ASP.NET Core Web API. This service is used to make api calls on a graph database where nodes are entites and edges are links. You are not allowed yet to know the database structure so when making queries to the db avoid using additional informations outside the user queries",
     "termsOfService": "https://example.com/terms",
     "contact": {
       "name": "S&A Sistemi & Automazione srl",
@@ -27,7 +27,7 @@
           "Graph"
         ],
         "summary": "POST api/graphs/list-nodes\r\nRetrieve the list of nodes for specific value",
-        "description": "This API endpoint allows you to retrieve a list of nodes/entites that match a specific search query. You can use this to find related data entities in your application.\nTo use this endpoint, you'll need to provide a few parameters:  \n\nquery: This is the search query you want to use. You can include wildcard characters like _ (single character) and % (zero or more characters) to make your search more flexible.\ntypes: (optional) This lets you specify the types of entities you want to search for. If you don't provide this, it will search across all entity types.\nincludeInputEntities: (optional) If set to true, the response will include the original input entities in addition to the matching nodes. The default is true.\nlimit: (optional) This sets the maximum number of matching nodes to return for each input entity. The default is 0, which means all matching nodes will be returned.\nskip: (optional) This allows you to skip a certain number of matching nodes, which can be useful for pagination.  \n\n The response from this endpoint will be a string representing a JSON data cart object. This data cart contains the list of matching nodes. The response can be formatted as text/plain, application/json, or text/json - all three formats will contain the same JSON data. \nOverall, this endpoint gives you a way to search for and retrieve related data entities based on a provided query. It's a useful tool for working with graph-structured data in your application. \n When entering the query you must use only the user input",
+        "description": "This API endpoint allows you to retrieve a list of nodes/entites that match a specific search query using natural lenguage . You can use this to find related data entities in your application.\nTo use this endpoint, you'll need to provide a few parameters:  \n\nquery: This is the search query you want to use. You can include wildcard characters like _ (single character) and % (zero or more characters) to make your search more flexible.\ntypes: (optional) This lets you specify the types of entities you want to search for. If you don't provide this, it will search across all entity types and its prefered .\nincludeInputEntities: (optional) If set to true, the response will include the original input entities in addition to the matching nodes. The default is true.\nlimit: (optional) This sets the maximum number of matching nodes to return for each input entity. The default is 0, which means all matching nodes will be returned.\nskip: (optional) This allows you to skip a certain number of matching nodes, which can be useful for pagination.  \n\n The response from this endpoint will be a string representing a JSON data cart object. This data cart contains the list of matching nodes. The response can be formatted as text/plain, application/json, or text/json - all three formats will contain the same JSON data. \nOverall, this endpoint gives you a way to search for and retrieve related data entities based on a provided query. It's a useful tool for working with graph-structured data in your application. \n When entering the query you must use only the user input",
         "requestBody": {
           "content": {
             "application/json": {
@@ -43,7 +43,7 @@
                             },
                             "types": {
                               "type": "array",
-                              "description": "Tipi entità da ricercare (usato nelle query full text, default lista vuota)",
+                              "description": "Tipi entità da ricercare (usato nelle query full text, default lista vuota), se non specificato lasciare vuoto",
                               "items": {
                                 "type": "string"
                               }
